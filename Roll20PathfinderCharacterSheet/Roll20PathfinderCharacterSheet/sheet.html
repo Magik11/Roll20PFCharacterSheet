@@ -913,6 +913,7 @@
         </div>
         <br>
     </div>
+
     <div>
         <b title="Toggle common conditions.">Conditions</b>
         <input type="checkbox" class="sheet-sect-show" title="@{conditions-show}" name="attr_conditions-show" value="1" style="opacity:0; width:90px; height:1.5em; position:relative; top:0; left:0; margin:0 -15px 0 -75px; cursor:pointer; z-index:1;" checked="checked" /><span></span>
@@ -1280,8 +1281,8 @@
                                 <div class="sheet-table-row">
                                     <span class="sheet-table-data sheet-center"><b>0.</b></span>
                                     <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{mythic-0-path}" type="text" name="attr_mythic-0-path" placeholder="Path Name" /></span>
-                                    <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{mythic-0-tier}" type="number" name="attr_mythic-0-tier" value="0"></span>
-                                    <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{mythic-0-hp}" type="number" name="attr_mythic-0-hp" value="0" /></span>
+                                    <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{mythic-tier}" type="number" name="attr_mythic-tier" value="0"></span>
+                                    <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{mythic-hp}" type="number" name="attr_mythic-hp" value="0" /></span>
                                 </div>
                                 <div class="sheet-table-row">
                                     <span class="sheet-table-data sheet-center"><b>1.</b></span>
@@ -1315,8 +1316,8 @@
                                     <span class="sheet-table-data sheet-divider">+</span>
                                     <span class="sheet-table-data sheet-center"><input style="width:100%;" type="number" title="@{misc-mythic-power}" name="attr_misc-mythic-power" value="0" /></span>
                                 </div>
-                                <div class="sheet-table-row">
-                                    <span class="sheet-table-data sheet-center"><label><input type="checkbox" title="@{mythic-paragon}" name="attr_mythic-paragon" value="2" /><b title="Has Mythic Paragon feat"> Mythic Paragon</b></label></span>
+                                <div class="sheet-table-row" style="height:2em;">
+                                    <span class="sheet-table-data sheet-center"><label style="white-space:nowrap;"><input type="checkbox" title="@{mythic-paragon}" name="attr_mythic-paragon" value="2" /><b title="Has Mythic Paragon feat"> Mythic Paragon</b></label></span>
                                 </div>
                             </div>
                         </div>
@@ -1442,7 +1443,7 @@
 
                                 <textarea class="sheet-desc" title="@{repeating_mythic-ability_$X_description}" name="attr_description"></textarea>
 
-                                <textarea class="sheet-macro-text" title="@{repeating_mythic-ability_$X_macro-text}" name="attr_macro-text">@{PC-whisper} &{template:pf_block} {{header_image=@{header_image-pf_block}}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{subtitle}} {{Class=**Class**: @{mythic-number}}} {{name=@{name}}} {{description=@{short-description}}}</textarea>
+                                <textarea class="sheet-macro-text" title="@{repeating_mythic-ability_$X_macro-text}" name="attr_macro-text">@{PC-whisper} &{template:pf_block} {{header_image=@{header_image-pf_block}}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{subtitle}} {{Class=**Path**: @{mythic-number}}} {{name=@{name}}} {{description=@{short-description}}}</textarea>
 
                                 <div class="sheet-repeating_ids sheet-table-row">
                                     <input type="hidden" name="attr_new_flag" value="0" />
@@ -2469,6 +2470,7 @@
                         <input type="checkbox" class="sheet-macro-text-show" title="@{repeating_weapon_$X_macro-text-show}" name="attr_macro-text-show" value="1" style="opacity:0; width:90px; height:1.5em; position:relative; top:0; left:0; margin:0 -15px 0 -75px; cursor:pointer; z-index:1;" /><span></span>
                         <b>IDs</b>
                         <input type="checkbox" class="sheet-repeating_ids-show" title="@{repeating_weapon_$X_ids-show}" name="attr_ids-show" value="1" style="opacity:0;width: 40px; height:1.5em; position:relative; top:0; left:0;margin: 0px -15px 0 -25px; cursor:pointer; z-index:1;" /><span></span>
+
                         <div class="sheet-table sheet-sect sheet-iterative_attack_section">
                             <span class="sheet-table-name">Iterative Attacks</span>
                             <div class="sheet-table-row">
@@ -2583,6 +2585,7 @@
                             </div>
                             <input type="hidden" name="attr_iterative_attacks" value="@{toggle_iterative_attack2} @{toggle_iterative_attack3} @{toggle_iterative_attack4} @{toggle_iterative_attack5} @{toggle_iterative_attack6} @{toggle_iterative_attack7} @{toggle_iterative_attack8}" />
                         </div>
+
                         <div class="sheet-table sheet-options">
                             <textarea style="display:none;" name="attr_var_melee_notes">{{melee_notes=@{melee-attack-notes}}} {{header_image=@{header_image-pf_attack-melee}}}</textarea>
                             <textarea style="display:none;" name="attr_var_ranged_notes">{{ranged_notes=@{ranged-attack-notes}}} {{header_image=@{header_image-pf_attack-ranged}}}</textarea>
@@ -2599,7 +2602,9 @@
                             </div>
                             <textarea style="display:none;" name="attr_macro_options">@{toggle_notes} @{toggle_attack_notes}</textarea>
                         </div>
+
                         <textarea class="sheet-macro-text" title="@{repeating_weapon_$X_macro-text}" name="attr_macro-text">@{PC-whisper} &{template:pf_attack} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{subtitle}} {{name=@{name}}} {{attack=[[ 1d20cs>[[ @{crit-target} ]] + [[ @{total-attack} ]] ]]}} {{damage=[[ @{damage-dice-num}d@{damage-die} + [[ @{total-damage} ]] ]]}} {{crit_confirm=[[ 1d20 + [[ @{total-attack} ]] ]]}} {{crit_damage=[[ [[ (@{damage-dice-num} * (@{crit-multiplier} - 1)) ]]d@{damage-die} + [[ (@{total-damage} * (@{crit-multiplier} - 1)) ]] ]]}} {{type=@{type}}} {{weapon_notes=@{notes}}} @{iterative_attacks} @{macro_options}</textarea>
+
                         <div class="sheet-repeating_ids sheet-table-row">
                             <input type="hidden" name="attr_new_flag" value="0" />
                             <span class="sheet-table-data sheet-small-data">
@@ -2654,11 +2659,13 @@
     </div>
     <!-- Unchained Skills display option toggled from Config-->
     <div style="margin:-15px 0px 15px 0px;">
+
         <input type="checkbox" class="sheet-sect-show" title="@{unchained_skills-show}" name="attr_unchained_skills-show" value="1" style="margin:-9999px;" /><span></span>
         <div class="sheet-sect">
             <div>
                 <b>Unchained Skills</b>
                 <input type="checkbox" class="sheet-sect-show" title="@{unchained_skill_sub-show}" name="attr_unchained_skill_sub-show" value="1" style="opacity: 0;width: 140px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -125px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
+
                 <div class="sheet-sect">
                     <input type="radio" name="attr_skills_tab" class="sheet-tab sheet-skill-tab sheet-skills-tab1" value="1" title="Adventure Skills" checked="checked" />
                     <span class="sheet-tab sheet-skill-tab sheet-skills-tab1">Adventure</span>
@@ -2666,6 +2673,7 @@
                     <span class="sheet-tab sheet-skill-tab sheet-skills-tab2">Background</span>
                     <input type="radio" name="attr_skills_tab" class="sheet-tab sheet-skill-tab sheet-skills-tab3" value="3" title="Consolidated Skills" />
                     <span class="sheet-tab sheet-skill-tab sheet-skills-tab3">Consolidated</span>
+
                     <div class="sheet-section sheet-section-adventure">
                         <div class="sheet-table sheet-sect">
                             <span class="sheet-table-name">Adventure Skills</span>
@@ -2692,6 +2700,7 @@
                                 <span class="sheet-table-header" style="width:28px;" title="Requires Training">RT</span>
                                 <span class="sheet-table-header">Macro</span>
                             </div>
+
                             <div class="sheet-table-row">
                                 <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|Acrobatics-Check}" type="roll" value="@{Acrobatics-macro}" name="roll_Acrobatics-Check"></button></span>
                                 <span class="sheet-table-data sheet-center"><input title="@{Acrobatics-cs}" type="checkbox" name="attr_Acrobatics-cs" value="3" /></span>
@@ -2724,6 +2733,7 @@
                                 <span class="sheet-table-data sheet-center"><input title="@{Acrobatics-ReqTrain}" type="checkbox" name="attr_Acrobatics-ReqTrain" value="1" /></span>
                                 <span class="sheet-table-data sheet-center"><textarea class="sheet-skill-macro-text" title="@{Acrobatics-macro}" name="attr_Acrobatics-macro">@{PC-whisper} &{template:pf_generic} {{header_image=@{header_image-pf_generic}}} {{character_name=@{character_name}}} {{character_id=@{character_id}}}  {{subtitle}} {{name=Acrobatics}} {{Check=[[ 1d20 + [[ @{Acrobatics} ]] ]]}}</textarea></span>
                             </div>
+
                             <div class="sheet-table-row">
                                 <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|Bluff-Check}" type="roll" value="@{Bluff-macro}" name="roll_Bluff-Check"></button></span>
                                 <span class="sheet-table-data sheet-center"><input title="@{Bluff-cs}" type="checkbox" name="attr_Bluff-cs" value="3" /></span>
@@ -4309,6 +4319,8 @@
                                 <span class="sheet-table-data sheet-center"><textarea class="sheet-skill-macro-text" title="@{Misc-Skill-5-macro}" name="attr_Misc-Skill-5-macro">@{PC-whisper} &{template:pf_generic} {{header_image=@{header_image-pf_generic}}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{subtitle}} {{name=@{Misc-Skill-5-name}}} {{Check=[[ 1d20 + [[ @{Misc-Skill-5} ]] ]]}}</textarea></span>
                             </div>
 
+
+
                         </div>
                         <div class="sheet-table sheet-center sheet-sect"><b>CS</b> = Class Skill | <b>RT</b> = Requires Training | <b>Cl/Ac/Sz/Co</b> = Class Skill Bonus / Armor check penalty / Size mod / Condition penalty</div>
                         <br>
@@ -4742,6 +4754,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <div style="margin-top:-15px;">
         <b>Skills</b>
@@ -6050,6 +6063,7 @@
                 <span class="sheet-table-data sheet-center"><input title="@{Stealth-class}" type="text" name="attr_Stealth-class" value="0/0/0/0" style="width:4em;" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-center"><input title="@{Stealth-ReqTrain}" type="checkbox" name="attr_Stealth-ReqTrain" value="1" /></span>
                 <span class="sheet-table-data sheet-center"><textarea class="sheet-skill-macro-text" title="@{Stealth-macro}" name="attr_Stealth-macro">@{PC-whisper} &{template:pf_generic} {{header_image=@{header_image-pf_generic}}} {{character_name=@{character_name}}} {{character_id=@{character_id}}}  {{subtitle}} {{name=Stealth}} {{Check=[[ 1d20 + [[ @{Stealth} ]] ]]}}</textarea></span>
+
             </div>
             <div class="sheet-table-row">
                 <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|Survival-Check}" type="roll" value="@{Survival-macro}" name="roll_Survival-Check"></button></span>
@@ -6346,6 +6360,7 @@
                 <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-5-ReqTrain}" type="checkbox" name="attr_Misc-Skill-5-ReqTrain" value="1" /></span>
                 <span class="sheet-table-data sheet-center"><textarea class="sheet-skill-macro-text" title="@{Misc-Skill-5-macro}" name="attr_Misc-Skill-5-macro">@{PC-whisper} &{template:pf_generic} {{header_image=@{header_image-pf_generic}}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{subtitle}} {{name=@{Misc-Skill-5-name}}} {{Check=[[ 1d20 + [[ @{Misc-Skill-5} ]] ]]}}</textarea></span>
             </div>
+
         </div>
         <div class="sheet-table sheet-center sheet-sect"><b>CS</b> = Class Skill | <b>RT</b> = Requires Training | <b>Cl/Ac/Sz/Co</b> = Class Skill Bonus / Armor check penalty / Size mod / Condition penalty</div>
         <br>
@@ -6794,6 +6809,7 @@
                         <span class="sheet-table-header">Mod</span>
                         <span class="sheet-table-header"></span>
 
+
                         <span class="sheet-table-header">Misc Conc.</span>
                         <span class="sheet-table-header" style="width:20%;">Notes</span>
                         <span class="sheet-table-header sheet-divider">|</span>
@@ -6816,6 +6832,7 @@
                         </span>
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-0-mod}" type="number" name="attr_Concentration-0-mod" value="" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-divider">+</span>
+
 
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-0-misc}" type="number" name="attr_Concentration-0-misc" value="0" /></span>
                         <span class="sheet-table-data"><input title="@{Concentration-0-miscnote}" type="text" name="attr_Concentration-0-miscnote" value="" Placeholder="notes" style="width:100%;" /></span>
@@ -7051,6 +7068,7 @@
                         <span class="sheet-table-header">Mod</span>
                         <span class="sheet-table-header"></span>
 
+
                         <span class="sheet-table-header">Misc Conc.</span>
                         <span class="sheet-table-header" style="width:20%;">Notes</span>
                         <span class="sheet-table-header sheet-divider">|</span>
@@ -7073,6 +7091,7 @@
                         </span>
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-1-mod}" type="number" name="attr_Concentration-1-mod" value="" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-divider">+</span>
+
 
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-1-misc}" type="number" name="attr_Concentration-1-misc" value="0" /></span>
                         <span class="sheet-table-data"><input title="@{Concentration-1-miscnote}" type="text" name="attr_Concentration-1-miscnote" value="" Placeholder="notes" style="width:100%;" /></span>
@@ -7305,6 +7324,7 @@
                         <span class="sheet-table-header">Mod</span>
                         <span class="sheet-table-header"></span>
 
+
                         <span class="sheet-table-header">Misc Conc.</span>
                         <span class="sheet-table-header" style="width:20%;">Notes</span>
                         <span class="sheet-table-header sheet-divider">|</span>
@@ -7327,6 +7347,7 @@
                         </span>
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-2-mod}" type="number" name="attr_Concentration-2-mod" value="" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-divider">+</span>
+
 
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-2-misc}" type="number" name="attr_Concentration-2-misc" value="0" /></span>
                         <span class="sheet-table-data"><input title="@{Concentration-2-miscnote}" type="text" name="attr_Concentration-2-miscnote" value="" Placeholder="notes" style="width:100%;" /></span>
@@ -9243,6 +9264,7 @@
                     <span class="sheet-table-data sheet-divider-lg">+<br>&nbsp;</span>
                     <span class="sheet-table-data sheet-center sheet-small-label"><input type="number" title="@{buff_HP-temp-total}" name="attr_buff_HP-temp-total" value="0" class="sheet-calc" /><br>Buffs</span>
                     <span class="sheet-table-data sheet-divider-lg"><br>&nbsp;</span>
+
                     <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><input type="number" title="@{non-lethal-damage}" name="attr_non-lethal-damage" value="0" min="0" /><br>NL</span>
                 </div>
             </div>
@@ -9438,6 +9460,7 @@
                             <input type="checkbox" class="sheet-counted sheet-sect-show" name="attr_attack-show" title="@{repeating_weapon_$X_attack-show}" value="1" style="opacity:0 ; height:1.5em ; position: absolute ; top:20px; width:3.5% ; cursor:pointer ; z-index:1" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center"><button type="roll" name="attr_attack-npc-roll" title="%{selected|repeating_weapon_$X_attack-npc-roll}" value="@{macro-text}"></button></span>
+
                             <span class="sheet-table-data sheet-center sheet-small-label"><input type="number" name="attr_enhance" title="@{repeating_weapon_$X_enhance}" value="0" style="width:40px;" /><br>Enh</span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="padding-top: 8px;"><input type="checkbox" name="attr_masterwork" title="@{repeating_weapon_$X_masterwork}" value="1" style="width:15px;height:15px;" /><br>Mwk</span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input type="text" name="attr_name" title="@{repeating_weapon_$X_name}" placeholder="Name" /><br>Name</span>
@@ -9454,6 +9477,7 @@
                                 <br>ATK Type
                             </span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input type="number" name="attr_attack-type-mod" title="@{repeating_weapon_$X_attack-type-mod}" value="" style="width:40px;" class="sheet-calc" readonly="readonly" /><br>mod</span>
+
                             <span class="sheet-table-data sheet-divider">+</span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input type="number" name="attr_attk-effect-total-copy" title="@{repeating_weapon_$X_attk-effect-total-copy}" value="0" style="width:40px;" class="sheet-calc" readonly="readonly" /><br><b title="Additional modifier from Attack and Damage Effects.">Other</b></span>
                             <span class="sheet-table-data sheet-divider">=</span>
@@ -10112,10 +10136,12 @@
                         <span class="sheet-table-data sheet-left">Acrobatics</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Acrobatics}" type="number" name="attr_Acrobatics" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Acrobatics-misc}" type="number" name="attr_Acrobatics-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Appraise-Check}" type="roll" value="@{NPC-whisper} @{Appraise-macro}" name="roll_NPC-Appraise-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Appraise</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Appraise}" type="number" name="attr_Appraise" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Appraise-misc}" type="number" name="attr_Appraise-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Artistry-Check}" type="roll" value="@{NPC-whisper} @{Artistry-macro}" name="roll_NPC-Artistry-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><span title="Optional Ruleset">Artistry: <input title="@{Artistry-name}" style="width: 50%" type="text" name="attr_Artistry-name" /></span></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Artistry}" type="number" name="attr_Artistry" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10126,10 +10152,12 @@
                         <span class="sheet-table-data sheet-left">Bluff</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Bluff}" type="number" name="attr_Bluff" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Bluff-misc}" type="number" name="attr_Bluff-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Climb-Check}" type="roll" value="@{NPC-whisper} @{Climb-macro}" name="roll_NPC-Climb-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Climb</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Climb}" type="number" name="attr_Climb" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Climb-misc}" type="number" name="attr_Climb-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Craft-Check}" type="roll" value="@{NPC-whisper} @{Craft-macro}" name="roll_NPC-Craft-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input title="@{Craft-name}" type="text" name="attr_Craft-name" Placeholder="Craft" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Craft}" type="number" name="attr_Craft" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10140,10 +10168,12 @@
                         <span class="sheet-table-data sheet-left"><input title="@{Craft2-name}" type="text" name="attr_Craft2-name" Placeholder="Craft 2" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Craft2}" type="number" name="attr_Craft2" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Craft2-misc}" type="number" name="attr_Craft2-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Craft3-Check}" type="roll" value="@{NPC-whisper} @{Craft3-macro}" name="roll_NPC-Craft3-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input title="@{Craft3-name}" type="text" name="attr_Craft3-name" Placeholder="Craft 3" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Craft3}" type="number" name="attr_Craft3" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Craft3-misc}" type="number" name="attr_Craft3-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Diplomacy-Check}" type="roll" value="@{NPC-whisper} @{Diplomacy-macro}" name="roll_NPC-Diplomacy-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Diplomacy</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Diplomacy}" type="number" name="attr_Diplomacy" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10154,10 +10184,12 @@
                         <span class="sheet-table-data sheet-left">Disable Device</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Disable-Device}" type="number" name="attr_Disable-Device" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Disable-Device-misc}" type="number" name="attr_Disable-Device-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Disguise-Check}" type="roll" value="@{NPC-whisper} @{Disguise-macro}" name="roll_NPC-Disguise-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Disguise</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Disguise}" type="number" name="attr_Disguise" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Disguise-misc}" type="number" name="attr_Disguise-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Escape-Artist-Check}" type="roll" value="@{NPC-whisper} @{Escape-Artist-macro}" name="roll_NPC-Escape-Artist-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Escape Artist</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Escape-Artist}" type="number" name="attr_Escape-Artist" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10168,10 +10200,12 @@
                         <span class="sheet-table-data sheet-left">Fly</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Fly}" type="number" name="attr_Fly" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Fly-misc}" type="number" name="attr_Fly-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Handle-Animal-Check}" type="roll" value="@{NPC-whisper} @{Handle-Animal-macro}" name="roll_NPC-Handle-Animal-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Handle Animal</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Handle-Animal}" type="number" name="attr_Handle-Animal" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Handle-Animal-misc}" type="number" name="attr_Handle-Animal-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Heal-Check}" type="roll" value="@{NPC-whisper} @{Heal-macro}" name="roll_NPC-Heal-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Heal</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Heal}" type="number" name="attr_Heal" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10182,10 +10216,12 @@
                         <span class="sheet-table-data sheet-left">Intimidate</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Intimidate}" type="number" name="attr_Intimidate" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Intimidate-misc}" type="number" name="attr_Intimidate-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Knowledge-Arcana-Check}" type="roll" value="@{NPC-whisper} @{Knowledge-Arcana-macro}" name="roll_NPC-Knowledge-Arcana-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Knowledge (Arcana)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Arcana}" type="number" name="attr_Knowledge-Arcana" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Arcana-misc}" type="number" name="attr_Knowledge-Arcana-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Knowledge-Dungeoneering-Check}" type="roll" value="@{NPC-whisper} @{Knowledge-Dungeoneering-macro}" name="roll_NPC-Knowledge-Dungeoneering-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Knowledge (Dungeoneering)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Dungeoneering}" type="number" name="attr_Knowledge-Dungeoneering" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10196,10 +10232,12 @@
                         <span class="sheet-table-data sheet-left">Knowledge (Engineering)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Engineering}" type="number" name="attr_Knowledge-Engineering" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Engineering-misc}" type="number" name="attr_Knowledge-Engineering-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Knowledge-Geography-Check}" type="roll" value="@{NPC-whisper} @{Knowledge-Geography-macro}" name="roll_NPC-Knowledge-Geography-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Knowledge (Geography)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Geography}" type="number" name="attr_Knowledge-Geography" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Geography-misc}" type="number" name="attr_Knowledge-Geography-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Knowledge-History-Check}" type="roll" value="@{NPC-whisper} @{Knowledge-History-macro}" name="roll_NPC-Knowledge-History-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Knowledge (History)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-History}" type="number" name="attr_Knowledge-History" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10214,6 +10252,7 @@
                         <span class="sheet-table-data sheet-left">Knowledge (Nature)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Nature}" type="number" name="attr_Knowledge-Nature" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Nature-misc}" type="number" name="attr_Knowledge-Nature-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Knowledge-Nobility-Check}" type="roll" value="@{NPC-whisper} @{Knowledge-Nobility-macro}" name="roll_NPC-Knowledge-Nobility-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Knowledge (Nobility)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Nobility}" type="number" name="attr_Knowledge-Nobility" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10224,24 +10263,29 @@
                         <span class="sheet-table-data sheet-left">Knowledge (Planes)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Planes}" type="number" name="attr_Knowledge-Planes" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Planes-misc}" type="number" name="attr_Knowledge-Planes-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Knowledge-Religion-Check}" type="roll" value="@{NPC-whisper} @{Knowledge-Religion-macro}" name="roll_NPC-Knowledge-Religion-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Knowledge (Religion)</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Religion}" type="number" name="attr_Knowledge-Religion" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Knowledge-Religion-misc}" type="number" name="attr_Knowledge-Religion-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Linguistics-Check}" type="roll" value="@{NPC-whisper} @{Linguistics-macro}" name="roll_NPC-Linguistics-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Linguistics</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Linguistics}" type="number" name="attr_Linguistics" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Linguistics-misc}" type="number" name="attr_Linguistics-misc" value="0" /></span>
+
                     </div>
                     <div class="sheet-table-row">
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Lore-Check}" type="roll" value="@{NPC-whisper} @{Lore-macro}" name="roll_NPC-Lore-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><span title="Optional Ruleset"><input title="@{Lore-name}" type="text" name="attr_Lore-name" Placeholder="Lore" /></span></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Lore}" type="number" name="attr_Lore" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Lore-misc}" type="number" name="attr_Lore-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Perception-Check}" type="roll" value="@{NPC-whisper} @{Perception-macro}" name="roll_NPC-Perception-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Perception</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Perception}" type="number" name="attr_Perception" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Perception-misc}" type="number" name="attr_Perception-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Perform-Check}" type="roll" value="@{NPC-whisper} @{Perform-macro}" name="roll_NPC-Perform-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input title="@{Perform-name}" type="text" name="attr_Perform-name" Placeholder="Perform" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Perform}" type="number" name="attr_Perform" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10252,10 +10296,12 @@
                         <span class="sheet-table-data sheet-left"><input title="@{Perform2-name}" type="text" name="attr_Perform2-name" Placeholder="Perform 2" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Perform2}" type="number" name="attr_Perform2" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Perform2-misc}" type="number" name="attr_Perform2-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Perform3-Check}" type="roll" value="@{NPC-whisper} @{Perform3-macro}" name="roll_NPC-Perform3-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input title="@{Perform3-name}" type="text" name="attr_Perform3-name" Placeholder="Perform 3" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Perform3}" type="number" name="attr_Perform3" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Perform3-misc}" type="number" name="attr_Perform3-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Profession-Check}" type="roll" value="@{NPC-whisper} @{Profession-macro}" name="roll_NPC-Profession-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input title="@{Profession-name}" type="text" name="attr_Profession-name" Placeholder="Profession" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Profession}" type="number" name="attr_Profession" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10266,10 +10312,12 @@
                         <span class="sheet-table-data sheet-left"><input title="@{Profession2-name}" type="text" name="attr_Profession2-name" Placeholder="Profession 2" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Profession2}" type="number" name="attr_Profession2" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Profession2-misc}" type="number" name="attr_Profession2-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Profession3-Check}" type="roll" value="@{NPC-whisper} @{Profession3-macro}" name="roll_NPC-Profession3-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input title="@{Profession3-name}" type="text" name="attr_Profession3-name" Placeholder="Profession 3" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Profession3}" type="number" name="attr_Profession3" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Profession3-misc}" type="number" name="attr_Profession3-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Ride-Check}" type="roll" value="@{NPC-whisper} @{Ride-macro}" name="roll_NPC-Ride-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Ride</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Ride}" type="number" name="attr_Ride" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10280,10 +10328,12 @@
                         <span class="sheet-table-data sheet-left">Sense Motive</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Sense-Motive}" type="number" name="attr_Sense-Motive" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Sense-Motive-misc}" type="number" name="attr_Sense-Motive-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Sleight-of-Hand-Check}" type="roll" value="@{NPC-whisper} @{Sleight-of-Hand-macro}" name="roll_NPC-Sleight-of-Hand-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Sleight of Hand</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Sleight-of-Hand}" type="number" name="attr_Sleight-of-Hand" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Sleight-of-Hand-misc}" type="number" name="attr_Sleight-of-Hand-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Spellcraft-Check}" type="roll" value="@{NPC-whisper} @{Spellcraft-macro}" name="roll_NPC-Spellcraft-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Spellcraft</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Spellcraft}" type="number" name="attr_Spellcraft" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10294,10 +10344,12 @@
                         <span class="sheet-table-data sheet-left">Stealth</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Stealth}" type="number" name="attr_Stealth" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Stealth-misc}" type="number" name="attr_Stealth-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Survival-Check}" type="roll" value="@{NPC-whisper} @{Survival-macro}" name="roll_NPC-Survival-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Survival</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Survival}" type="number" name="attr_Survival" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Survival-misc}" type="number" name="attr_Survival-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Swim-Check}" type="roll" value="@{NPC-whisper} @{Swim-macro}" name="roll_NPC-Swim-Check"></button></span>
                         <span class="sheet-table-data sheet-left">Swim</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Swim}" type="number" name="attr_Swim" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10308,10 +10360,12 @@
                         <span class="sheet-table-data sheet-left">Use Magic Device</span>
                         <span class="sheet-table-data sheet-center"><input title="@{Use-Magic-Device}" type="number" name="attr_Use-Magic-Device" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Use-Magic-Device-misc}" type="number" name="attr_Use-Magic-Device-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Misc-Skill-0-Check}" type="roll" value="@{NPC-whisper} @{Misc-Skill-0-macro}" name="roll_NPC-Misc-Skill-0-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input type="text" title="@{Misc-Skill-0-name}" name="attr_Misc-Skill-0-name" placeholder="Misc Skill 0" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-0}" type="number" name="attr_Misc-Skill-0" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-0-misc}" type="number" name="attr_Misc-Skill-0-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Misc-Skill-1-Check}" type="roll" value="@{NPC-whisper} @{Misc-Skill-1-macro}" name="roll_NPC-Misc-Skill-1-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input type="text" title="@{Misc-Skill-1-name}" name="attr_Misc-Skill-1-name" placeholder="Misc Skill 1" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-1}" type="number" name="attr_Misc-Skill-1" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10322,10 +10376,12 @@
                         <span class="sheet-table-data sheet-left"><input type="text" title="@{Misc-Skill-2-name}" name="attr_Misc-Skill-2-name" placeholder="Misc Skill 2" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-2}" type="number" name="attr_Misc-Skill-2" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-2-misc}" type="number" name="attr_Misc-Skill-2-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Misc-Skill-3-Check}" type="roll" value="@{NPC-whisper} @{Misc-Skill-3-macro}" name="roll_NPC-Misc-Skill-3-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input type="text" title="@{Misc-Skill-3-name}" name="attr_Misc-Skill-3-name" placeholder="Misc Skill 3" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-3}" type="number" name="attr_Misc-Skill-3" value="0" class="sheet-calc" readonly="readonly" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-3-misc}" type="number" name="attr_Misc-Skill-3-misc" value="0" /></span>
+
                         <span class="sheet-table-data sheet-center"><button style="font-size:100%;" title="%{selected|NPC-Misc-Skill-4-Check}" type="roll" value="@{NPC-whisper} @{Misc-Skill-4-macro}" name="roll_NPC-Misc-Skill-4-Check"></button></span>
                         <span class="sheet-table-data sheet-left"><input type="text" title="@{Misc-Skill-4-name}" name="attr_Misc-Skill-4-name" placeholder="Misc Skill 4" /></span>
                         <span class="sheet-table-data sheet-center"><input title="@{Misc-Skill-4}" type="number" name="attr_Misc-Skill-4" value="0" class="sheet-calc" readonly="readonly" /></span>
@@ -10680,7 +10736,7 @@
 <div class="sheet-footer">
     <div class="sheet-table">
         <div class="sheet-table-row">
-            <span class="sheet-table-data sheet-center">Created by Samuel Marino w/contributions by Vince, Samuel Terrazas, Nibrodooh, Chris Buchholz | Last updated: <i>02.16.16'&nbsp;&nbsp;</i>v.<input type="text" style="width:2.5em; height:1.4em; vertical-align:top; padding:0px 2px 0px 2px; border:none;" name="attr_PFSheet_Version" value="0" class="sheet-calc" readonly="readonly" title="A non-blank version indicates attributes have been successfully recalculated."></span>
+            <span class="sheet-table-data sheet-center">Created by Samuel Marino w/contributions by Vince, Chris Buchholz, Magik | Last updated: <i>02.17.16'&nbsp;&nbsp;</i>v.<input type="text" style="width:2.5em; height:1.4em; vertical-align:top; padding:0px 2px 0px 2px; border:none;" name="attr_PFSheet_Version" value="0" class="sheet-calc" readonly="readonly" title="A non-blank version indicates attributes have been successfully recalculated."></span>
         </div>
         <div class="sheet-table-row">
             <span class="sheet-table-data sheet-center">Questions/Feedback?:<input type="text" style="width:75%; border:none; cursor:help; height:1.4em;" value="https://app.roll20.net/forum/post/2788628/pf-pathfinder-sheet-thread-5/?pageforid=2788628#post-2788628" /></span>
@@ -10770,6 +10826,7 @@
             <tr class="sheet-rolltemplate-pf_attack"><td>Damage</td><td>{{damage}}</td></tr>
             {{/damage}}
             {{/attack}}
+
             {{#attack2}}
             <tr class="sheet-rolltemplate-pf_attack"><td>**Attack 2**</td><td>{{attack2}}</td></tr>
             {{#crit_confirm2}}
@@ -10786,6 +10843,7 @@
             {{/rollWasCrit() attack2}}
             {{/crit_damage2}}
             {{/attack2}}
+
             {{#allprops() header_image character_name character_id name_link subtitle school level casterlevel casting_time components range targets duration saving_throw dc sr Concentration spellPen cast_def Concentration_chk spellPen_chk cast_def_chk casterlevel_chk description attack damage crit_confirm crit_damage attack2 damage2 crit_confirm2 crit_damage2}}
             <tr><td>**{{key}}**</td><td style="text-align:right;">{{value}}</td></tr>
             {{/allprops() header_image character_name character_id name_link subtitle school level casterlevel casting_time components range targets duration saving_throw dc sr Concentration spellPen cast_def Concentration_chk spellPen_chk cast_def_chk casterlevel_chk description attack damage crit_confirm crit_damage attack2 damage2 crit_confirm2 crit_damage2}}
@@ -10794,6 +10852,7 @@
             <tr><td colspan="2"><span class="sheet-tcat">Description: </span><span>{{description}}</span></td></tr>{{/description}}
         </table>
     </rolltemplate>
+
     <!-- Attack Roll Templates -->
     <rolltemplate class="sheet-rolltemplate-pf_attack">
         <table>
@@ -10846,6 +10905,7 @@
             {{#rollWasCrit() attack2}}
             <tr><td style="text-indent:0.5em">Crit Confirm</td><td>{{crit_confirm2}}</td></tr>
             {{/rollWasCrit() attack2}}
+
             {{/crit_confirm2}}
             {{#damage2}}
             <tr><td style="text-indent:0.5em">Damage</td><td>{{damage2}}</td></tr>
@@ -10875,6 +10935,7 @@
             {{#crit_damage3}}
             {{#rollWasCrit() attack3}}
             <tr><td style="text-indent:0.5em">Crit Damage</td><td><b>+</b>{{crit_damage3}}</td></tr>
+
             {{/rollWasCrit() attack3}}
             {{/crit_damage3}}
             {{/attack3}}
@@ -11017,6 +11078,7 @@
             {{/description}}
         </table>
     </rolltemplate>
+
     <!-- Defense Roll Templates -->
     <rolltemplate class="sheet-rolltemplate-pf_defense">
         <table>
@@ -11068,6 +11130,7 @@
             {{/description}}
         </table>
     </rolltemplate>
+
     <!-- Generic Roll Templates -->
     <rolltemplate class="sheet-rolltemplate-pf_generic">
         <table>
@@ -11144,6 +11207,7 @@
             {{/description}}
         </table>
     </rolltemplate>
+
     <!-- Block Text Roll Templates -->
     <rolltemplate class="sheet-rolltemplate-pf_block">
         <table>
@@ -11788,8 +11852,8 @@ var TAS = TAS || (function () {
             .execute();
     };
 
-    console.log('%c•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸  The Aaron Sheet  v' + version + '  ¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•', 'background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
-    console.log('%c•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸  Last update: ' + (new Date(lastUpdate * 1000)) + '  ¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•', 'background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
+    console.log('%cï¿½.ï¿½ï¿½.ï¿½*ï¿½ï¿½`*ï¿½.ï¿½ï¿½.ï¿½*ï¿½ï¿½`*ï¿½.ï¿½  The Aaron Sheet  v' + version + '  ï¿½.ï¿½*ï¿½ï¿½`*ï¿½.ï¿½ï¿½.ï¿½*ï¿½ï¿½`*ï¿½.ï¿½ï¿½.ï¿½', 'background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
+    console.log('%cï¿½.ï¿½ï¿½.ï¿½*ï¿½ï¿½`*ï¿½.ï¿½ï¿½.ï¿½*ï¿½ï¿½`*ï¿½.ï¿½  Last update: ' + (new Date(lastUpdate * 1000)) + '  ï¿½.ï¿½*ï¿½ï¿½`*ï¿½.ï¿½ï¿½.ï¿½*ï¿½ï¿½`*ï¿½.ï¿½ï¿½.ï¿½', 'background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
 
 
     return {
@@ -13119,7 +13183,7 @@ var SWUtils = SWUtils || (function () {
 
 var PFSheet = PFSheet || (function () {
 
-    var version = 0.31,
+    var version = 0.32,
 	pfDebug = false,
 
     //Utilities
@@ -13222,7 +13286,6 @@ var PFSheet = PFSheet || (function () {
 
 	/*handleNonFFDefenseDropdown
 	*@ddField {string} = field for ability dropdown
-
 	*@modField {string} = mod field containing value of ddField
 	*@ffField {string} = field for correlated flat footed ability dropdown
 	*@ffModField {string} = mod field containing value of ffField (to write to if modField is negative)
@@ -13231,7 +13294,6 @@ var PFSheet = PFSheet || (function () {
 	    console.log("at handleNonFFDefenseDropdown");
 	    handleDropdown(ddField, modField, function (dexmod, oldmod) {
 	        var setter = {};
-
 	        if (dexmod < 0) {
 	            setter[ffModField] = dexmod;
 	            setAttrs(setter);
@@ -13663,8 +13725,8 @@ var PFSheet = PFSheet || (function () {
     * Updates total at bottom of Mythic Path Information grid
     */
     updateMythicPathInformation = function () {
-        getAttrs(["mythic-0-tier", "mythic-0-hp", "total-mythic-hp"], function (values) {
-            var tot = (parseInt(values["mythic-0-tier"], 10) || 0) * (parseInt(values["mythic-0-hp"], 10) || 0),
+        getAttrs(["mythic-tier", "mythic-hp", "total-mythic-hp"], function (values) {
+            var tot = (parseInt(values["mythic-tier"], 10) || 0) * (parseInt(values["mythic-hp"], 10) || 0),
             currTot = parseInt(values["total-mythic-hp"], 10) || 0;
             //console.log("tot=" + tot + ", currTot=" + currTot);
             if (currTot !== tot) { setAttrs({ "total-mythic-hp": tot }); }
@@ -13689,8 +13751,8 @@ var PFSheet = PFSheet || (function () {
     */
     updateTierMythicPower = function () {
         //console.log("entered updateTierMythicPower");
-        getAttrs(["tier-mythic-power", "mythic-0-tier"], function (values) {
-            var totalTier = 3 + 2 * (parseInt(values["mythic-0-tier"], 10) || 0),
+        getAttrs(["tier-mythic-power", "mythic-tier"], function (values) {
+            var totalTier = 3 + 2 * (parseInt(values["mythic-tier"], 10) || 0),
             curr = parseInt(values["tier-mythic-power"], 10) || 0;
             //console.log("totalTier=" + totalTier + ", curr=" + curr);
             if (curr !== totalTier) { setAttrs({ "tier-mythic-power": totalTier }); }
@@ -14062,7 +14124,7 @@ var PFSheet = PFSheet || (function () {
 	*/
     handleRepeatingAttackDropdown = function (id, eventInfo) {
         var idStr = getRepeatingIDStr(id), prefix = "repeating_weapon_" + idStr;
-        //console.log("TRACE:handleRepeatingAttackDropdown id:" + id+", eventinfo is");
+        //console.log("TRACE:handleRepeatingAttackDropdown id:" + id+", eventInfo is");
         //console.log(eventInfo);
         //console.log("TRACE end");
         if (isBadRowId("weapon", id, true)) {
@@ -14363,7 +14425,6 @@ var PFSheet = PFSheet || (function () {
 			    //there is no Fascinated, if we add it then:
 			    //,"condition-Fascinated" -4 to perception
 			    var buffCheck = parseInt(v["buff_Check-total"], 10) || 0
-
                 , drained = parseInt(v["condition-Drained"], 10) || 0
                 , fear = -1 * (parseInt(v["condition-Fear"], 10) || 0)
                 , sick = -1 * (parseInt(v["condition-Sickened"], 10) || 0)
@@ -14551,32 +14612,21 @@ var PFSheet = PFSheet || (function () {
 
     updateConcentration = function (classidx) {
         updateRowTotal(["Concentration-" + classidx, "spellclass-" + classidx + "-level-total", "Concentration-" + classidx + "-mod", "Concentration-" + classidx + "-misc"]);
-
     },
-
-
-
 
     handleConcentrationAbilityDropdown = function (classidx) {
         handleDropdown("Concentration-" + classidx + "-ability", ["Concentration-" + classidx + "-mod"]);
     },
-
 	/*
 	* updateBonusSpells
 	* updates Bonus Spells for the class
 	* It looks at the attribute, not the attribute mod. So it does not change with ability damage or penalties.
 	*/
     updateBonusSpells = function (classidx) {
-
         getAttrs(["Concentration-" + classidx + "-ability"], function (va) {
             var ability = findAbilityInString(va["Concentration-" + classidx + "-ability"]).replace("-mod", "");
-
-
-
-
             //eliminate the modifier, we just want @{INT} not @{INT-mod}
             getAttrs([ability], function (v) {
-
                 var spellAbility = parseInt(v[ability], 10) || 0
                 , fields = {}, bonusSpells, bonusName, i, newRaw;
                 if (spellAbility >= 12) {
@@ -14584,13 +14634,11 @@ var PFSheet = PFSheet || (function () {
                         newRaw = Math.max(0, spellAbility - 10 - (2 * (i - 1)));
                         bonusSpells = Math.ceil(newRaw / 8);
                         bonusName = "spellclass-" + classidx + "-level-" + i + "-bonus";
-
                         fields[bonusName] = bonusSpells;
                     }
                 } else {
                     for (i = 1; i < 10; i++) {
                         bonusName = "spellclass-" + classidx + "-level-" + i + "-bonus";
-
                         fields[bonusName] = 0;
                     }
                 }
@@ -14633,10 +14681,12 @@ var PFSheet = PFSheet || (function () {
 			, prefix = "repeating_" + section + "_" + idStr
 			, spellclassField = prefix + "spellclass"
 			, spellLevelField = prefix + "spell_level";
-	    //console.log("At updateSpell prefix: "+prefix+", classfield="+spellclassField);
+	    console.log("At updateSpell prefix: " + prefix + ", classfield=" + spellclassField);
+	    TAS.log(eventInfo);
 	    getAttrs([spellLevelField, spellclassField], function (va) {
-	        var spellLevel = (parseInt(va[spellLevelField], 10) || 0)
-				, classNum = findSpellClass(va[spellclassField])
+	        var currSpellLevel = parseInt(va[spellLevelField], 10)
+				, spellLevel = isNaN(currSpellLevel) ? parseInt(section.substring(4), 10) : currSpellLevel
+				, classNum = findSpellClass(va[spellclassField]) || 0
 				, hasClass = (isNaN(classNum) || classNum < 0) ? false : true
 				, spellDefCastDCField = prefix + "cast_def_dc"
 				, spellDefConField = prefix + "cast_def-mod"
@@ -14652,7 +14702,8 @@ var PFSheet = PFSheet || (function () {
 				, classDCField = "spellclass-" + classNum + "-level-" + spellLevel + "-savedc"
 				, classConField = "Concentration-" + classNum
 				, classDefConField = "Concentration-" + classNum + "-def"
-				, classSpellPenField = "spellclass-" + classNum + "-SP_misc";
+				, classSpellPenField = "spellclass-" + classNum + "-SP-mod";
+	        TAS.log(va);
 
 	        getAttrs([spellDCField, spellDCUserField, spellCLField, spellCLUserField
 				, spellConField, spellConUserField, spellDefConField, spellDefCastDCField
@@ -14671,8 +14722,10 @@ var PFSheet = PFSheet || (function () {
                     , classDefConMod = (parseInt(v[classDefConField], 10) || 0)
                     , classSpellPen = (parseInt(v[classSpellPenField], 10) || 0)
                     , defDC = 15 + (spellLevel * 2)
-                    , classLevelDelta = 0, setter = {}, setAny = 0
+				, setter = {}, setAny = 0
+				, classLevelDelta = 0
 				    ;
+				    TAS.log(v);
 				    if (defDC !== currdefDC || isNaN(currdefDC)) {
 				        setter[spellDefCastDCField] = defDC;
 				        setAny = 1;
@@ -14680,17 +14733,17 @@ var PFSheet = PFSheet || (function () {
 				    //Caster level check mod
 				    newCL = (parseInt(v[spellCLUserField], 10) || 0) + classCL;
 				    if (newCL !== currCL || isNaN(currCL)) {
-				        classLevelDelta = newCL - (currCL || 0);
 				        setter[spellCLField] = newCL;
 				        setAny = 1;
 				    }
-
+				    classLevelDelta = newCL - classCL;
 				    //DC to save
 				    newDC = (parseInt(v[spellDCUserField], 10) || 0) + classDC;
 				    if (newDC !== currDC || isNaN(currDC)) {
 				        setter[spellDCField] = newDC;
 				        setAny = 1;
 				    }
+
 				    //Concentration check mod
 				    newCon = (parseInt(v[spellConUserField], 10) || 0) + classCon + classLevelDelta;
 				    if (newCon !== currCon || isNaN(currCon)) {
@@ -14706,9 +14759,14 @@ var PFSheet = PFSheet || (function () {
 				    }
 
 				    //Spell penetration check mod 
-				    newSpellPen = newCL + classSpellPen + (parseInt(v[spellSpellPenUserField], 10) || 0);
+				    newSpellPen = classSpellPen + (parseInt(v[spellSpellPenUserField], 10) || 0) + classLevelDelta;
 				    if (newSpellPen !== currSpellPen || isNaN(currSpellPen)) {
 				        setter[spellSpellPenField] = newSpellPen;
+				        setAny = 1;
+				    }
+
+				    if (currSpellLevel !== spellLevel || isNaN(currSpellLevel)) {
+				        setter[spellLevelField] = spellLevel;
 				        setAny = 1;
 				    }
 
@@ -14762,7 +14820,6 @@ var PFSheet = PFSheet || (function () {
         });
     },
 
-
 	/***********************************************************
 	Recalculate section
 	*/
@@ -14779,11 +14836,10 @@ var PFSheet = PFSheet || (function () {
 	    getAttrs([spellLevelField, classLevelField, dcModField, dcMiscField], function (v) {
 	        var setter = {}, currLevel = parseInt(v[spellLevelField], 10),
 			currDCMod = parseInt(v[dcModField], 10),
-			currDCMisc = parseInt(v[dcMiscField], 10);
+			currDCMisc = parseInt(v[dcMiscField], 10),
+			spellLevel = parseInt(section.substring(4), 10);
 
-
-
-	        if (isNaN(currLevel)) {
+	        if (isNaN(currLevel) && !isNaN(spellLevel)) {
 	            setter[spellLevelField] = spellLevel;
 	            setAttrs(setter);
 	        }
@@ -14825,7 +14881,6 @@ var PFSheet = PFSheet || (function () {
     recalculateRepeatingWeapons = function () {
         getAttrs(["attk-effect-total", "dmg-effect-total", "DMG-mod"], function (v) {
             getSectionIDs("repeating_weapon", function (ids) {
-
                 ids.forEach(function (id, index) {
                     var readField = "repeating_weapon_" + id + "_";
                     if (isBadRowId("weapon", id, false)) {
@@ -14833,7 +14888,6 @@ var PFSheet = PFSheet || (function () {
                         return;
                     }
                     //console.log("TRACE: recalculateRepeatingWeapons id="+id);
-
                     SWUtils.setAttributeNumber(readField + "attk-effect-total-copy", (parseInt(v["attk-effect-total"], 10) || 0));
                     SWUtils.setAttributeNumber(readField + "dmg-effect-total-copy", (parseInt(v["dmg-effect-total"], 10) || 0));
                     SWUtils.setAttributeNumber(readField + "DMG-mod-copy", (parseInt(v["DMG-mod"], 10) || 0));
@@ -15180,7 +15234,6 @@ var PFSheet = PFSheet || (function () {
             updateSave("Ref");
             updateSave("Will");
             updateConditionDefensePenalty();
-            updateDefenses();
             updateArmor();
             updateConditionAttackPenalty();
             updateAttack("melee");
@@ -15245,8 +15298,6 @@ var PFSheet = PFSheet || (function () {
             updateSaveDCs(0);
             updateSaveDCs(1);
             updateSaveDCs(2);
-            recalculateSpellLevelsAll();
-
             updateBonusSpells(0);
             updateBonusSpells(1);
             updateBonusSpells(2);
@@ -15273,6 +15324,16 @@ var PFSheet = PFSheet || (function () {
             updateConcentration(0);
             updateConcentration(1);
             updateConcentration(2);
+        }
+        if (oldversion < 0.32) {
+            recalculateSpellLevelsAll();
+            updateMythicPathInformation();
+            updateMythicPower();
+            updateTierMythicPower();
+            recalculateRepeatingMaxUsed("mythic-ability");
+            recalculateRepeatingMaxUsed("mythic-feat");
+            handleRepeatingRowOrdering("mythic-ability", true);
+            handleRepeatingRowOrdering("mythic-feat", true);
         }
     },
 
@@ -15316,9 +15377,7 @@ var PFSheet = PFSheet || (function () {
         util: {
             findAbilityInString: findAbilityInString,
             findMultiplier: findMultiplier,
-
             updateRowTotal: updateRowTotal,
-
             isBadRowId: isBadRowId
         },
         version: version,
@@ -15375,7 +15434,6 @@ var PFSheet = PFSheet || (function () {
         updateSpell: updateSpell,
         updateSpells: updateSpells,
         checkIsNewRow: checkIsNewRow,
-
         checkForUpdate: checkForUpdate
     };
 }());
@@ -15919,7 +15977,7 @@ on("change:init-ability-mod change:init-trait change:init-misc change:condition-
 
 //hp
 on("change:hp-ability", function () { PFSheet.handleDropdown("HP-ability", ["HP-ability-mod"]); });
-on("change:hp-ability-mod change:level change:total-hp change:total-mythic-hp change:hp-formula-mod change:HP-misc", function () { PFSheet.updateHP(); });
+on("change:hp-ability-mod change:level change:total-hp change:total-mythic-hp change:hp-formula-mod change:HP-misc change:mythic-adventures-show", function () { PFSheet.updateHP(); });
 on("change:hp-temp-misc change:buff_hp-temp-total", function () { PFSheet.updateTempHP(); });
 on("change:hp-formula-macro-text", function () { SWUtils.evaluateAndSetNumber("HP-formula-macro-text", "HP-formula-mod"); });
 
@@ -15941,10 +15999,18 @@ on("change:class-0-level change:class-1-level change:class-2-level change:class-
     PFSheet.updateClassInformation("skill");
 });
 
-//mythic paths, mythic power
-on("change:mythic-0-tier change:mythic-0-hp", function () { PFSheet.updateMythicPathInformation(); });
-on("change:mythic-0-tier", function () { PFSheet.updateTierMythicPower(); });
+//mythic paths
+on("change:mythic-tier change:mythic-hp", function () { PFSheet.updateMythicPathInformation(); });
+
+//mythic power
+on("change:mythic-tier", function () { PFSheet.updateTierMythicPower(); });
 on("change:misc-mythic-power change:tier-mythic-power", function () { PFSheet.updateMythicPower(); });
+
+//mythic features/abilities
+on("change:repeating_mythic-ability:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_mythic-ability_max-calculation", "repeating_mythic-ability_used_max"); });
+
+//mythic feats
+on("change:repeating_mythic-feat:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_mythic-feat_max-calculation", "repeating_mythic-feat_used_max"); });
 
 //class abilities
 on("change:repeating_class-ability:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_class-ability_max-calculation", "repeating_class-ability_used_max"); });
@@ -16234,6 +16300,8 @@ on("change:repeating_lvl-9-spells:ids-show", function (eventInfo) { PFSheet.chec
 on("change:repeating_npc-spell-like-abilities:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("npc-spell-like-abilities", eventInfo); });
 on("change:repeating_npc-spells1:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("npc-spells1", eventInfo); });
 on("change:repeating_npc-spells2:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("npc-spells2", eventInfo); });
+on("change:repeating_mythic-ability:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("mythic-ability", eventInfo); });
+on("change:repeating_mythic-feat:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("mythic-feat", eventInfo); });
 
 
 </script>
