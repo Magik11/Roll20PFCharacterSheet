@@ -608,8 +608,8 @@ var TAS = TAS || (function () {
             .execute();
     };
 
-    console.log('%c•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸  The Aaron Sheet  v' + version + '  ¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•', 'background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
-    console.log('%c•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸  Last update: ' + (new Date(lastUpdate * 1000)) + '  ¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•', 'background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
+    console.log('%c?.??.?*??`*?.??.?*??`*?.?  The Aaron Sheet  v' + version + '  ?.?*??`*?.??.?*??`*?.??.?', 'background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
+    console.log('%c?.??.?*??`*?.??.?*??`*?.?  Last update: ' + (new Date(lastUpdate * 1000)) + '  ?.?*??`*?.??.?*??`*?.??.?', 'background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
 
 
     return {
@@ -1939,7 +1939,7 @@ var SWUtils = SWUtils || (function () {
 
 var PFSheet = PFSheet || (function () {
 
-    var version = 0.31,
+    var version = 0.32,
 	pfDebug = false,
 
     //Utilities
@@ -2042,7 +2042,6 @@ var PFSheet = PFSheet || (function () {
 
 	/*handleNonFFDefenseDropdown
 	*@ddField {string} = field for ability dropdown
-
 	*@modField {string} = mod field containing value of ddField
 	*@ffField {string} = field for correlated flat footed ability dropdown
 	*@ffModField {string} = mod field containing value of ffField (to write to if modField is negative)
@@ -2051,7 +2050,6 @@ var PFSheet = PFSheet || (function () {
 	    console.log("at handleNonFFDefenseDropdown");
 	    handleDropdown(ddField, modField, function (dexmod, oldmod) {
 	        var setter = {};
-
 	        if (dexmod < 0) {
 	            setter[ffModField] = dexmod;
 	            setAttrs(setter);
@@ -2483,8 +2481,8 @@ var PFSheet = PFSheet || (function () {
     * Updates total at bottom of Mythic Path Information grid
     */
     updateMythicPathInformation = function () {
-        getAttrs(["mythic-0-tier", "mythic-0-hp", "total-mythic-hp"], function (values) {
-            var tot = (parseInt(values["mythic-0-tier"], 10) || 0) * (parseInt(values["mythic-0-hp"], 10) || 0),
+        getAttrs(["mythic-tier", "mythic-hp", "total-mythic-hp"], function (values) {
+            var tot = (parseInt(values["mythic-tier"], 10) || 0) * (parseInt(values["mythic-hp"], 10) || 0),
             currTot = parseInt(values["total-mythic-hp"], 10) || 0;
             //console.log("tot=" + tot + ", currTot=" + currTot);
             if (currTot !== tot) { setAttrs({ "total-mythic-hp": tot }); }
@@ -2509,8 +2507,8 @@ var PFSheet = PFSheet || (function () {
     */
     updateTierMythicPower = function () {
         //console.log("entered updateTierMythicPower");
-        getAttrs(["tier-mythic-power", "mythic-0-tier"], function (values) {
-            var totalTier = 3 + 2 * (parseInt(values["mythic-0-tier"], 10) || 0),
+        getAttrs(["tier-mythic-power", "mythic-tier"], function (values) {
+            var totalTier = 3 + 2 * (parseInt(values["mythic-tier"], 10) || 0),
             curr = parseInt(values["tier-mythic-power"], 10) || 0;
             //console.log("totalTier=" + totalTier + ", curr=" + curr);
             if (curr !== totalTier) { setAttrs({ "tier-mythic-power": totalTier }); }
@@ -2882,7 +2880,7 @@ var PFSheet = PFSheet || (function () {
 	*/
     handleRepeatingAttackDropdown = function (id, eventInfo) {
         var idStr = getRepeatingIDStr(id), prefix = "repeating_weapon_" + idStr;
-        //console.log("TRACE:handleRepeatingAttackDropdown id:" + id+", eventinfo is");
+        //console.log("TRACE:handleRepeatingAttackDropdown id:" + id+", eventInfo is");
         //console.log(eventInfo);
         //console.log("TRACE end");
         if (isBadRowId("weapon", id, true)) {
@@ -3183,7 +3181,6 @@ var PFSheet = PFSheet || (function () {
 			    //there is no Fascinated, if we add it then:
 			    //,"condition-Fascinated" -4 to perception
 			    var buffCheck = parseInt(v["buff_Check-total"], 10) || 0
-
                 , drained = parseInt(v["condition-Drained"], 10) || 0
                 , fear = -1 * (parseInt(v["condition-Fear"], 10) || 0)
                 , sick = -1 * (parseInt(v["condition-Sickened"], 10) || 0)
@@ -3371,32 +3368,21 @@ var PFSheet = PFSheet || (function () {
 
     updateConcentration = function (classidx) {
         updateRowTotal(["Concentration-" + classidx, "spellclass-" + classidx + "-level-total", "Concentration-" + classidx + "-mod", "Concentration-" + classidx + "-misc"]);
-
     },
-
-
-
 
     handleConcentrationAbilityDropdown = function (classidx) {
         handleDropdown("Concentration-" + classidx + "-ability", ["Concentration-" + classidx + "-mod"]);
     },
-
 	/*
 	* updateBonusSpells
 	* updates Bonus Spells for the class
 	* It looks at the attribute, not the attribute mod. So it does not change with ability damage or penalties.
 	*/
     updateBonusSpells = function (classidx) {
-
         getAttrs(["Concentration-" + classidx + "-ability"], function (va) {
             var ability = findAbilityInString(va["Concentration-" + classidx + "-ability"]).replace("-mod", "");
-
-
-
-
             //eliminate the modifier, we just want @{INT} not @{INT-mod}
             getAttrs([ability], function (v) {
-
                 var spellAbility = parseInt(v[ability], 10) || 0
                 , fields = {}, bonusSpells, bonusName, i, newRaw;
                 if (spellAbility >= 12) {
@@ -3404,13 +3390,11 @@ var PFSheet = PFSheet || (function () {
                         newRaw = Math.max(0, spellAbility - 10 - (2 * (i - 1)));
                         bonusSpells = Math.ceil(newRaw / 8);
                         bonusName = "spellclass-" + classidx + "-level-" + i + "-bonus";
-
                         fields[bonusName] = bonusSpells;
                     }
                 } else {
                     for (i = 1; i < 10; i++) {
                         bonusName = "spellclass-" + classidx + "-level-" + i + "-bonus";
-
                         fields[bonusName] = 0;
                     }
                 }
@@ -3453,10 +3437,12 @@ var PFSheet = PFSheet || (function () {
 			, prefix = "repeating_" + section + "_" + idStr
 			, spellclassField = prefix + "spellclass"
 			, spellLevelField = prefix + "spell_level";
-	    //console.log("At updateSpell prefix: "+prefix+", classfield="+spellclassField);
+	    console.log("At updateSpell prefix: " + prefix + ", classfield=" + spellclassField);
+	    TAS.log(eventInfo);
 	    getAttrs([spellLevelField, spellclassField], function (va) {
-	        var spellLevel = (parseInt(va[spellLevelField], 10) || 0)
-				, classNum = findSpellClass(va[spellclassField])
+	        var currSpellLevel = parseInt(va[spellLevelField], 10)
+				, spellLevel = isNaN(currSpellLevel) ? parseInt(section.substring(4), 10) : currSpellLevel
+				, classNum = findSpellClass(va[spellclassField]) || 0
 				, hasClass = (isNaN(classNum) || classNum < 0) ? false : true
 				, spellDefCastDCField = prefix + "cast_def_dc"
 				, spellDefConField = prefix + "cast_def-mod"
@@ -3472,7 +3458,8 @@ var PFSheet = PFSheet || (function () {
 				, classDCField = "spellclass-" + classNum + "-level-" + spellLevel + "-savedc"
 				, classConField = "Concentration-" + classNum
 				, classDefConField = "Concentration-" + classNum + "-def"
-				, classSpellPenField = "spellclass-" + classNum + "-SP_misc";
+				, classSpellPenField = "spellclass-" + classNum + "-SP-mod";
+	        TAS.log(va);
 
 	        getAttrs([spellDCField, spellDCUserField, spellCLField, spellCLUserField
 				, spellConField, spellConUserField, spellDefConField, spellDefCastDCField
@@ -3491,8 +3478,10 @@ var PFSheet = PFSheet || (function () {
                     , classDefConMod = (parseInt(v[classDefConField], 10) || 0)
                     , classSpellPen = (parseInt(v[classSpellPenField], 10) || 0)
                     , defDC = 15 + (spellLevel * 2)
-                    , classLevelDelta = 0, setter = {}, setAny = 0
+				, setter = {}, setAny = 0
+				, classLevelDelta = 0
 				    ;
+				    TAS.log(v);
 				    if (defDC !== currdefDC || isNaN(currdefDC)) {
 				        setter[spellDefCastDCField] = defDC;
 				        setAny = 1;
@@ -3500,17 +3489,17 @@ var PFSheet = PFSheet || (function () {
 				    //Caster level check mod
 				    newCL = (parseInt(v[spellCLUserField], 10) || 0) + classCL;
 				    if (newCL !== currCL || isNaN(currCL)) {
-				        classLevelDelta = newCL - (currCL || 0);
 				        setter[spellCLField] = newCL;
 				        setAny = 1;
 				    }
-
+				    classLevelDelta = newCL - classCL;
 				    //DC to save
 				    newDC = (parseInt(v[spellDCUserField], 10) || 0) + classDC;
 				    if (newDC !== currDC || isNaN(currDC)) {
 				        setter[spellDCField] = newDC;
 				        setAny = 1;
 				    }
+
 				    //Concentration check mod
 				    newCon = (parseInt(v[spellConUserField], 10) || 0) + classCon + classLevelDelta;
 				    if (newCon !== currCon || isNaN(currCon)) {
@@ -3526,9 +3515,14 @@ var PFSheet = PFSheet || (function () {
 				    }
 
 				    //Spell penetration check mod 
-				    newSpellPen = newCL + classSpellPen + (parseInt(v[spellSpellPenUserField], 10) || 0);
+				    newSpellPen = classSpellPen + (parseInt(v[spellSpellPenUserField], 10) || 0) + classLevelDelta;
 				    if (newSpellPen !== currSpellPen || isNaN(currSpellPen)) {
 				        setter[spellSpellPenField] = newSpellPen;
+				        setAny = 1;
+				    }
+
+				    if (currSpellLevel !== spellLevel || isNaN(currSpellLevel)) {
+				        setter[spellLevelField] = spellLevel;
 				        setAny = 1;
 				    }
 
@@ -3582,7 +3576,6 @@ var PFSheet = PFSheet || (function () {
         });
     },
 
-
 	/***********************************************************
 	Recalculate section
 	*/
@@ -3599,11 +3592,10 @@ var PFSheet = PFSheet || (function () {
 	    getAttrs([spellLevelField, classLevelField, dcModField, dcMiscField], function (v) {
 	        var setter = {}, currLevel = parseInt(v[spellLevelField], 10),
 			currDCMod = parseInt(v[dcModField], 10),
-			currDCMisc = parseInt(v[dcMiscField], 10);
+			currDCMisc = parseInt(v[dcMiscField], 10),
+			spellLevel = parseInt(section.substring(4), 10);
 
-
-
-	        if (isNaN(currLevel)) {
+	        if (isNaN(currLevel) && !isNaN(spellLevel)) {
 	            setter[spellLevelField] = spellLevel;
 	            setAttrs(setter);
 	        }
@@ -3645,7 +3637,6 @@ var PFSheet = PFSheet || (function () {
     recalculateRepeatingWeapons = function () {
         getAttrs(["attk-effect-total", "dmg-effect-total", "DMG-mod"], function (v) {
             getSectionIDs("repeating_weapon", function (ids) {
-
                 ids.forEach(function (id, index) {
                     var readField = "repeating_weapon_" + id + "_";
                     if (isBadRowId("weapon", id, false)) {
@@ -3653,7 +3644,6 @@ var PFSheet = PFSheet || (function () {
                         return;
                     }
                     //console.log("TRACE: recalculateRepeatingWeapons id="+id);
-
                     SWUtils.setAttributeNumber(readField + "attk-effect-total-copy", (parseInt(v["attk-effect-total"], 10) || 0));
                     SWUtils.setAttributeNumber(readField + "dmg-effect-total-copy", (parseInt(v["dmg-effect-total"], 10) || 0));
                     SWUtils.setAttributeNumber(readField + "DMG-mod-copy", (parseInt(v["DMG-mod"], 10) || 0));
@@ -4000,7 +3990,6 @@ var PFSheet = PFSheet || (function () {
             updateSave("Ref");
             updateSave("Will");
             updateConditionDefensePenalty();
-            updateDefenses();
             updateArmor();
             updateConditionAttackPenalty();
             updateAttack("melee");
@@ -4065,8 +4054,6 @@ var PFSheet = PFSheet || (function () {
             updateSaveDCs(0);
             updateSaveDCs(1);
             updateSaveDCs(2);
-            recalculateSpellLevelsAll();
-
             updateBonusSpells(0);
             updateBonusSpells(1);
             updateBonusSpells(2);
@@ -4093,6 +4080,16 @@ var PFSheet = PFSheet || (function () {
             updateConcentration(0);
             updateConcentration(1);
             updateConcentration(2);
+        }
+        if (oldversion < 0.32) {
+            recalculateSpellLevelsAll();
+            updateMythicPathInformation();
+            updateMythicPower();
+            updateTierMythicPower();
+            recalculateRepeatingMaxUsed("mythic-ability");
+            recalculateRepeatingMaxUsed("mythic-feat");
+            handleRepeatingRowOrdering("mythic-ability", true);
+            handleRepeatingRowOrdering("mythic-feat", true);
         }
     },
 
@@ -4136,9 +4133,7 @@ var PFSheet = PFSheet || (function () {
         util: {
             findAbilityInString: findAbilityInString,
             findMultiplier: findMultiplier,
-
             updateRowTotal: updateRowTotal,
-
             isBadRowId: isBadRowId
         },
         version: version,
@@ -4195,7 +4190,6 @@ var PFSheet = PFSheet || (function () {
         updateSpell: updateSpell,
         updateSpells: updateSpells,
         checkIsNewRow: checkIsNewRow,
-
         checkForUpdate: checkForUpdate
     };
 }());
@@ -4739,7 +4733,7 @@ on("change:init-ability-mod change:init-trait change:init-misc change:condition-
 
 //hp
 on("change:hp-ability", function () { PFSheet.handleDropdown("HP-ability", ["HP-ability-mod"]); });
-on("change:hp-ability-mod change:level change:total-hp change:total-mythic-hp change:hp-formula-mod change:HP-misc", function () { PFSheet.updateHP(); });
+on("change:hp-ability-mod change:level change:total-hp change:total-mythic-hp change:hp-formula-mod change:HP-misc change:mythic-adventures-show", function () { PFSheet.updateHP(); });
 on("change:hp-temp-misc change:buff_hp-temp-total", function () { PFSheet.updateTempHP(); });
 on("change:hp-formula-macro-text", function () { SWUtils.evaluateAndSetNumber("HP-formula-macro-text", "HP-formula-mod"); });
 
@@ -4761,10 +4755,18 @@ on("change:class-0-level change:class-1-level change:class-2-level change:class-
     PFSheet.updateClassInformation("skill");
 });
 
-//mythic paths, mythic power
-on("change:mythic-0-tier change:mythic-0-hp", function () { PFSheet.updateMythicPathInformation(); });
-on("change:mythic-0-tier", function () { PFSheet.updateTierMythicPower(); });
+//mythic paths
+on("change:mythic-tier change:mythic-hp", function () { PFSheet.updateMythicPathInformation(); });
+
+//mythic power
+on("change:mythic-tier", function () { PFSheet.updateTierMythicPower(); });
 on("change:misc-mythic-power change:tier-mythic-power", function () { PFSheet.updateMythicPower(); });
+
+//mythic features/abilities
+on("change:repeating_mythic-ability:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_mythic-ability_max-calculation", "repeating_mythic-ability_used_max"); });
+
+//mythic feats
+on("change:repeating_mythic-feat:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_mythic-feat_max-calculation", "repeating_mythic-feat_used_max"); });
 
 //class abilities
 on("change:repeating_class-ability:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_class-ability_max-calculation", "repeating_class-ability_used_max"); });
@@ -5054,3 +5056,5 @@ on("change:repeating_lvl-9-spells:ids-show", function (eventInfo) { PFSheet.chec
 on("change:repeating_npc-spell-like-abilities:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("npc-spell-like-abilities", eventInfo); });
 on("change:repeating_npc-spells1:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("npc-spells1", eventInfo); });
 on("change:repeating_npc-spells2:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("npc-spells2", eventInfo); });
+on("change:repeating_mythic-ability:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("mythic-ability", eventInfo); });
+on("change:repeating_mythic-feat:ids-show", function (eventInfo) { PFSheet.checkIsNewRow("mythic-feat", eventInfo); });
