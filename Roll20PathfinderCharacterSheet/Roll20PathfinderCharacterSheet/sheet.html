@@ -1077,17 +1077,21 @@
                         <span class="sheet-table-name">Speeds</span>
                         <div class="sheet-table-row">
                             <span class="sheet-table-header">Base</span>
+                            <span class="sheet-table-header">Modified</span>
                             <span class="sheet-table-header">Fly</span>
                             <span class="sheet-table-header">Swim</span>
                             <span class="sheet-table-header">Climb</span>
                             <span class="sheet-table-header">Misc</span>
+                            <span class="sheet-table-header">Run</span>
                         </div>
                         <div class="sheet-table-row">
                             <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{speed-base}" type="number" name="attr_speed-base" value="0" step="5" /></span>
+                            <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{speed-modified}" type="number" name="attr_speed-modified" value="0" class="sheet-calc" readonly="readonly" /></span>
                             <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{speed-fly}" type="number" name="attr_speed-fly" value="0" step="5" /></span>
                             <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{speed-swim}" type="number" name="attr_speed-swim" value="0" step="5" /></span>
                             <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{speed-climb}" type="number" name="attr_speed-climb" value="0" step="5" /></span>
                             <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{speed-misc}" type="number" name="attr_speed-misc" value="0" step="5" /></span>
+                            <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{speed-run}" type="number" name="attr_speed-run" value="0" class="sheet-calc" readonly="readonly" /></span>
                         </div>
                     </div>
                 </div>
@@ -1277,9 +1281,9 @@
                                 <span class="sheet-table-name">Mythic Information</span>
                                 <div class="sheet-table-row">
                                     <span class="sheet-table-header">#</span>
-                                    <span class="sheet-table-header" title="Mythic Path">Mythic Path</span>
-                                    <span class="sheet-table-header" title="Tier">Tier</span>
-                                    <span class="sheet-table-header" title="Bonus HP">Bonus HP</span>
+                                    <span class="sheet-table-header" title="Mythic Path: archmage, champion, guardian, hierophant, marshal, or trickster">Mythic Path</span>
+                                    <span class="sheet-table-header" title="Mythic tier or rank. Mythic tiers range from 1 to 10">Tier</span>
+                                    <span class="sheet-table-header" title="Bonus hit points that are gained from each tier advancement: archmage: 3, champion: 5, guardian: 5, hierophant: 4, marshal: 4, or trickster: 4">Bonus HP</span>
                                 </div>
                                 <div class="sheet-table-row">
                                     <span class="sheet-table-data sheet-center"><b>0.</b></span>
@@ -1290,7 +1294,7 @@
                                 <div class="sheet-table-row">
                                     <span class="sheet-table-data sheet-center"><b>1.</b></span>
                                     <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{mythic-1-path}" type="text" name="attr_mythic-1-path" placeholder="Path Name" /></span>
-                                    <span class="sheet-table-data sheet-center"><b>Total Mythic HP:</b></span>
+                                    <span class="sheet-table-data sheet-center"><b title="Bonus HP x Tier. This is automatically added to Max HP">Total Mythic HP:</b></span>
                                     <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{total-mythic-hp}" type="number" name="attr_total-mythic-hp" value="0" class="sheet-calc" readonly="readonly" /></span>
                                 </div>
                             </div>
@@ -1302,13 +1306,13 @@
                             <div class="sheet-table">
                                 <span class="sheet-table-name">Mythic Power</span>
                                 <div class="sheet-table-row">
-                                    <span class="sheet-table-header">Current MP</span>
+                                    <span class="sheet-table-header" title="How much mythic power you have available to use">Current MP</span>
                                     <span class="sheet-table-header">/</span>
-                                    <span class="sheet-table-header">Max MP</span>
+                                    <span class="sheet-table-header" title="The maximum amount of mythic power you have">Max MP</span>
                                     <span class="sheet-table-header"></span>
-                                    <span class="sheet-table-header">Tier MP</span>
+                                    <span class="sheet-table-header" title="The amount of mythic power you gain from tiers">Tier MP</span>
                                     <span class="sheet-table-header"></span>
-                                    <span class="sheet-table-header">Misc</span>
+                                    <span class="sheet-table-header" title="Any additional mythic power you gain from abilities or feats">Misc</span>
                                 </div>
                                 <div class="sheet-table-row">
                                     <span class="sheet-table-data sheet-center"><input style="width:100%;" type="number" title="@{mythic-power}" name="attr_mythic-power" value="0" min="0" /></span>
@@ -6579,14 +6583,14 @@
         <div class="sheet-table sheet-sect">
             <div class="sheet-table-row" style="vertical-align:top;">
                 <div class="sheet-table-data sheet-center">
-                    <span class="sheet-table-name">Carried Currency</span>
-                    <span class="sheet-table-row-name">CP</span>
+                    <span class="sheet-table-name" title="The amount of currency carried on the character that will contribute to the load that the character has">Carried Currency</span>
+                    <span class="sheet-table-row-name" title="Copper pieces">CP</span>
                     <span class="sheet-table-data sheet-center"><input title="@{CP}" type="number" name="attr_CP" value="0" style="width:100%;"></span>
-                    <span class="sheet-table-row-name">SP</span>
+                    <span class="sheet-table-row-name" title="Silver pieces">SP</span>
                     <span class="sheet-table-data sheet-center"><input title="@{SP}" type="number" name="attr_SP" value="0" style="width:100%;"></span>
-                    <span class="sheet-table-row-name">GP</span>
+                    <span class="sheet-table-row-name" title="Gold pieces">GP</span>
                     <span class="sheet-table-data sheet-center"><input title="@{GP}" type="number" name="attr_GP" value="0" style="width:100%;"></span>
-                    <span class="sheet-table-row-name">PP</span>
+                    <span class="sheet-table-row-name" title="Platinum pieces">PP</span>
                     <span class="sheet-table-data sheet-center"><input title="@{PP}" type="number" name="attr_PP" value="0" style="width:100%;"></span>
                 </div>
                 <div class="sheet-table-data sheet-center">
@@ -6594,14 +6598,14 @@
                 </div>
                 <div class="sheet-table-data sheet-center">
                     <div class="sheet-table">
-                        <span class="sheet-table-name">Other Currency</span>
-                        <span class="sheet-table-row-name">CP</span>
+                        <span class="sheet-table-name" title="The amount of currency not actively carried by the character">Other Currency</span>
+                        <span class="sheet-table-row-name" title="Copper pieces">CP</span>
                         <span class="sheet-table-data sheet-center"><input title="@{other-CP}" type="number" name="attr_other-CP" value="0" style="width:100%;"></span>
-                        <span class="sheet-table-row-name">SP</span>
+                        <span class="sheet-table-row-name" title="Silver pieces">SP</span>
                         <span class="sheet-table-data sheet-center"><input title="@{other-SP}" type="number" name="attr_other-SP" value="0" style="width:100%;"></span>
-                        <span class="sheet-table-row-name">GP</span>
+                        <span class="sheet-table-row-name" title="Gold pieces">GP</span>
                         <span class="sheet-table-data sheet-center"><input title="@{other-GP}" type="number" name="attr_other-GP" value="0" style="width:100%;"></span>
-                        <span class="sheet-table-row-name">PP</span>
+                        <span class="sheet-table-row-name" title="Platinum pieces">PP</span>
                         <span class="sheet-table-data sheet-center"><input title="@{other-PP}" type="number" name="attr_other-PP" value="0" style="width:100%;"></span>
                     </div>
                 </div>
@@ -6613,17 +6617,17 @@
         <b>Worn Equipment</b>
         <input type="checkbox" class="sheet-sect-show" title="@{worn-equipment-show}" name="attr_worn-equipment-show" value="1" style="opacity:0;width: 150px; height:1.5em; position:relative; top:0; left:0;margin: 0 -15px 0 -133px; cursor:pointer; z-index:1;" /><span></span>
         <div class="sheet-table sheet-sect">
-            <span class="sheet-table-name">Worn Equipment</span>
+            <span class="sheet-table-name" title="The equipment currently worn by the character">Worn Equipment</span>
             <div class="sheet-table-row">
-                <span class="sheet-table-header" style="width:7%;">Slot</span>
-                <span class="sheet-table-header" style="width:21%;">Name</span>
-                <span class="sheet-table-header" style="width:30%;">Description</span>
-                <span class="sheet-table-header" style="width:6%;">Charges</span>
-                <span class="sheet-table-header" style="width:6%;">Weight</span>
-                <span class="sheet-table-header" style="width:8%;">Hardness</span>
-                <span class="sheet-table-header" style="width:6%;">HP</span>
-                <span class="sheet-table-header" style="width:6%;">Max HP</span>
-                <span class="sheet-table-header" style="width:10%;">Value (GP)</span>
+                <span class="sheet-table-header" style="width:7%;" title="The location on the body where the equipment is worn">Slot</span>
+                <span class="sheet-table-header" style="width:21%;" title="Brief description of the item">Name</span>
+                <span class="sheet-table-header" style="width:30%;" title="Lengthy description of the item">Description</span>
+                <span class="sheet-table-header" style="width:6%;" title="If the item has charges, this is how many remain">Charges</span>
+                <span class="sheet-table-header" style="width:6%;" title="The weight of the item">Weight</span>
+                <span class="sheet-table-header" style="width:8%;" title="The hardness of the item that helps prevent it from taking hit point damage">Hardness</span>
+                <span class="sheet-table-header" style="width:6%;" title="The current hit points of the item">HP</span>
+                <span class="sheet-table-header" style="width:6%;" title="The maximum possible hit points of the item">Max HP</span>
+                <span class="sheet-table-header" style="width:10%;" title="The value of the item measured in gold pieces">Value (GP)</span>
             </div>
             <div class="sheet-table-row">
                 <span class="sheet-table-data sheet-right">Armor:</span>
@@ -6809,21 +6813,21 @@
         <input type="checkbox" class="sheet-sect-show" title="@{inventory-show}" name="attr_inventory-show" value="1" style="opacity:0; width:90px; height:1.5em; position:relative; top:0; left:0; margin:0 -15px 0 -75px; cursor:pointer; z-index:1;" checked="checked" /><span></span>
         <input type="checkbox" class="sheet-expand-show" title="Collapse or expand all rows." name="attr_inventory-expand-show" value="1" style="opacity: 0;height: 1.5em;width: 38px; margin: 0px -38px 2px 0;help;z-index: 1;cursor: help;" /><span></span>
         <div class="sheet-table sheet-sect">
-            <span class="sheet-table-name">Carried Equipment</span>
+            <span class="sheet-table-name" title="The items carried on the character that will contribute to the load that the character has">Carried Equipment</span>
             <div class="sheet-table-row">
-                <span class="sheet-table-header" style="width:4%;"></span>
-                <span class="sheet-table-header" style="width:4%;"></span>
-                <span class="sheet-table-header" style="width:15%;">Name</span>
-                <span class="sheet-table-header" style="width:33%;">Short Description</span>
-                <span class="sheet-table-header" style="width:7%; text-align:right;">Chrg/Qty</span>
-                <span class="sheet-table-header sheet-divider-lg" style="width:1%;">/</span>
-                <span class="sheet-table-header" style="width:7%;text-align:left;">Max</span>
-                <span class="sheet-table-header" style="width:5%;">Wt</span>
-                <span class="sheet-table-header" style="width:5%;">Hard</span>
-                <span class="sheet-table-header" style="width:5%;">HP</span>
-                <span class="sheet-table-header sheet-divider-lg" style="width:1%;">/</span>
-                <span class="sheet-table-header" style="width:5%;">Max</span>
-                <span class="sheet-table-header" style="width:8%;">Value</span>
+                <span class="sheet-table-header sheet-table-data" style="width:4%;"></span>
+                <span class="sheet-table-header sheet-table-data" style="width:4%;"></span>
+                <span class="sheet-table-header sheet-table-data" style="width:18%;">Name</span>
+                <span class="sheet-table-header sheet-table-data" style="width:40%;">Short Description</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; text-align:right; min-width:3.5em;">Chrg/Qty</span>
+                <span class="sheet-table-header sheet-divider-lg sheet-table-data" style="width:1%;">/</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%;text-align:left; min-width:3.5em;">Max</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; min-width:3.5em;">Wt</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; min-width:3.5em;">Hard</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; text-align:right; min-width:3.5em;">HP</span>
+                <span class="sheet-table-header sheet-divider-lg sheet-table-data" style="width:1%;">/</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; text-align:left; min-width:3.5em;">Max</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; min-width:3.5em;">Value</span>
             </div>
         </div>
         <div class="sheet-table sheet-sect">
@@ -6867,17 +6871,17 @@
         <div class="sheet-table-row">
             <span class="sheet-table-data sheet-left" style="width:4%;"></span>
             <span class="sheet-table-data sheet-left" style="width:4%;"></span>
-            <span class="sheet-table-data sheet-left" style="width:15%;"></span>
-            <span class="sheet-table-data sheet-left" style="width:33%;"></span>
-            <span class="sheet-table-data sheet-left" style="width:7%;"></span>
-            <span class="sheet-table-data sheet-left"></span>
-            <span class="sheet-table-data sheet-right" style="width:6%;"><b>Totals:</b></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{item_total_weight}" type="number" name="attr_item_total_weight" value="0" class="sheet-calc" readonly="readonly"></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{item-total-hardness}" type="number" name="attr_item-total-hardness" value="0" class="sheet-calc" readonly="readonly"></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{item-total-hp}" type="number" name="attr_item-total-hp" value="0" class="sheet-calc" readonly="readonly"></span>
-            <span class="sheet-table-data sheet-left"></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{item-total-hp|max}" type="number" name="attr_item-total-hp_max" value="0" class="sheet-calc" readonly="readonly"></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{item-total-value}" type="number" name="attr_item-total-value" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left" style="width:18%;"></span>
+            <span class="sheet-table-data sheet-left" style="width:40%;"></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"></span>
+            <span class="sheet-table-data sheet-left">&nbsp;</span>
+            <span class="sheet-table-data sheet-right" style="width:5%; min-width:3.5em;"><b>Totals:</b></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{item_total_weight}" type="number" name="attr_item_total_weight" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{item-total-hardness}" type="number" name="attr_item-total-hardness" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{item-total-hp}" type="number" name="attr_item-total-hp" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left">&nbsp;</span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{item-total-hp|max}" type="number" name="attr_item-total-hp_max" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{item-total-value}" type="number" name="attr_item-total-value" value="0" class="sheet-calc" readonly="readonly"></span>
         </div>
     </div>
     <div>
@@ -6892,12 +6896,12 @@
                 <span class="sheet-table-header"></span>
                 <span class="sheet-table-header">Carried Equipment</span>
                 <span class="sheet-table-header"></span>
-                <span class="sheet-table-header">Misc</span>
+                <span class="sheet-table-header" title="Miscellaneous weight. Player configurable">Misc</span>
                 <span class="sheet-table-header"></span>
-                <span class="sheet-table-header">Total</span>
+                <span class="sheet-table-header" title="Total weight carried by character">Total</span>
             </div>
             <div class="sheet-table-row">
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{carried-currency}" type="number" name="attr_carried-currency" value="" class="sheet-calc" readonly="readonly"/></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{carried-currency}" type="number" name="attr_carried-currency" value="" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-divider">+</span>
                 <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{carried-worn-equipment}" type="number" name="attr_carried-worn-equipment" value="@{worn-total-weight}" disabled /></span>
                 <span class="sheet-table-data sheet-divider">+</span>
@@ -6905,7 +6909,7 @@
                 <span class="sheet-table-data sheet-divider">+</span>
                 <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{carried-misc}" type="number" name="attr_carried-misc" value="0" min="0" /></span>
                 <span class="sheet-table-data sheet-divider">=</span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{carried-total}" type="number" name="attr_carried-total" value="" class="sheet-calc" readonly="readonly"/></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{carried-total}" type="number" name="attr_carried-total" value="" class="sheet-calc" readonly="readonly" /></span>
             </div>
         </div>
         <br>
@@ -6916,22 +6920,28 @@
         <div class="sheet-table sheet-sect">
             <span class="sheet-table-name">Loads and Lift</span>
             <div class="sheet-table-row">
-                <span class="sheet-table-header">Light</span>
-                <span class="sheet-table-header">Medium</span>
-                <span class="sheet-table-header">Heavy</span>
+                <span class="sheet-table-header" title="Bonus to Strength score for carrying capacity only">STR Bonus</span>
+                <span class="sheet-table-header" title="The amount that load values will be multiplied">Multiplier</span>
+                <span class="sheet-table-header" title="Miscellaneous bonus to load values">Misc</span>
+                <span class="sheet-table-header" title="At this weight of carried equipment or less, the character is unencumbered">Light</span>
+                <span class="sheet-table-header" title="Over the light load and up to this weight, the character is moderately encumbered">Medium</span>
+                <span class="sheet-table-header" title="Over the medium load and up to this weight, the character is heavily encumbered">Heavy</span>
                 <span class="sheet-table-header" style="background-color:black;"></span>
-                <span class="sheet-table-header">Above Head</span>
-                <span class="sheet-table-header">Off Ground</span>
-                <span class="sheet-table-header">Drag &amp; Push</span>
+                <span class="sheet-table-header" title="A character can lift as much as his maximum load over his head">Above Head</span>
+                <span class="sheet-table-header" title="A character can lift as much as double his maximum load off the ground, but he or she can only stagger around with it">Off Ground</span>
+                <span class="sheet-table-header" title="A character can generally push or drag along the ground as much as five times his maximum load">Drag &amp; Push</span>
             </div>
             <div class="sheet-table-row">
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-light}" type="number" name="attr_load-light" value="0" /></span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-medium}" type="number" name="attr_load-medium" value="0" /></span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-heavy}" type="number" name="attr_load-heavy" value="0" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-str-bonus}" type="number" name="attr_load-str-bonus" value="0" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-multiplier}" type="number" name="attr_load-multiplier" value="1" min="1" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-misc}" type="number" name="attr_load-misc" value="0" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-light}" type="number" name="attr_load-light" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-medium}" type="number" name="attr_load-medium" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{load-heavy}" type="number" name="attr_load-heavy" value="0" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-center" style="background-color:black;">&nbsp;</span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{lift-above-head}" type="number" name="attr_lift-above-head" value="@{load-heavy}" disabled /></span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{lift-off-ground}" type="number" name="attr_lift-off-ground" value="(@{load-heavy} * 2)" disabled /></span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{lift-drag-and-push}" type="number" name="attr_lift-drag-and-push" value="(@{load-heavy} * 5)" disabled /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{lift-above-head}" type="number" name="attr_lift-above-head" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{lift-off-ground}" type="number" name="attr_lift-off-ground" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{lift-drag-and-push}" type="number" name="attr_lift-drag-and-push" value="0" class="sheet-calc" readonly="readonly" /></span>
             </div>
         </div>
         <div class="sheet-table sheet-sect">
@@ -6951,21 +6961,21 @@
         <input type="checkbox" class="sheet-sect-show" title="@{belongings-show}" name="attr_belongings-show" value="1" style="opacity:0; width:90px; height:1.5em; position:relative; top:0; left:0; margin:0 -15px 0 -75px; cursor:pointer; z-index:1;" checked="checked" /><span></span>
         <input type="checkbox" class="sheet-expand-show" title="Collapse or expand all rows." name="attr_belongings-expand-show" value="1" style="opacity: 0;height: 1.5em;width: 38px; margin: 0px -38px 2px 0;help;z-index: 1;cursor: help;" /><span></span>
         <div class="sheet-table sheet-sect">
-            <span class="sheet-table-name">Other Belongings</span>
+            <span class="sheet-table-name" title="These are things that the character owns, but is not actively carrying">Other Belongings</span>
             <div class="sheet-table-row">
-                <span class="sheet-table-header" style="width:4%;"></span>
-                <span class="sheet-table-header" style="width:4%;"></span>
-                <span class="sheet-table-header" style="width:15%;">Name</span>
-                <span class="sheet-table-header" style="width:33%;">Short Description</span>
-                <span class="sheet-table-header" style="width:7%; text-align:right;">Chrg/Qty</span>
-                <span class="sheet-table-header sheet-divider-lg" style="width:1%;">/</span>
-                <span class="sheet-table-header" style="width:7%;text-align:left;">Max</span>
-                <span class="sheet-table-header" style="width:5%;">Wt</span>
-                <span class="sheet-table-header" style="width:5%;">Hard</span>
-                <span class="sheet-table-header" style="width:5%;">HP</span>
-                <span class="sheet-table-header sheet-divider-lg" style="width:1%;">/</span>
-                <span class="sheet-table-header" style="width:5%;">Max</span>
-                <span class="sheet-table-header" style="width:8%;">Value</span>
+                <span class="sheet-table-header sheet-table-data" style="width:4%;"></span>
+                <span class="sheet-table-header sheet-table-data" style="width:4%;"></span>
+                <span class="sheet-table-header sheet-table-data" style="width:18%;">Name</span>
+                <span class="sheet-table-header sheet-table-data" style="width:40%;">Short Description</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; text-align:right; min-width:3.5em;">Chrg/Qty</span>
+                <span class="sheet-table-header sheet-divider-lg sheet-table-data" style="width:1%;">/</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%;text-align:left; min-width:3.5em;">Max</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; min-width:3.5em;">Wt</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; min-width:3.5em;">Hard</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; text-align:right; min-width:3.5em;">HP</span>
+                <span class="sheet-table-header sheet-divider-lg sheet-table-data" style="width:1%;">/</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; text-align:left; min-width:3.5em;">Max</span>
+                <span class="sheet-table-header sheet-table-data" style="width:5%; min-width:3.5em;">Value</span>
             </div>
         </div>
         <div class="sheet-table sheet-sect">
@@ -7009,17 +7019,17 @@
         <div class="sheet-table-row">
             <span class="sheet-table-data sheet-left" style="width:4%;"></span>
             <span class="sheet-table-data sheet-left" style="width:4%;"></span>
-            <span class="sheet-table-data sheet-left" style="width:15%;"></span>
-            <span class="sheet-table-data sheet-left" style="width:33%;"></span>
-            <span class="sheet-table-data sheet-left" style="width:7%;"></span>
-            <span class="sheet-table-data sheet-left"></span>
-            <span class="sheet-table-data sheet-right" style="width:6%;"><b>Totals:</b></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{belonging_total_weight}" type="number" name="attr_belonging_total_weight" value="0" class="sheet-calc" readonly="readonly"></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{belonging-total-hardness}" type="number" name="attr_belonging-total-hardness" value="0" class="sheet-calc" readonly="readonly"></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{belonging-total-hp}" type="number" name="attr_belonging-total-hp" value="0" class="sheet-calc" readonly="readonly"></span>
-            <span class="sheet-table-data sheet-left"></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{belonging-total-hp|max}" type="number" name="attr_belonging-total-hp_max" value="0" class="sheet-calc" readonly="readonly"></span>
-            <span class="sheet-table-data sheet-left"><input style="width:100%;" title="@{belonging-total-value}" type="number" name="attr_belonging-total-value" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left" style="width:18%;"></span>
+            <span class="sheet-table-data sheet-left" style="width:40%;"></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width: 3.5em;"></span>
+            <span class="sheet-table-data sheet-left">&nbsp;</span>
+            <span class="sheet-table-data sheet-right" style="width:5%; min-width:3.5em;"><b>Totals:</b></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{belonging_total_weight}" type="number" name="attr_belonging_total_weight" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{belonging-total-hardness}" type="number" name="attr_belonging-total-hardness" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{belonging-total-hp}" type="number" name="attr_belonging-total-hp" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left">&nbsp;</span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{belonging-total-hp|max}" type="number" name="attr_belonging-total-hp_max" value="0" class="sheet-calc" readonly="readonly"></span>
+            <span class="sheet-table-data sheet-left" style="width:5%; min-width:3.5em;"><input style="width:100%;" title="@{belonging-total-value}" type="number" name="attr_belonging-total-value" value="0" class="sheet-calc" readonly="readonly"></span>
         </div>
     </div>
 </div>
@@ -7087,7 +7097,7 @@
                         <span class="sheet-table-data"><input title="@{CasterLevel-0-note}" type="text" name="attr_CasterLevel-0-note" value="" Placeholder="notes" style="width:100%;" /></span>
                     </div>
                 </div>
-				<div class="sheet-table" style="margin-top:2px" >
+                <div class="sheet-table" style="margin-top:2px">
                     <span class="sheet-table-name">Concentration</span>
                     <div class="sheet-table-row">
                         <span class="sheet-table-header">Check</span>
@@ -7128,47 +7138,47 @@
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-0-def}" type="number" name="attr_Concentration-0-def" value="0" /></span>
                     </div>
                 </div>
-				<div class="sheet-table" style="margin-top:4px" >
-					<b>Domains / SubDomains / Bloodlines / Patrons / Schools</b>
-					<input type="checkbox" class="sheet-sect-show" title="@{domains-0-show}" name="attr_domains-0-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
-					<div class="sheet-table sheet-sect">
-						<span class="sheet-table-name">Known / Specialities</span>
-						<div class="sheet-table-row">
-							<span class="sheet-table-header">Type</span><span class="sheet-table-header">Name</span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domaintype-0} type="text" name="attr_spellclass-0-domaintype-0" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domain-0} type="text" name="attr_spellclass-0-domain-0" value="" Placeholder="Name" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domaintype-1} type="text" name="attr_spellclass-0-domaintype-1" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domain-1} type="text" name="attr_spellclass-0-domain-1" value="" Placeholder="Name" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domaintype-2} type="text" name="attr_spellclass-0-domaintype-2" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domain-2} type="text" name="attr_spellclass-0-domain-2" value="" Placeholder="Name" /></span>
-						</div>
-					</div>
-					<div class="sheet-table sheet-sect">
-						<span class="sheet-table-name">Opposition</span>
-						<div class="sheet-table-row">
-							<span class="sheet-table-header">Name</span><span class="sheet-table-header">Effect</span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositionschool-0} type="text" name="attr_spellclass-0-oppositionschool-0" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositioneffect-0} type="text" name="attr_spellclass-0-oppositioneffect-0" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositionschool-1} type="text" name="attr_spellclass-0-oppositionschool-1" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositioneffect-1} type="text" name="attr_spellclass-0-oppositioneffect-1" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositionschool-2} type="text" name="attr_spellclass-0-oppositionschool-2" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositioneffect-2} type="text" name="attr_spellclass-0-oppositioneffect-2" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-					</div>
-					
-				</div>
+                <div class="sheet-table" style="margin-top:4px">
+                    <b>Domains / SubDomains / Bloodlines / Patrons / Schools</b>
+                    <input type="checkbox" class="sheet-sect-show" title="@{domains-0-show}" name="attr_domains-0-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
+                    <div class="sheet-table sheet-sect">
+                        <span class="sheet-table-name">Known / Specialities</span>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-header">Type</span><span class="sheet-table-header">Name</span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domaintype-0} type="text" name="attr_spellclass-0-domaintype-0" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domain-0} type="text" name="attr_spellclass-0-domain-0" value="" Placeholder="Name" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domaintype-1} type="text" name="attr_spellclass-0-domaintype-1" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domain-1} type="text" name="attr_spellclass-0-domain-1" value="" Placeholder="Name" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domaintype-2} type="text" name="attr_spellclass-0-domaintype-2" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-domain-2} type="text" name="attr_spellclass-0-domain-2" value="" Placeholder="Name" /></span>
+                        </div>
+                    </div>
+                    <div class="sheet-table sheet-sect">
+                        <span class="sheet-table-name">Opposition</span>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-header">Name</span><span class="sheet-table-header">Effect</span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositionschool-0} type="text" name="attr_spellclass-0-oppositionschool-0" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositioneffect-0} type="text" name="attr_spellclass-0-oppositioneffect-0" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositionschool-1} type="text" name="attr_spellclass-0-oppositionschool-1" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositioneffect-1} type="text" name="attr_spellclass-0-oppositioneffect-1" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositionschool-2} type="text" name="attr_spellclass-0-oppositionschool-2" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-0-oppositioneffect-2} type="text" name="attr_spellclass-0-oppositioneffect-2" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                    </div>
+
+                </div>
                 <div>
                     <b>Spells Per Day</b>
                     <input type="checkbox" class="sheet-sect-show" title="@{spellsPerDay-0-show}" name="attr_spellsPerDay-0-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
@@ -7387,7 +7397,7 @@
                         <span class="sheet-table-data"><input title="@{CasterLevel-1-note}" type="text" name="attr_CasterLevel-1-note" value="" Placeholder="notes" style="width:100%;" /></span>
                     </div>
                 </div>
-				<div class="sheet-table" style="margin-top:2px" >
+                <div class="sheet-table" style="margin-top:2px">
                     <span class="sheet-table-name">Concentration</span>
                     <div class="sheet-table-row">
                         <span class="sheet-table-header">Check</span>
@@ -7428,47 +7438,47 @@
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-1-def}" type="number" name="attr_Concentration-1-def" value="0" /></span>
                     </div>
                 </div>
-				<div class="sheet-table" style="margin-top:4px" >
-					<b>Domains / SubDomains / Bloodlines / Patrons / Schools</b>
-					<input type="checkbox" class="sheet-sect-show" title="@{domains-1-show}" name="attr_domains-1-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
-					<div class="sheet-table sheet-sect">
-						<span class="sheet-table-name">Known / Specialities</span>
-						<div class="sheet-table-row">
-							<span class="sheet-table-header">Type</span><span class="sheet-table-header">Name</span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domaintype-0} type="text" name="attr_spellclass-1-domaintype-0" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domain-0} type="text" name="attr_spellclass-1-domain-0" value="" Placeholder="Name" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domaintype-1} type="text" name="attr_spellclass-1-domaintype-1" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domain-1} type="text" name="attr_spellclass-1-domain-1" value="" Placeholder="Name" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domaintype-2} type="text" name="attr_spellclass-1-domaintype-2" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domain-2} type="text" name="attr_spellclass-1-domain-2" value="" Placeholder="Name" /></span>
-						</div>
-					</div>
-					<div class="sheet-table sheet-sect">
-						<span class="sheet-table-name">Opposition</span>
-						<div class="sheet-table-row">
-							<span class="sheet-table-header">Name</span><span class="sheet-table-header">Effect</span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositionschool-0} type="text" name="attr_spellclass-1-oppositionschool-0" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositioneffect-0} type="text" name="attr_spellclass-1-oppositioneffect-0" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositionschool-1} type="text" name="attr_spellclass-1-oppositionschool-1" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositioneffect-1} type="text" name="attr_spellclass-1-oppositioneffect-1" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositionschool-2} type="text" name="attr_spellclass-1-oppositionschool-2" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositioneffect-2} type="text" name="attr_spellclass-1-oppositioneffect-2" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-					</div>
-					
-				</div>
+                <div class="sheet-table" style="margin-top:4px">
+                    <b>Domains / SubDomains / Bloodlines / Patrons / Schools</b>
+                    <input type="checkbox" class="sheet-sect-show" title="@{domains-1-show}" name="attr_domains-1-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
+                    <div class="sheet-table sheet-sect">
+                        <span class="sheet-table-name">Known / Specialities</span>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-header">Type</span><span class="sheet-table-header">Name</span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domaintype-0} type="text" name="attr_spellclass-1-domaintype-0" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domain-0} type="text" name="attr_spellclass-1-domain-0" value="" Placeholder="Name" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domaintype-1} type="text" name="attr_spellclass-1-domaintype-1" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domain-1} type="text" name="attr_spellclass-1-domain-1" value="" Placeholder="Name" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domaintype-2} type="text" name="attr_spellclass-1-domaintype-2" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-domain-2} type="text" name="attr_spellclass-1-domain-2" value="" Placeholder="Name" /></span>
+                        </div>
+                    </div>
+                    <div class="sheet-table sheet-sect">
+                        <span class="sheet-table-name">Opposition</span>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-header">Name</span><span class="sheet-table-header">Effect</span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositionschool-0} type="text" name="attr_spellclass-1-oppositionschool-0" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositioneffect-0} type="text" name="attr_spellclass-1-oppositioneffect-0" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositionschool-1} type="text" name="attr_spellclass-1-oppositionschool-1" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositioneffect-1} type="text" name="attr_spellclass-1-oppositioneffect-1" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositionschool-2} type="text" name="attr_spellclass-1-oppositionschool-2" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-1-oppositioneffect-2} type="text" name="attr_spellclass-1-oppositioneffect-2" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                    </div>
+
+                </div>
                 <div>
                     <b>Spells Per Day</b>
                     <input type="checkbox" class="sheet-sect-show" title="@{spellsPerDay-1-show}" name="attr_spellsPerDay-1-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
@@ -7725,47 +7735,47 @@
                         <span class="sheet-table-data sheet-center"><input title="@{Concentration-2-def}" type="number" name="attr_Concentration-2-def" value="0" /></span>
                     </div>
                 </div>
-				<div class="sheet-table" style="margin-top:4px" >
-					<b>Domains / SubDomains / Bloodlines / Patrons / Schools</b>
-					<input type="checkbox" class="sheet-sect-show" title="@{domains-2-show}" name="attr_domains-2-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
-					<div class="sheet-table sheet-sect">
-						<span class="sheet-table-name">Known / Specialities</span>
-						<div class="sheet-table-row">
-							<span class="sheet-table-header">Type</span><span class="sheet-table-header">Name</span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domaintype-0} type="text" name="attr_spellclass-2-domaintype-0" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domain-0} type="text" name="attr_spellclass-2-domain-0" value="" Placeholder="Name" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domaintype-1} type="text" name="attr_spellclass-2-domaintype-1" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domain-1} type="text" name="attr_spellclass-2-domain-1" value="" Placeholder="Name" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domaintype-2} type="text" name="attr_spellclass-2-domaintype-2" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domain-2} type="text" name="attr_spellclass-2-domain-2" value="" Placeholder="Name" /></span>
-						</div>
-					</div>
-					<div class="sheet-table sheet-sect">
-						<span class="sheet-table-name">Opposition</span>
-						<div class="sheet-table-row">
-							<span class="sheet-table-header">Name</span><span class="sheet-table-header">Effect</span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositionschool-0} type="text" name="attr_spellclass-2-oppositionschool-0" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositioneffect-0} type="text" name="attr_spellclass-2-oppositioneffect-0" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositionschool-1} type="text" name="attr_spellclass-2-oppositionschool-1" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositioneffect-1} type="text" name="attr_spellclass-2-oppositioneffect-1" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositionschool-2} type="text" name="attr_spellclass-2-oppositionschool-2" value="" Placeholder="Name" /></span>
-							<span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositioneffect-2} type="text" name="attr_spellclass-2-oppositioneffect-2" value="" Placeholder="Cost double or prohibited" /></span>
-						</div>
-					</div>
-					
-				</div>
+                <div class="sheet-table" style="margin-top:4px">
+                    <b>Domains / SubDomains / Bloodlines / Patrons / Schools</b>
+                    <input type="checkbox" class="sheet-sect-show" title="@{domains-2-show}" name="attr_domains-2-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
+                    <div class="sheet-table sheet-sect">
+                        <span class="sheet-table-name">Known / Specialities</span>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-header">Type</span><span class="sheet-table-header">Name</span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domaintype-0} type="text" name="attr_spellclass-2-domaintype-0" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domain-0} type="text" name="attr_spellclass-2-domain-0" value="" Placeholder="Name" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domaintype-1} type="text" name="attr_spellclass-2-domaintype-1" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domain-1} type="text" name="attr_spellclass-2-domain-1" value="" Placeholder="Name" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domaintype-2} type="text" name="attr_spellclass-2-domaintype-2" value="" Placeholder="(Sub)Domain/School/Bloodline/Patron" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-domain-2} type="text" name="attr_spellclass-2-domain-2" value="" Placeholder="Name" /></span>
+                        </div>
+                    </div>
+                    <div class="sheet-table sheet-sect">
+                        <span class="sheet-table-name">Opposition</span>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-header">Name</span><span class="sheet-table-header">Effect</span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositionschool-0} type="text" name="attr_spellclass-2-oppositionschool-0" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositioneffect-0} type="text" name="attr_spellclass-2-oppositioneffect-0" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositionschool-1} type="text" name="attr_spellclass-2-oppositionschool-1" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositioneffect-1} type="text" name="attr_spellclass-2-oppositioneffect-1" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                        <div class="sheet-table-row">
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositionschool-2} type="text" name="attr_spellclass-2-oppositionschool-2" value="" Placeholder="Name" /></span>
+                            <span class="sheet-table-data sheet-left sheet-entry-wide"><input title="@{spellclass-2-oppositioneffect-2} type="text" name="attr_spellclass-2-oppositioneffect-2" value="" Placeholder="Cost double or prohibited" /></span>
+                        </div>
+                    </div>
+
+                </div>
                 <div>
                     <b>Spells Per Day</b>
                     <input type="checkbox" class="sheet-sect-show" title="@{spellsPerDay-2-show}" name="attr_spellsPerDay-2-show" value="1" style="opacity: 0;width: 125px; height: 1.5em; position: relative; top: 0; left: 0;margin: 0 -15px 0 -110px; cursor: pointer; z-index: 1" checked="checked" /><span></span>
@@ -7968,7 +7978,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-0-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-0-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-0-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-0-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-0-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -8111,7 +8121,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-1-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-1-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-1-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-1-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-1-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -8254,7 +8264,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-2-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-2-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-2-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-2-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-2-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -8397,7 +8407,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-3-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-3-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-3-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-3-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-3-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -8540,7 +8550,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-4-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-4-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-4-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-4-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-4-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -8683,7 +8693,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-5-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-5-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-5-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-5-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-5-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -8826,7 +8836,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-6-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-6-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-6-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-6-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-6-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -8969,7 +8979,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-7-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-7-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-7-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-7-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-7-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -9112,7 +9122,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-8-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-8-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-8-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-8-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-8-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -9255,7 +9265,7 @@
                     </div>
                     <div class="sheet-repeating-fields">
                         <fieldset class="repeating_lvl-9-spells">
-                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-9-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0 ; height: 1.5em ; position: absolute; top: 20px; width: 3.5% ; cursor: pointer ; z-index: 1" checked="checked" />
+                            <input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_lvl-9-spells_$X_spells-show}" name="attr_spells-show" value="1" style="opacity: 0;height: 1.5em;position: absolute;top: 20px;width: 2.75%;min-width: 3em;cursor: pointer;z-index: 1;" checked="checked" />
                             <span class="sheet-table-data sheet-center" style="width:4%;"></span>
                             <span class="sheet-table-data sheet-center sheet-small-label" style="width:5%;"><button type="roll" name="attr_roll" title="%{selected|repeating_lvl-9-spells_$X_roll}" value="@{macro-text}"></button></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{repeating_lvl-9-spells_$X_used}" type="number" name="attr_used" value="0" placeholder="Number Prepared"><br>Prepped</span>
@@ -9438,6 +9448,13 @@
             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{CMD-size}" type="number" name="attr_CMD-size" value="0" class="sheet-calc" readonly="readonly" hidden /><br>Size-CMD</span>
             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{size_skill}" type="number" name="attr_size_skill" value="0" class="sheet-calc" readonly="readonly" hidden /><br>Size-Skills</span>
             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{size_skill_double}" type="number" name="attr_size_skill_double" value="0" class="sheet-calc" readonly="readonly" hidden /><br>Size-Skills x2</span>
+            <span class="sheet-table-data sheet-center sheet-small-label" style="width:10%;" title="How many legs the character has. Affects carrying capacity">
+                <select title="@{legs}" name="attr_legs">
+                    <option value="2" selected>&#8226;Bipedal</option>
+                    <option value="4">Quadruped</option>
+                </select>
+                <br>Legs
+            </span>
             <span class="sheet-table-data sheet-center sheet-small-label" style="width:15%;"><input title="@{deity}" type="text" name="attr_deity" placeholder="Deity" /><br>Deity</span>
             <span class="sheet-table-data sheet-center sheet-small-label" style="width:15%;"><input title="@{homeland}" type="text" name="attr_homeland" placeholder="Homeland" /><br>Homeland</span>
             <span class="sheet-table-data sheet-center sheet-small-label" style="width:15%;"><input title="@{occupation}" type="text" name="attr_occupation" placeholder="Occupation" /><br>Occupation</span>
@@ -11147,10 +11164,10 @@
 <div class="sheet-footer">
     <div class="sheet-table">
         <div class="sheet-table-row">
-			<span class="sheet-table-data sheet-center">Created by Samuel Marino w/contributions by Vince, Chris Buchholz, Magik | Last updated: <i>02.20.16'&nbsp;&nbsp;</i>v.<input type="text" style="width:2.5em; height:1.4em; vertical-align:top; padding:0px 2px 0px 2px; border:none;" name="attr_PFSheet_Version" value="0" class="sheet-calc" readonly="readonly" title="A non-blank version indicates attributes have been successfully recalculated."></span>
+            <span class="sheet-table-data sheet-center">Created by Samuel Marino w/contributions by Vince, Chris Buchholz, Magik | Last updated: <i>02.22.16'&nbsp;&nbsp;</i>v.<input type="text" style="width:2.5em; height:1.4em; vertical-align:top; padding:0px 2px 0px 2px; border:none;" name="attr_PFSheet_Version" value="0" class="sheet-calc" readonly="readonly" title="A non-blank version indicates attributes have been successfully recalculated."></span>
         </div>
         <div class="sheet-table-row">
-            <span class="sheet-table-data sheet-center">Questions/Feedback?:<input type="text" style="width:75%; border:none; cursor:help; height:1.4em;" value="https://app.roll20.net/forum/post/2788628/pf-pathfinder-sheet-thread-5/?pageforid=2788628#post-2788628" /></span>
+            <span class="sheet-table-data sheet-center">Questions/Feedback?:<input type="text" style="width:50%; border:none; cursor:help; height:1.4em;" value="https://app.roll20.net/forum/post/2788628/pf-pathfinder-sheet-thread-5/?pageforid=2788628#post-2788628" /></span>
         </div>
     </div>
 </div>
@@ -11652,7 +11669,6 @@
         </table>
     </rolltemplate>
 </div>
-
 <script type="text/worker">
 //var getSectionIDs=function(){};
 //var getAttrs=function(){};
@@ -12308,20 +12324,20 @@ var ExExp = ExExp || (function () {
         var ARG_COUNTS = { 'abs': 1, 'ceil': 1, 'floor': 1, 'round': 1, 'max': [1], 'min': [1] };
         var BINARY_PRECEDENCE = {
             '?': 1, ':': 2, '||': 3, '&&': 4, '|': 5, '^': 6
-		, '&': 7, '=': 8, '==': 8, '!=': 8, '>=': 9, '>': 9
-		, '<': 9, '<=': 9, '<<': 10, '>>': 10, '+': 11, '-': 11
-		, '*': 12, '/': 12, '%': 12
-		, '**': 14
-		, 't': 98, 'd': 99
+		    , '&': 7, '=': 8, '==': 8, '!=': 8, '>=': 9, '>': 9
+		    , '<': 9, '<=': 9, '<<': 10, '>>': 10, '+': 11, '-': 11
+		    , '*': 12, '/': 12, '%': 12
+		    , '**': 14
+		    , 't': 98, 'd': 99
         };
         var UNARY_PRECEDENCE = {
             '!': 13
-		, '~': 13
-		, '-': 13
+		    , '~': 13
+		    , '-': 13
         };
         var CLOSERS = {
             '(': ")"
-		, '{': "}"
+		    , '{': "}"
         };
 
         // local variables
@@ -12338,8 +12354,8 @@ var ExExp = ExExp || (function () {
             function retVal(tokType, matchObj) {
                 return {
                     'type': tokType
-				, 'text': matchObj[0]
-				, 'match': matchObj
+			        , 'text': matchObj[0]
+			        , 'match': matchObj
                 };
             }
 
@@ -12390,7 +12406,7 @@ var ExExp = ExExp || (function () {
 
             return {
                 'type': "raw"
-			, 'text': s.charAt(0)
+			    , 'text': s.charAt(0)
             };
         }
 
@@ -12419,14 +12435,14 @@ var ExExp = ExExp || (function () {
             // unescape string to be returned
             function replaceEscapes(s) {
                 return s.replace(/\\n/g, "\n")
-				.replace(/\\r/g, "\r")
-				.replace(/\\t/g, "\t")
-				.replace(/\\/g, "");
+				    .replace(/\\r/g, "\r")
+				    .replace(/\\t/g, "\t")
+				    .replace(/\\/g, "");
             }
             var retval = state.s.substring(0, i)
-			.split("\\\\")
-			.map(replaceEscapes)
-			.join("\\");
+			    .split("\\\\")
+			    .map(replaceEscapes)
+			    .join("\\");
             // point state delim, then pop off the delimiter token
             state.s = state.s.substring(i);
             popToken(state);
@@ -12439,9 +12455,9 @@ var ExExp = ExExp || (function () {
             if (op.unary) {
                 operands.push({
                     'type': (op.type === "baseoperator" ? "unop" : "unopex")
-				, 'datatype': right.datatype
-				, 'operator': op.text
-				, 'operand': right
+				    , 'datatype': right.datatype
+				    , 'operator': op.text
+				    , 'operand': right
                 });
                 return;
             }
@@ -12457,12 +12473,12 @@ var ExExp = ExExp || (function () {
                 }
                 operands.push({
                     'type': (op.type === "baseoperator" ? "binop" : "binopex")
-				, 'datatype': datatype
-				, 'operator': op.text
-				, 'left': left
-				, 'right': right
-				, 'mods': op.mods
-				, 'label': op.label
+				    , 'datatype': datatype
+				    , 'operator': op.text
+				    , 'left': left
+				    , 'right': right
+				    , 'mods': op.mods
+				    , 'label': op.label
                 });
                 return;
             }
@@ -12473,10 +12489,10 @@ var ExExp = ExExp || (function () {
             var cond = operands.pop();
             operands.push({
                 'type': "cond"
-			, 'cond': cond
-			, 'left': left
-			, 'right': right
-			, 'datatype': (left.datatype === right.datatype ? left.datatype : undefined)
+			    , 'cond': cond
+			    , 'left': left
+			    , 'right': right
+			    , 'datatype': (left.datatype === right.datatype ? left.datatype : undefined)
             });
         }
 
@@ -13270,8 +13286,8 @@ handleExpression = function (msg) {
 var SWUtils = SWUtils || (function () {
 
     /*no macro calls, dropdowns, or keep  highest/lowest more than 1
-	* currently support floor, abs, kh1, kl1 , also extended: ceil, round, max, min
-	*/
+	 * currently support floor, abs, kh1, kl1 , also extended: ceil, round, max, min
+	 */
     var validNumericStr = function (preeval) {
         var anyIllegal = preeval.match(/\||\?|&|\{|\}|k[h,l][^1]/);
         if (anyIllegal) {
@@ -13347,10 +13363,10 @@ var SWUtils = SWUtils || (function () {
 	},
 
 	/* evaluateExpression
-	*  reads in the string, evalutates it until we find a number, then passes that numbe to the callback.
-	*  @exprStr= A string containing a mathematical expression, possibly containing references to fields such as @{myfield}
-	*  @callback = a function taking one parameter, either a number or empty string .
-	*/
+	 *  reads in the string, evalutates it until we find a number, then passes that numbe to the callback.
+	 *  @exprStr= A string containing a mathematical expression, possibly containing references to fields such as @{myfield}
+	 *  @callback = a function taking one parameter, either a number or empty string .
+	 */
 	evaluateExpression = function (exprStr, callback) {
 	    if (typeof callback !== "function") {
 	        return;
@@ -13387,7 +13403,7 @@ var SWUtils = SWUtils || (function () {
 	 * @readField = the field that contains the string to evaluate, like a field containing a macro
 	 * @writeField = the field to write the evaluated value of readField to
 	 * @ensureValidExpr = the field should POTENTIALLY be evalauable to a number, it does not have to finish the evaluation,
-	*/
+	 */
 	evaluateAndSetString = function (readField, writeField, ensureValidExpr) {
 	    if (!writeField || !readField) {
 	        return;
@@ -13404,20 +13420,20 @@ var SWUtils = SWUtils || (function () {
 	},
 
 	/* evaluateAndSetNumber
-	* Examines the string in readField, and tests to see if it is a number
-	* if it's a number immediately write it to writeField.
-	* if not, then replace any @{field} references with numbers, and then evaluate it
-	* as a mathematical expression till we find a number.
-	*
-	* note this is NOT recursive, you can't point one field of
-	*
-	* @readField {string}= field to read containing string to parse
-	* @writeField {string}= field to write to
-	* @dontForceOnBlank {boolean}= False (default): if writeField is empty overwrite no matter what,
-	*               True: if writeField empty, then write only if readField evaluates to other than defaultVal||0.
-	* @defaultVal {number}= optional, default to set if we cannot evaluate the field. If none set to 0.
-	*
-	*/
+	 * Examines the string in readField, and tests to see if it is a number
+	 * if it's a number immediately write it to writeField.
+	 * if not, then replace any @{field} references with numbers, and then evaluate it
+	 * as a mathematical expression till we find a number.
+	 *
+	 * note this is NOT recursive, you can't point one field of
+	 *
+	 * @readField {string}= field to read containing string to parse
+	 * @writeField {string}= field to write to
+	 * @dontForceOnBlank {boolean}= False (default): if writeField is empty overwrite no matter what,
+	 *               True: if writeField empty, then write only if readField evaluates to other than defaultVal||0.
+	 * @defaultVal {number}= optional, default to set if we cannot evaluate the field. If none set to 0.
+	 *
+	 */
 	evaluateAndSetNumber = function (readField, writeField, dontForceOnBlank, defaultVal) {
 	    //console.log("EEEE at evaluateAndSetNumber read:"+readField+", write:"+writeField+", dontforce:"+dontForceOnBlank+", default:"+defaultVal);
 	    getAttrs([readField, writeField], function (values) {
@@ -13637,7 +13653,7 @@ var PFSheet = PFSheet || (function () {
 	 *
 	 * @str = the value of the damage ability
 	 * @returns = a number indicating the multiplier for the ability mod
-	*/
+	 */
 	findMultiplier = function (str) {
 	    var retNum;
 	    if (!str) { return 0; }
@@ -13652,13 +13668,13 @@ var PFSheet = PFSheet || (function () {
 	},
 
 	/* updateRowTotal
-	* Adds up numbers and puts it in the first field of the fields array.
-	* All numbers are added up as FLOATS, and then FLOOR is used to round the sum down
-	* @fields {Array}= array of field names, first element (fields[0]) MUST be the total field , rest are the fields to add up.
-	* Updates total field if the total is not the same as the number in the total, or if the current value is not a number.
-	* @bonus {number} = a number that is added
-	* @penalties {Array} = array of fieldnames to be subtracted from the total.
-	*/
+	 * Adds up numbers and puts it in the first field of the fields array.
+	 * All numbers are added up as FLOATS, and then FLOOR is used to round the sum down
+	 * @fields {Array}= array of field names, first element (fields[0]) MUST be the total field , rest are the fields to add up.
+	 * Updates total field if the total is not the same as the number in the total, or if the current value is not a number.
+	 * @bonus {number} = a number that is added
+	 * @penalties {Array} = array of fieldnames to be subtracted from the total.
+	 */
 	updateRowTotal = function (fields, bonus, penalties) {
 	    var readFields = fields;
 	    if (!fields || fields.length === 0) { return; }
@@ -13734,7 +13750,7 @@ var PFSheet = PFSheet || (function () {
 
 	/****************************************** REPEATING SECTION SUPPORT *****************/
 	/* if id is not empty, then returns the ID with an underscore on the right.
-	*/
+	 */
 	getRepeatingIDStr = function (id) {
 	    var idStr = "";
 	    if (id) { idStr = id + "_"; }
@@ -13759,11 +13775,11 @@ var PFSheet = PFSheet || (function () {
 	},
 
 	/* 	setRepeatingRowDefaultFields
-	*	Sets the ID for a row if the newflag is not set to 1.
-	* @section {string} the fieldset name after "section_"
-	* @id {string} the id ofthe row
-	* @forceReset {forceReset} = if true set the ID even if new_flag is not set.
-	*/
+	 *	Sets the ID for a row if the newflag is not set to 1.
+	 * @section {string} the fieldset name after "section_"
+	 * @id {string} the id ofthe row
+	 * @forceReset {forceReset} = if true set the ID even if new_flag is not set.
+	 */
 	setRepeatingRowDefaultFields = function (section, id, forceReset) {
 	    var newflag = "repeating_" + section + "_" + id + "_new_flag",
 		rowid = "repeating_" + section + "_" + id + "_row_id",
@@ -13779,10 +13795,10 @@ var PFSheet = PFSheet || (function () {
 	},
 
 	/* handleRepeatingRowOrdering
-	*  sets the ID fields and new_flag fields for all rows in the section
-	* @section {string} = the fieldset name after "section_"
-	* @forceReset {forceReset} = if true set the ID even if new_flag is not set.
-	*/
+	 *  sets the ID fields and new_flag fields for all rows in the section
+	 * @section {string} = the fieldset name after "section_"
+	 * @forceReset {forceReset} = if true set the ID even if new_flag is not set.
+	 */
 	handleRepeatingRowOrdering = function (section, forceReset) {
 	    getSectionIDs("repeating_" + section, function (ids) {
 	        ids.forEach(function (id, index) {
@@ -13797,11 +13813,11 @@ var PFSheet = PFSheet || (function () {
 
 
 	/*checkIsNewRow - updates new_flag and id for a row. if a spell row calls updateSpell
-	* Within row context of a repeating section item,
-	* if _new_flag is blank or 0 then call handleRepeatingRowOrdering
-	* @section {string} = the name of the repeating section that appears after "repeating_"
-	* @eventinfo = from the event that launched this
-	*/
+	 * Within row context of a repeating section item,
+	 * if _new_flag is blank or 0 then call handleRepeatingRowOrdering
+	 * @section {string} = the name of the repeating section that appears after "repeating_"
+	 * @eventinfo = from the event that launched this
+	 */
 	checkIsNewRow = function (section, eventInfo) {
 	    if (!section || !eventInfo) { return; }
 	    //console.log("checkIsNewRow: event:"+eventInfo.sourceAttribute);
@@ -13824,8 +13840,8 @@ var PFSheet = PFSheet || (function () {
 
 	/*************************************   MULTI PAGE ****************************************/
 	/*updateSize
-	* When size attribute is changed, update CMD-size, size_display, size_skill, size_skill_double
-	*/
+	 * When size attribute is changed, update CMD-size, size_display, size_skill, size_skill_double
+	 */
 	updateSize = function () {
 	    getAttrs(["size"], function (v) {
 	        var size = parseInt(v.size, 10) || 0,
@@ -13848,9 +13864,9 @@ var PFSheet = PFSheet || (function () {
 
 
 	/* updateConditionCheckPenalty - handles changes to skill and ability checks due to conditions AND buffs.
-	* Reads in condition that affect Ability and Skill checks and updates condition fields.
-	* checks-cond, Phys-skills-cond, Perception-cond.
-	*/
+	 * Reads in condition that affect Ability and Skill checks and updates condition fields.
+	 * checks-cond, Phys-skills-cond, Perception-cond.
+	 */
 	updateConditionCheckPenalty = function () {
 	    //console.log("CCCCCCCCCCCCCCCCCCCCCCCCCCCC at updateConditionCheckPenalty");
 	    getAttrs(["condition-Blinded", "condition-Fear", "condition-Drained", "condition-Sickened", "condition-Wounds"
@@ -13933,8 +13949,8 @@ var PFSheet = PFSheet || (function () {
 
 
 	/* updateConditionAbilityPenalty - for ability penalties, not "ability check" penalites
-	* Sets DEX-cond and STR-cond for fatigued, entangled, and grappled
-	*/
+	 * Sets DEX-cond and STR-cond for fatigued, entangled, and grappled
+	 */
 	updateConditionAbilityPenalty = function () {
 	    getAttrs(["STR-cond", "DEX-cond", "condition-Fatigued", "condition-Entangled", "condition-Grappled"], function (v) {
 	        var setter = {}, setAny = 0
@@ -13981,7 +13997,7 @@ var PFSheet = PFSheet || (function () {
 	 * If toggled off, then sets all to zero.  If toggled on, then sets non-zero buffs to proper value.
 	 *
 	 * @row {number} The buff row toggled (X in buffX_Toggle )
-	  */
+	 */
 	updateBuffRow = function (row) {
 	    var toggle = "buff" + row + "_Toggle"
 		, buffFlds = ["buff" + row + "_Melee", "buff" + row + "_Ranged", "buff" + row + "_DMG", "buff" + row + "_AC", "buff" + row + "_HP-temp", "buff" + row + "_Fort",
@@ -14054,24 +14070,59 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
+    /* updateModifiedSpeed
+     * updates the modified speed and run values
+     *
+     */
+    updateModifiedSpeed = function () {
+        getAttrs(["current-load", "speed-base", "speed-modified", "speed-run", "load-heavy", "carried-total"], function (v) {
+            var currMod = parseInt(v["speed-modified"], 10) || 0,
+            currRun = parseInt(v["speed-run"], 10) || 0,
+            load = parseInt(v["current-load"], 10) || 0,
+            base = parseInt(v["speed-base"], 10) || 0,
+            heavy = parseInt(v["load-heavy"], 10) || 0,
+            carried = parseInt(v["carried-total"], 10) || 0;
+            //console.log("speed-modified=" + currMod + ", speed-run=" + currRun + ", current-load=" + load + ", speed-base=" + base + ", load-heavy=" + heavy + ", carried-total=" + carried);
+            var newSpeed, newRun;
+            if (load > 0) { //Medium Or Heavy load
+                if (carried > heavy) {
+                    newSpeed = 5;
+                    newRun = 5;
+                } else {
+                    if (base <= 5) { newSpeed = 5; }
+                    else if (base % 15 == 0) { newSpeed = base * 2 / 3; }
+                    else if ((base + 5) % 15 == 0) { newSpeed = (base + 5) * 2 / 3; }
+                    else { newSpeed = ((base + 10) * 2 / 3) - 5; }
 
-	/* updateGrapple
-	* Ensures Grapple and Pin are mutually exclusive
-	*/
-	updateGrapple = function () {
-	    getAttrs(["condition-Pinned", "condition-Grappled"], function (values) {
-	        if (values["condition-Pinned"] !== "0" && values["condition-Grappled"] !== "0") {
-	            setAttrs({ "condition-Pinned": "0" });
-	        } else {
-	            //user hit either pinned and it undid grapple, or hit grapple first time.
-	            updateConditionAbilityPenalty();
-	        }
-	    });
-	},
+                    if (load > 1) { newRun = newSpeed * 3; } //Heavy load
+                    else { newRun = newSpeed * 4; } //Medium load
+                }
+            } else { //Light load
+                newSpeed = base;
+                newRun = base * 4;
+            }
+            if (currMod !== newSpeed) { setAttrs({ "speed-modified": newSpeed }); }
+            if (currRun !== newRun) { setAttrs({ "speed-run": newRun }); }
+        });
+    }
 
-	/* updatePin
-	* Ensures Grapple and Pin are mutually exclusive
-	*/
+    /* updateGrapple
+	 * Ensures Grapple and Pin are mutually exclusive
+	 */
+    updateGrapple = function () {
+        getAttrs(["condition-Pinned", "condition-Grappled"], function (values) {
+            if (values["condition-Pinned"] !== "0" && values["condition-Grappled"] !== "0") {
+                setAttrs({ "condition-Pinned": "0" });
+            } else {
+                //user hit either pinned and it undid grapple, or hit grapple first time.
+                updateConditionAbilityPenalty();
+            }
+        });
+    },
+
+    /* updatePin
+	 * Ensures Grapple and Pin are mutually exclusive
+	 */
 	updatePin = function () {
 	    getAttrs(["condition-Pinned", "condition-Grappled"], function (values) {
 	        if (values["condition-Pinned"] !== "0" && values["condition-Grappled"] !== "0") {
@@ -14084,7 +14135,7 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/* updateInit
+    /* updateInit
 	 * updates the init
 	 */
 	updateInit = function () {
@@ -14092,7 +14143,7 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/* updateHP
+    /* updateHP
 	 * sets max HP
 	 */
 	updateHP = function () {
@@ -14115,7 +14166,7 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateTempHP
+    /* updateTempHP
 	 * sets temp hp
 	 */
 	updateTempHP = function () {
@@ -14128,12 +14179,12 @@ var PFSheet = PFSheet || (function () {
 
 
 
-	/********************************* NPC PAGE  *********************************************/
+    /********************************* NPC PAGE  *********************************************/
 
-	/* updateNPCHP
-	* updates the NPC hp,
-	* also PC hp, if config page says to
-	*/
+    /* updateNPCHP
+	 * updates the NPC hp,
+	 * also PC hp, if config page says to
+	 */
 	updateNPCHP = function () {
 	    getAttrs(["NPC-HD", "NPC-HD-num", "NPC-HD2", "NPC-HD-num2", "NPC-HD-misc-mod", "NPC-HP_max", "NPC-HP", "sync_npc_pc_hp"], function (v) {
 	        var hp = Math.floor(((parseInt(v["NPC-HD"], 10) || 0) + 1) / 2 * (parseInt(v["NPC-HD-num"], 10) || 0))
@@ -14159,10 +14210,10 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/************************************* CLASS PAGE ***********************************/
+    /************************************* CLASS PAGE ***********************************/
 
 
-	/* updateClassInformation
+    /* updateClassInformation
 	 * Updates totals at bottom of Class Information grid
 	 *
 	 * @col the unique part of the string for the cell modified:
@@ -14216,12 +14267,12 @@ var PFSheet = PFSheet || (function () {
 	        });
 	    }
 	},
-	/******* MYTHIC ***************/
+    /******* MYTHIC ***************/
 
 
-	/* updateMythicPathInformation
-	* Updates total at bottom of Mythic Path Information grid
-	*/
+    /* updateMythicPathInformation
+	 * Updates total at bottom of Mythic Path Information grid
+	 */
 	updateMythicPathInformation = function () {
 	    getAttrs(["mythic-tier", "mythic-hp", "total-mythic-hp"], function (values) {
 	        var tot = (parseInt(values["mythic-tier"], 10) || 0) * (parseInt(values["mythic-hp"], 10) || 0),
@@ -14231,9 +14282,9 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateMythicPower
-	* sets max MP
-	*/
+    /* updateMythicPower
+	 * sets max MP
+	 */
 	updateMythicPower = function () {
 	    //console.log("entered updateMythicPower");
 	    getAttrs(["mythic-power_max", "tier-mythic-power", "misc-mythic-power"], function (values) {
@@ -14244,9 +14295,9 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateTierMythicPower
-	* sets tier mp
-	*/
+    /* updateTierMythicPower
+	 * sets tier mp
+	 */
 	updateTierMythicPower = function () {
 	    //console.log("entered updateTierMythicPower");
 	    getAttrs(["tier-mythic-power", "mythic-tier"], function (values) {
@@ -14258,16 +14309,16 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/************************************* DEFENSE PAGE ***********************************/
+    /************************************* DEFENSE PAGE ***********************************/
 
-	/*handleNonFFDefenseDropdown
-	* This handles the ability dropdown for AC and CMD. (except STR to CMD, just the "DEX" modifier)
-	* If the modifier is negative, then apply it to flat footed as well.
-	* @ddField {string} = field for ability dropdown
-	* @modField {string} = mod field containing value of ddField
-	* @ffField {string} = field for correlated flat footed ability dropdown
-	* @ffModField {string} = mod field containing value of ffField (to write to if modField is negative)
-	*/
+    /*handleNonFFDefenseDropdown
+	 * This handles the ability dropdown for AC and CMD. (except STR to CMD, just the "DEX" modifier)
+	 * If the modifier is negative, then apply it to flat footed as well.
+	 * @ddField {string} = field for ability dropdown
+	 * @modField {string} = mod field containing value of ddField
+	 * @ffField {string} = field for correlated flat footed ability dropdown
+	 * @ffModField {string} = mod field containing value of ffField (to write to if modField is negative)
+	 */
 	handleNonFFDefenseDropdown = function (ddField, modField, ffField, ffModField) {
 	    console.log("at handleNonFFDefenseDropdown");
 	    handleDropdown(ddField, modField, function (dexmod, oldmod) {
@@ -14282,18 +14333,18 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/*handleDefenseDropdown
-	* All dropdowns in the defense grid: AC, flat footed AC, touch, CMD, flat footed CMD.
-	* it calls handleNonFFDefenseDropdown for the 3 non flat footed
-	* otherwise it just calles handleDropdown directly.
-	*
-	* NOTE: due to the way eventInfo.sourceAttribute is populated if the change comes from the autocalc code, the value is
-	* lower case, so you must check either BOTH the regular and all lowercase, or just change it to lower case before comparing to be sure
-	*
-	* @dropdownField {string} = fieldname of dropdown, FROM eventInfo.sourceAttribute
-	*/
+    /*handleDefenseDropdown
+	 * All dropdowns in the defense grid: AC, flat footed AC, touch, CMD, flat footed CMD.
+	 * it calls handleNonFFDefenseDropdown for the 3 non flat footed
+	 * otherwise it just calles handleDropdown directly.
+	 *
+	 * NOTE: due to the way eventInfo.sourceAttribute is populated if the change comes from the autocalc code, the value is
+	 * lower case, so you must check either BOTH the regular and all lowercase, or just change it to lower case before comparing to be sure
+	 *
+	 * @dropdownField {string} = fieldname of dropdown, FROM eventInfo.sourceAttribute
+	 */
 	handleDefenseDropdown = function (dropdownField) {
-	    console.log("at handleDefenseDropdown:" + ability);
+	    console.log("at handleDefenseDropdown:" + dropdownField);
 	    switch (dropdownField) {
 	        case "CMD-ability1":
 	        case "cmd-ability1":
@@ -14318,12 +14369,10 @@ var PFSheet = PFSheet || (function () {
 	    }
 	},
 
-
-
-	/*updateConditionDefensePenalty
-	* Updates the AC-penalty and CMD-penalty field based on conditions
-	*only difference is CMD penalty affected by energy drain for some reason
-	*/
+    /*updateConditionDefensePenalty
+	 * Updates the AC-penalty and CMD-penalty field based on conditions
+	 *only difference is CMD penalty affected by energy drain for some reason
+	 */
 	updateConditionDefensePenalty = function (eventInfo) {
 	    if (!(eventInfo && eventInfo.sourceAttribute === "condition-Drained")) {
 	        updateRowTotal(["AC-penalty"], 0, ["condition-Blinded", "condition-Cowering", "condition-Stunned"
@@ -14333,14 +14382,13 @@ var PFSheet = PFSheet || (function () {
 		, "condition-Flat-Footed", "condition-Pinned", "condition-Wounds"]);
 	},
 
-
-	/* updateDefenses
+    /* updateDefenses
 	 * updates the top grid of AC, Touch AC, Flat Footed AC, CMD, Flat Footed CMD
 	 * http://paizo.com/pathfinderRPG/prd/coreRulebook/combat.html#combat-maneuver-defense
 	 * A creature can also add any circumstance, deflection, dodge, insight, luck, morale, profane, and sacred bonuses to AC to its CMD.
 	 * Any penalties to a creature's AC also apply to its CMD
 	 *
-	  */
+	 */
 	updateDefenses = function (eventInfo) {
 	    getAttrs(["condition-Flat-Footed", "AC-ability-mod", "FF-DEX", "AC-penalty", "CMD-penalty", "size", "max-dex",
 			"AC-dodge", "AC-natural", "AC-deflect", "AC-misc", "buff_AC-total", "buff_Touch-total", "buff_CMD-total",
@@ -14435,8 +14483,7 @@ var PFSheet = PFSheet || (function () {
 			});
 	},
 
-
-	/*updateArmor
+    /*updateArmor
 	 * updates total AC and penalty and max dex
 	 * if not proficient sets attack penalty
 	 * for backward compatiblity, proficiency is string and 0 is proficient, anything else non proficient
@@ -14567,9 +14614,9 @@ var PFSheet = PFSheet || (function () {
 		 });
 	},
 
-	/*updateConditionsSavePenalty
-	*  applies conditions to saves.
-	*/
+    /*updateConditionsSavePenalty
+	 *  applies conditions to saves.
+	 */
 	updateConditionsSavePenalty = function () {
 	    getAttrs(["condition-Fear", "condition-Sickened", "condition-Drained", "condition-Wounds", "saves-cond"], function (v) {
 	        var fear = parseInt(v["condition-Fear"], 10) || 0,
@@ -14584,30 +14631,30 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateSave
-	* updates the saves for a character
-	* @save = type of save: Fort, Ref, Will  (first character capitalized)
-	*/
+    /* updateSave
+	 * updates the saves for a character
+	 * @save = type of save: Fort, Ref, Will  (first character capitalized)
+	 */
 	updateSave = function (save) {
 	    var getFields = [save, "total-" + save, save + "-ability-mod", save + "-trait", save + "-enhance", save + "-resist", save + "-misc", "saves-cond", "buff_" + save + "-total"];
 	    updateRowTotal(getFields);
 	},
 
 
-	/************************************* ATTACKS PAGE ***********************************/
+    /************************************* ATTACKS PAGE ***********************************/
 
-	/********* TOP GRID **********/
+    /********* TOP GRID **********/
 	attackGridFields = {
 	    "melee": { "size": "size", "atk": "attk-melee", "buff": "buff_Melee-total", "abilityMod": "melee-ability-mod", "misc": "attk-melee-misc" }
 		, "ranged": { "size": "size", "atk": "attk-ranged", "buff": "buff_Ranged-total", "abilityMod": "ranged-ability-mod", "misc": "attk-ranged-misc" }
 		, "CMB": { "size": "CMD-size", "atk": "CMB", "buff": "buff_Melee-total", "abilityMod": "CMB-ability-mod", "misc": "attk-CMB-misc" }
 	},
 
-	/* updates notes for damage row of grid
-	* sets reminder on @{DMG-cnote} to increase the damage die if size changes.
-	* CB: DO WE REALLY NEED THIS? IT DOESN'T GET REMOVED IF THEY DO SO IT"S PRETTY USLESS
-	* Plus it's not even in the rolltable. so safe to remove :)
-	*/
+    /* updates notes for damage row of grid
+	 * sets reminder on @{DMG-cnote} to increase the damage die if size changes.
+	 * CB: DO WE REALLY NEED THIS? IT DOESN'T GET REMOVED IF THEY DO SO IT"S PRETTY USLESS
+	 * Plus it's not even in the rolltable. so safe to remove :)
+	 */
 	 updateDamageNote = function () {
 	     getAttrs(["size", "DMG-cnote"], function (v) {
 	         var size = (parseInt(v["size"], 10) || 0),
@@ -14623,14 +14670,14 @@ var PFSheet = PFSheet || (function () {
 	     });
 	 },
 
-	 /* updateDamage - conditions and buffs
-	  * calculates damage mod in top grid
-	*/
+    /* updateDamage - conditions and buffs
+     * calculates damage mod in top grid
+     */
 	 updateDamage = function () {
 	     updateRowTotal(["DMG-mod", "buff_DMG-total"], 0, ["condition-Sickened"]);
 	 },
 
-	/* updateConditionAttackPenalty
+    /* updateConditionAttackPenalty
 	 *
 	 * updates the attk-penalty for attacks based on conditions (including wearing armor you are not proficient in)
 	 */
@@ -14642,8 +14689,8 @@ var PFSheet = PFSheet || (function () {
 	    updateRowTotal(adds, 0, subtracts);
 	},
 
-	/* updates notes for attack grid
-	*/
+    /* updates notes for attack grid
+	 */
 	updateConditionAttackNote = function () {
 	    getAttrs(["condition-Grappled", "condition-Invisible"], function (v) {
 	        var setter = {}, setAny = 0, gnote, cnote;
@@ -14668,7 +14715,7 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/* updateAttack - updates one row of attack grid,
+    /* updateAttack - updates one row of attack grid,
 	 * Updates the attack type totals at top of attack page for one row of grid
 	 *
 	 * @attype = the type of attack: melee, ranged, CMB case sensitive
@@ -14684,9 +14731,9 @@ var PFSheet = PFSheet || (function () {
 			, attackGridFields[attype].size, attackGridFields[attype].buff]);
 	},
 
-	/****** Attack and Damge Effect section ********/
-	/* handles the attacks effects row
-	*/
+    /****** Attack and Damge Effect section ********/
+    /* handles the attacks effects row
+	 */
 	updateAttackEffectTotals = function () {
 	    getAttrs(["attk-effect-total",
 			"attk-effect_mod_1", "attk-effect_mod_1_Toggle", "attk-effect_mod_2", "attk-effect_mod_2_Toggle",
@@ -14706,8 +14753,8 @@ var PFSheet = PFSheet || (function () {
 			});
 	},
 
-	/* handles the damage effects row (separated just to speed up calculations)
-	*/
+    /* handles the damage effects row (separated just to speed up calculations)
+	 */
 	updateDMGEffectTotals = function () {
 	    getAttrs(["dmg-effect-total",
 			"dmg-effect_mod_1", "dmg-effect_mod_1_Toggle", "dmg-effect_mod_2", "dmg-effect_mod_2_Toggle",
@@ -14728,9 +14775,9 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/***********  REPEATING WEAPON FIELDSET *********/
-	/*handleRepeatingAttackDropdown
-	*/
+    /***********  REPEATING WEAPON FIELDSET *********/
+    /*handleRepeatingAttackDropdown
+	 */
 	handleRepeatingAttackDropdown = function (id, eventInfo) {
 	    var idStr = getRepeatingIDStr(id), prefix = "repeating_weapon_" + idStr;
 	    //console.log("TRACE:handleRepeatingAttackDropdown id:" + id+", eventInfo is");
@@ -14743,10 +14790,10 @@ var PFSheet = PFSheet || (function () {
 	    handleDropdown(prefix + "attack-type", prefix + "attack-type-mod");
 	},
 
-	/* handleRepeatingDamageDropdown
-	* this is a special case of dropdown, because it contains a possible multipler Damage ability dropdown.
-	* better to split this into two
-	*/
+    /* handleRepeatingDamageDropdown
+	 * this is a special case of dropdown, because it contains a possible multipler Damage ability dropdown.
+	 * better to split this into two
+	 */
 	handleRepeatingDamageDropdown = function (id) {
 	    var idStr = getRepeatingIDStr(id)
 		, readField = id ? "repeating_weapon_" + idStr + "damage-ability" : "repeating_weapon_damage-ability"
@@ -14773,12 +14820,12 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateRepeatingWeaponAttack - calculates total-attack
-	* also updates attk-effect-total-copy
-	* @id {string} optional = id of row, if blank we are within the context of the row
-	* @overrideAttr {string} optional = if we are passing in a value this is the fieldname after "repeating_weapon_"
-	* @overrideValue {number} optional = if overrideAttr then this should be a number usually int but it won't check
-	*/
+    /* updateRepeatingWeaponAttack - calculates total-attack
+	 * also updates attk-effect-total-copy
+	 * @id {string} optional = id of row, if blank we are within the context of the row
+	 * @overrideAttr {string} optional = if we are passing in a value this is the fieldname after "repeating_weapon_"
+	 * @overrideValue {number} optional = if overrideAttr then this should be a number usually int but it won't check
+	 */
 	updateRepeatingWeaponAttack = function (id, eventInfo) {
 	    //is it faster to not do the idstr each time? try it with ?:
 	    var idStr = getRepeatingIDStr(id)
@@ -14823,7 +14870,7 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* loops trough all rows and calls updateRepeatingWeaponAttack */
+    /* loops trough all rows and calls updateRepeatingWeaponAttack */
 	updateRepeatingWeaponAttacks = function (eventInfo) {
 	    getSectionIDs("repeating_weapon", function (ids) {
 	        ids.forEach(function (id, index) {
@@ -14836,9 +14883,9 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateRepeatingWeaponDamage - updates total-damage
-	* also updates  dmg-effect-total-copy and DMG-mod-copy
-	*/
+    /* updateRepeatingWeaponDamage - updates total-damage
+	 * also updates  dmg-effect-total-copy and DMG-mod-copy
+	 */
 	updateRepeatingWeaponDamage = function (id, eventInfo) {
 	    var idStr = getRepeatingIDStr(id),
 			maxname = "repeating_weapon_" + idStr + "damage-ability-max",
@@ -14875,7 +14922,7 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/*  loops trough all rows and calls updateRepeatingWeaponDamage */
+    /*  loops trough all rows and calls updateRepeatingWeaponDamage */
 	updateRepeatingWeaponDamages = function (fieldUpdated, value) {
 	    getSectionIDs("repeating_weapon", function (ids) {
 	        ids.forEach(function (id, index) {
@@ -14890,11 +14937,11 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/******************************************* SKILLS PAGE ********************************/
+    /******************************************* SKILLS PAGE ********************************/
 
-	/* updateMaxSkills Calculates maximum skill ranks. Minimum 1 per level.
-	*  divides by 2 if using consolidated skills
-	*/
+    /* updateMaxSkills Calculates maximum skill ranks. Minimum 1 per level.
+	 *  divides by 2 if using consolidated skills
+	 */
 	updateMaxSkills = function () {
 	    getAttrs(["total-skill", "total-fcskill", "INT-mod", "level", "Max-Skill-Ranks-mod", "Max-Skill-Ranks", "Max-Skill-Ranks-Misc2",
 			"unchained_skills-show", "BG-Skill-Use"], function (v) {
@@ -14927,9 +14974,9 @@ var PFSheet = PFSheet || (function () {
 	    "Fly": 1, "Stealth": 2
 	},
 
-	/* updates one  skill row
-	* @skill {string} skill to update, must have same capitalization as on html
-	*/
+    /* updates one  skill row
+	 * @skill {string} skill to update, must have same capitalization as on html
+	 */
 	updateSkill = function (skill) {
 	    var csNm = skill + "-cs",
 		ranksNm = skill + "-ranks",
@@ -15007,9 +15054,9 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/******** ITEMS PAGE ********/
+    /******** ITEMS PAGE ********/
 
-	/* updateWornEquipment
+    /* updateWornEquipment
 	 * updates the totals for worn equipment
 	 *
 	 * col can be: charges, weight, hardness, hp, hp_max, or value
@@ -15077,12 +15124,115 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
+	getCarryingCapacity = function (str, load) {
+	    var l, m, h;
+	    switch (str) {
+	        case 0: l = 0; m = 0; h = 0; break;
+	        case 1: l = 3; m = 6; h = 10; break;
+	        case 2: l = 6; m = 13; h = 20; break;
+	        case 3: l = 10; m = 20; h = 30; break;
+	        case 4: l = 13; m = 26; h = 40; break;
+	        case 5: l = 16; m = 33; h = 50; break;
+	        case 6: l = 20; m = 40; h = 60; break;
+	        case 7: l = 23; m = 46; h = 70; break;
+	        case 8: l = 26; m = 53; h = 80; break;
+	        case 9: l = 30; m = 60; h = 90; break;
+	        case 10: l = 33; m = 66; h = 100; break;
+	        case 11: l = 38; m = 76; h = 115; break;
+	        case 12: l = 43; m = 86; h = 130; break;
+	        case 13: l = 50; m = 100; h = 150; break;
+	        case 14: l = 58; m = 116; h = 175; break;
+	        case 15: l = 66; m = 133; h = 200; break;
+	        case 16: l = 76; m = 153; h = 230; break;
+	        case 17: l = 86; m = 173; h = 260; break;
+	        case 18: l = 100; m = 200; h = 300; break;
+	        case 19: l = 116; m = 233; h = 350; break;
+	        case 20: l = 133; m = 266; h = 400; break;
+	        case 21: l = 153; m = 306; h = 460; break;
+	        case 22: l = 173; m = 346; h = 520; break;
+	        case 23: l = 200; m = 400; h = 600; break;
+	        case 24: l = 233; m = 466; h = 700; break;
+	        case 25: l = 266; m = 533; h = 800; break;
+	        case 26: l = 306; m = 613; h = 920; break;
+	        case 27: l = 346; m = 693; h = 1040; break;
+	        case 28: l = 400; m = 800; h = 1200; break;
+	        case 29: l = 466; m = 933; h = 1400; break;
+	        default: l = getCarryingCapacity(str - 10, "light") * 4; m = getCarryingCapacity(str - 10, "medium") * 4; h = getCarryingCapacity(str - 10, "heavy") * 4; break;
+	    }
+	    if (load == "light") { return l; }
+	    else if (load == "medium") { return m; }
+	    else if (load == "heavy") { return h; }
+	},
 
-	/*******************************************  SPELL PAGE ***********************/
+    /* updateLoadsAndLift
+     * updates the load and lift numbers
+     *
+     */
+	updateLoadsAndLift = function () {
+	    getAttrs(["STR", "size", "legs", "load-light", "load-medium", "load-heavy", "lift-above-head", "lift-off-ground", "lift-drag-and-push", "load-str-bonus", "load-multiplier", "load-misc"], function (v) {
+	        var str = parseInt(v["STR"], 10) || 0,
+            size = parseInt(v["size"], 10) || 0,
+            legs = parseInt(v["legs"], 10) || 0,
+            light = parseInt(v["load-light"], 10) || 0,
+            medium = parseInt(v["load-medium"], 10) || 0,
+            heavy = parseInt(v["load-heavy"], 10) || 0,
+            abovehead = parseInt(v["lift-above-head"], 10) || 0,
+            offground = parseInt(v["lift-off-ground"], 10) || 0,
+            drag = parseInt(v["lift-drag-and-push"], 10) || 0,
+            strmod = parseInt(v["load-str-bonus"], 10) || 0,
+            loadmult = parseInt(v["load-multiplier"], 10) || 0,
+            misc = parseInt(v["load-misc"], 10) || 0;
+	        //console.log("STR=" + str + ", legs=" + legs + ", load-light=" + light + ", load-medium=" + medium + ", load-heavy=" + heavy + ", lift-above-head=" + abovehead + ", lift-off-ground=" + offground + ", lift-drag-and-push=" + drag + ", load-str-bonus=" + strmod + ", load-multiplier=" + loadmult + ", load-misc=" + misc);
+	        if (loadmult < 1) { loadmult = 1; }
+	        loadmult--;
+	        var l = getCarryingCapacity(str + strmod, "light") + misc,
+            m = getCarryingCapacity(str + strmod, "medium") + misc,
+            h = getCarryingCapacity(str + strmod, "heavy") + misc,
+            mult = 1;
+	        if (legs == 2) {
+	            switch (size) {
+	                case -8: mult = 16; break;
+	                case -4: mult = 8; break;
+	                case -2: mult = 4; break;
+	                case -1: mult = 2; break;
+	                case 1: mult = 3 / 4; break;
+	                case 2: mult = 1 / 2; break;
+	                case 4: mult = 1 / 4; break;
+	                case 8: mult = 1 / 8; break;
+	            }
+	        } else if (legs == 4) {
+	            switch (size) {
+	                case -8: mult = 24; break;
+	                case -4: mult = 12; break;
+	                case -2: mult = 6; break;
+	                case -1: mult = 3; break;
+	                case 0: mult = 1.5; break;
+	                case 1: mult = 1; break;
+	                case 2: mult = 3 / 4; break;
+	                case 4: mult = 1 / 2; break;
+	                case 8: mult = 1 / 4; break;
+	            }
+	        }
+	        mult += loadmult;
+	        l *= mult; m *= mult; h *= mult;
+	        var a = h, o = h * 2, d = h * 5;
 
-	/********  Spell Classes top section ****/
-	/*  findSpellClass - determines spell class from class dropdown at top of page
-	*/
+	        //console.log("new light load=" + l + ", new medium load=" + m + ", new heavy load=" + h + ", new above head=" + a + ", new off ground=" + o + ", new drag=" + d);
+	        if (light !== l) { setAttrs({ "load-light": l }); }
+	        if (medium !== m) { setAttrs({ "load-medium": m }); }
+	        if (heavy !== h) { setAttrs({ "load-heavy": h }); }
+	        if (abovehead !== a) { setAttrs({ "lift-above-head": a }); }
+	        if (offground !== o) { setAttrs({ "lift-off-ground": o }); }
+	        if (drag !== d) { setAttrs({ "lift-drag-and-push": d }); }
+	    });
+	},
+
+
+    /*******************************************  SPELL PAGE ***********************/
+
+    /********  Spell Classes top section ****/
+    /*  findSpellClass - determines spell class from class dropdown at top of page
+	 */
 	findSpellClass = function (selected) {
 	    if (!selected) { return 0; } //it is undefined if it is default set to the first one
 	    if (selected.indexOf("0") >= 0) { return 0; }
@@ -15091,10 +15241,10 @@ var PFSheet = PFSheet || (function () {
 	    return 0;
 	},
 
-	/* ifSpellClassExists - is a spell level filled in or not.
-	* if spellclass-classidx-level is greater than 0 then call the callback
-	* only check level, not level-total, since modifiers could cause it to drop
-	*/
+    /* ifSpellClassExists - is a spell level filled in or not.
+	 * if spellclass-classidx-level is greater than 0 then call the callback
+	 * only check level, not level-total, since modifiers could cause it to drop
+	 */
 	ifSpellClassExists = function (classidx, callback) {
 	    getAttrs(["spellclass-" + classidx + "-level"], function (v) {
 	        if ((parseInt(v["spellclass-" + classidx + "-level"], 10) || 0) > 0) {
@@ -15103,10 +15253,10 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateSpellClassLevel - when the class level is updated on the CLASS page, sync the level on the SPELL page
-	* but not vice versa
-	* @classidx {number} = the row on the CLASS GRID starting with 0
-	*/
+    /* updateSpellClassLevel - when the class level is updated on the CLASS page, sync the level on the SPELL page
+	 * but not vice versa
+	 * @classidx {number} = the row on the CLASS GRID starting with 0
+	 */
 	updateSpellClassLevel = function (classidx) {
 	    var spellclassdropdown0 = "spellclass-0", spellclassdropdown1 = "spellclass-1", spellclassdropdown2 = "spellclass-2";
 	    getAttrs([spellclassdropdown0, spellclassdropdown1, spellclassdropdown2], function (va) {
@@ -15128,9 +15278,9 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* handleSpellClassDropdown - sets spell class name and level from dropdown
-	* When the spell class dropdown is changed to one of the 5 classees, update the spellclass name and level.
-	*/
+    /* handleSpellClassDropdown - sets spell class name and level from dropdown
+	 * When the spell class dropdown is changed to one of the 5 classees, update the spellclass name and level.
+	 */
 	handleSpellClassDropdown = function (spellclassidx) {
 	    //console.log("SSSSSSSSSSSSSSSSSSSSS handleSpellClassDropdown, level is :"+spellclassidx);
 	    var spellclassdropdown = "spellclass-" + spellclassidx;
@@ -15167,14 +15317,14 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/*updateCasterLevel
-	*/
+    /*updateCasterLevel
+	 */
 	updateCasterLevel = function (classidx) {
 	    updateRowTotal(["spellclass-" + classidx + "-level-total", "spellclass-" + classidx + "-level", "spellclass-" + classidx + "-level-misc", "buff_CasterLevel-total", "CasterLevel-Penalty"]);
 	},
 
-	/*  updateCastingPenaltyNote - for condition deafened update penalty note on DEFENSE PAGE
-	*/
+    /*  updateCastingPenaltyNote - for condition deafened update penalty note on DEFENSE PAGE
+	 */
 	updateCastingPenaltyNote = function () {
 	    ifSpellClassExists(0, function () {
 	        getAttrs(["condition-Deafened", "SpellFailureNote"], function (v) {
@@ -15187,32 +15337,32 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateConcentration - updates concentration for spellclass
-	* @classidx {number} = 0,1,2 the spellclass
-	*/
+    /* updateConcentration - updates concentration for spellclass
+	 * @classidx {number} = 0,1,2 the spellclass
+	 */
 	updateConcentration = function (classidx) {
 	    updateRowTotal(["Concentration-" + classidx, "spellclass-" + classidx + "-level-total", "Concentration-" + classidx + "-mod", "Concentration-" + classidx + "-misc"]);
 	},
 
-	/* handleConcentrationAbilityDropdown - updates spell related ability modifier for spell class
-	* @classidx {number} = 0,1,2 the spellclass
-	*/
+    /* handleConcentrationAbilityDropdown - updates spell related ability modifier for spell class
+	 * @classidx {number} = 0,1,2 the spellclass
+	 */
 	handleConcentrationAbilityDropdown = function (classidx) {
 	    handleDropdown("Concentration-" + classidx + "-ability", ["Concentration-" + classidx + "-mod"]);
 	},
 
-	/*updateSpellPenetration
-	*/
+    /*updateSpellPenetration
+	 */
 	updateSpellPenetration = function (classidx) {
 	    updateRowTotal(["spellclass-" + classidx + "-SP-mod", "spellclass-" + classidx + "-SP_misc", "spellclass-" + classidx + "-level-total"]);
 	},
 
 
-	/*** SPELLS PER DAY section ******/
+    /*** SPELLS PER DAY section ******/
 
-	/* updateSaveDCs - update save DCs on left  column of Spells Per Day grid
-	* @classidx {number} = 0,1,2 the spellclass
-	*/
+    /* updateSaveDCs - update save DCs on left  column of Spells Per Day grid
+	 * @classidx {number} = 0,1,2 the spellclass
+	 */
 	updateSaveDCs = function (classidx) {
 	    //console.log("DDDDDDCCCCCC at updateSaveDCs");
 	    getAttrs(["spellclass-" + classidx + "-level"], function (va) {
@@ -15267,10 +15417,10 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/* updateBonusSpells
-	* updates Bonus Spells for the class
-	* It looks at the attribute, not the attribute mod. So it does not change with ability damage or penalties.
-	*/
+    /* updateBonusSpells
+	 * updates Bonus Spells for the class
+	 * It looks at the attribute, not the attribute mod. So it does not change with ability damage or penalties.
+	 */
 	updateBonusSpells = function (classidx) {
 	    getAttrs(["Concentration-" + classidx + "-ability"], function (va) {
 	        var ability = findAbilityInString(va["Concentration-" + classidx + "-ability"]).replace("-mod", "");
@@ -15296,8 +15446,8 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* updateMaxSpellsPerDay
-	*/
+    /* updateMaxSpellsPerDay
+	 */
 	updateMaxSpellsPerDay = function (classidx, spelllvl) {
 	    var fields = ["spellclass-" + classidx + "-level-" + spelllvl + "-spells-per-day_max"
 			, "spellclass-" + classidx + "-level-" + spelllvl + "-class"
@@ -15306,14 +15456,14 @@ var PFSheet = PFSheet || (function () {
 	    updateRowTotal(fields);
 	},
 
-	/******** SPELLS REPEATING SECTION ******/
+    /******** SPELLS REPEATING SECTION ******/
 
-	/* updateSpell
-	* For a row in lvl-x-spells repeating sections, updates:
-	*  cast_def_dc, cast_def, savedc, casterlevel, Concentration,spellPen
-	* @section {string} =  lvl-0-spells , lvl-1-spells, etc
-	* @id {string} optional = id of row, can be omitted if we're already in row context
-	*/
+    /* updateSpell
+	 * For a row in lvl-x-spells repeating sections, updates:
+	 *  cast_def_dc, cast_def, savedc, casterlevel, Concentration,spellPen
+	 * @section {string} =  lvl-0-spells , lvl-1-spells, etc
+	 * @id {string} optional = id of row, can be omitted if we're already in row context
+	 */
 	updateSpell = function (section, id, eventInfo) {
 	    var idStr = getRepeatingIDStr(id)
 			, prefix = "repeating_" + section + "_" + idStr
@@ -15418,10 +15568,10 @@ var PFSheet = PFSheet || (function () {
 
 	},
 
-	/*updateSpells
-	* calls updateSpell for every row of the given spell section
-	* can call with either "lvl-0-spells", or with 0
-	*/
+    /*updateSpells
+	 * calls updateSpell for every row of the given spell section
+	 * can call with either "lvl-0-spells", or with 0
+	 */
 	updateSpells = function (section) {
 	    var spelllvl = parseInt(section, 10);
 	    if (!isNaN(spelllvl)) {
@@ -15436,12 +15586,12 @@ var PFSheet = PFSheet || (function () {
 
 
 
-	/************************************************ RECALCULATE  PAGES  to account for updates  *****************/
+    /************************************************ RECALCULATE  PAGES  to account for updates  *****************/
 
-	/*recalculateSpell sets spell level because it is now modifiable
-	* ensures that spell_level is set on each spell repeating row, since it was changed to an editable field
-	* @section the spell level "lvl-0-spells", "lvl-1-spells", .... , "lvl-9-spells"
-	*/
+    /*recalculateSpell sets spell level because it is now modifiable
+	 * ensures that spell_level is set on each spell repeating row, since it was changed to an editable field
+	 * @section the spell level "lvl-0-spells", "lvl-1-spells", .... , "lvl-9-spells"
+	 */
 	recalculateSpell = function (section, id) {
 	    var spellLevelField = "repeating_" + section + "_" + id + "_spell_level",
 		classLevelField = "repeating_" + section + "_" + id + "_spellclass",
@@ -15461,9 +15611,9 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/*recalculateSpellLevels - for all spell repeating sections of a level 0,..,9 calls recalculateSpell and updateSpell
-	* @spellLevel {int} = the DEFAULT spell level of the repeating section, from 0 to 9
-	*/
+    /*recalculateSpellLevels - for all spell repeating sections of a level 0,..,9 calls recalculateSpell and updateSpell
+	 * @spellLevel {int} = the DEFAULT spell level of the repeating section, from 0 to 9
+	 */
 	recalculateSpellLevels = function (spellLevel) {
 	    var section = "lvl-" + spellLevel + "-spells";
 	    getSectionIDs("repeating_" + section, function (ids) {
@@ -15478,7 +15628,7 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/*recalculateSpellLevelsAll calls recalculateSpellLevels for each spell levels 0-9 */
+    /*recalculateSpellLevelsAll calls recalculateSpellLevels for each spell levels 0-9 */
 	recalculateSpellLevelsAll = function () {
 	    var i = 0;
 	    for (i = 0; i < 10; i++) {
@@ -15486,7 +15636,7 @@ var PFSheet = PFSheet || (function () {
 	    }
 	},
 
-	/* recalculateRepeatingWeapons-  recalculates all repeating weapons rows.   */
+    /* recalculateRepeatingWeapons-  recalculates all repeating weapons rows.   */
 	recalculateRepeatingWeapons = function () {
 	    getAttrs(["attk-effect-total", "dmg-effect-total", "DMG-mod"], function (v) {
 	        getSectionIDs("repeating_weapon", function (ids) {
@@ -15511,12 +15661,12 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* recalculateRepeatingMaxUsed - Parses the macro text "...max-calculation" in the repeating items
-	* (such as class-abilities, feats, traits, racial-traits)
-	* and sets the used|max value.
-	* Loops through all rows in the given repeating section.
-	* @section {string}= the name of the section after the word "repeating_"
-	*/
+    /* recalculateRepeatingMaxUsed - Parses the macro text "...max-calculation" in the repeating items
+	 * (such as class-abilities, feats, traits, racial-traits)
+	 * and sets the used|max value.
+	 * Loops through all rows in the given repeating section.
+	 * @section {string}= the name of the section after the word "repeating_"
+	 */
 	recalculateRepeatingMaxUsed = function (section) {
 	    getSectionIDs("repeating_" + section, function (ids) {
 	        ids.forEach(function (id, index) {
@@ -15533,8 +15683,8 @@ var PFSheet = PFSheet || (function () {
 
 
 
-	/* recalculateSkills - updates ALL skills  - calls handleDropdown for ability then updateSkill
-	* CB: REFACTOR: put updateSkill in the callback so it happens in order */
+    /* recalculateSkills - updates ALL skills  - calls handleDropdown for ability then updateSkill
+	 * CB: REFACTOR: put updateSkill in the callback so it happens in order */
 	recalculateSkills = function () {
 	    handleDropdown("Acrobatics-ability", ["Acrobatics-ability-mod"]);
 	    handleDropdown("Artistry-ability", ["Artistry-ability-mod"]);
@@ -15663,7 +15813,7 @@ var PFSheet = PFSheet || (function () {
 	    updateSkill("CS-Survival");
 	},
 
-	/* fixClassSkill - updates the class skill checkbox from that long string to a number 0 or 3 */
+    /* fixClassSkill - updates the class skill checkbox from that long string to a number 0 or 3 */
 	fixClassSkill = function (skill) {
 	    var csNm = skill + "-cs";
 	    getAttrs([csNm], function (v) {
@@ -15679,7 +15829,7 @@ var PFSheet = PFSheet || (function () {
 	    });
 	},
 
-	/* fixClassSkills calls fixClassSkill for all skills */
+    /* fixClassSkills calls fixClassSkill for all skills */
 	fixClassSkills = function () {
 	    fixClassSkill("Acrobatics");
 	    fixClassSkill("Appraise");
@@ -15746,7 +15896,7 @@ var PFSheet = PFSheet || (function () {
 	    fixClassSkill("CS-Survival");
 	},
 
-	/* recalculateAllBuffs - can't we find  abetter way? sets about a thousand fields to 0*/
+    /* recalculateAllBuffs - can't we find  abetter way? sets about a thousand fields to 0*/
 	recalculateAllBuffs = function () {
 	    setAttrs({
 	        "buff_Melee-total": 0,
@@ -15799,7 +15949,7 @@ var PFSheet = PFSheet || (function () {
 	    updateBuffColumn("CasterLevel");
 	},
 
-	/* recalculateSheet - all pages in sheet!  */
+    /* recalculateSheet - all pages in sheet!  */
 	recalculateSheet = function (oldversion) {
 	    if (oldversion < 0.15) {
 
@@ -15952,6 +16102,7 @@ var PFSheet = PFSheet || (function () {
 	        recalculateRepeatingMaxUsed("mythic-feat");
 	    }
 	    if (oldversion < 0.34) {
+	        updateModifiedSpeed();
 	        updateWornEquipment("charges");
 	        updateWornEquipment("weight");
 	        updateWornEquipment("hardness");
@@ -15975,6 +16126,7 @@ var PFSheet = PFSheet || (function () {
 	        updateCarriedCurrency();
 	        updateCarriedTotal();
 	        updateCurrentLoad();
+	        updateLoadsAndLift();
 	        TAS.repeating('belonging')
 				.attrs('belonging_total_weight')
 				.fields('qty', 'weight')
@@ -15993,8 +16145,8 @@ var PFSheet = PFSheet || (function () {
 	},
 
 
-	/* checkForUpdate looks at current version of page in PFSheet_Version and compares to code PFSheet.version
-	*  calls recalulateSheet if versions don't match or if recalculate button was pressed.
+    /* checkForUpdate looks at current version of page in PFSheet_Version and compares to code PFSheet.version
+	 *  calls recalulateSheet if versions don't match or if recalculate button was pressed.
 	 */
 	checkForUpdate = function () {
 	    getAttrs(["PFSheet_Version", "PFSheet_forcesync", "recalc1"], function (v) {
@@ -16039,6 +16191,7 @@ var PFSheet = PFSheet || (function () {
         handleDropdown: handleDropdown,
         updateSize: updateSize,
         updateAbility: updateAbility,
+        updateModifiedSpeed: updateModifiedSpeed,
         updateGrapple: updateGrapple,
         updatePin: updatePin,
         updateBuff: updateBuff,
@@ -16079,6 +16232,7 @@ var PFSheet = PFSheet || (function () {
         updateCarriedCurrency: updateCarriedCurrency,
         updateCarriedTotal: updateCarriedTotal,
         updateCurrentLoad: updateCurrentLoad,
+        updateLoadsAndLift: updateLoadsAndLift,
         handleSpellClassDropdown: handleSpellClassDropdown,
         updateConcentration: updateConcentration,
         updateCasterLevel: updateCasterLevel,
@@ -16325,9 +16479,6 @@ on("change:buff10_casterlevel_macro-text", function () { getAttrs(["buff10_Toggl
 
 
 //allskills
-
-
-
 on("change:acrobatics-ability", function () { PFSheet.handleDropdown("Acrobatics-ability", ["Acrobatics-ability-mod"]); });
 on("change:acp change:acrobatics-cs change:acrobatics-ranks change:acrobatics-class change:checks-cond change:acrobatics-ability-mod change:acrobatics-racial change:acrobatics-feat change:acrobatics-item change:acrobatics-size change:acrobatics-acp change:acrobatics-misc change:acrobatics-ReqTrain"
    , function () { PFSheet.updateSkill("Acrobatics"); });
@@ -16594,8 +16745,6 @@ on("change:int-base change:int-enhance change:int-misc change:int-temp change:in
 on("change:wis-base change:wis-enhance change:wis-misc change:wis-temp change:wis-damage change:wis-penalty change:wis-drain change:wis-cond", function () { PFSheet.updateAbility("WIS"); });
 on("change:cha-base change:cha-enhance change:cha-misc change:cha-temp change:cha-damage change:cha-penalty change:cha-drain change:cha-cond", function () { PFSheet.updateAbility("CHA"); });
 
-
-
 //Conditions
 on("change:condition-fatigued change:condition-entangled", function () { PFSheet.updateConditionAbilityPenalty(); });
 on("change:condition-grappled", function () { PFSheet.updateGrapple(); });
@@ -16634,14 +16783,17 @@ on("change:condition-grappled change:condition-invisible", function () {
 on("change:init-ability", function () { PFSheet.handleDropdown("init-ability", ["init-ability-mod"]); });
 on("change:init-ability-mod change:init-trait change:init-misc change:condition-deafened", function () { PFSheet.updateInit(); });
 
+//speed
+on("change:current-load change:speed-base change:load-heavy change:carried-total", function () {
+    //console.log("caught change:current-load change:speed-base event");
+    PFSheet.updateModifiedSpeed();
+});
+
 //hp
 on("change:hp-ability", function () { PFSheet.handleDropdown("HP-ability", ["HP-ability-mod"]); });
 on("change:hp-ability-mod change:level change:total-hp change:total-mythic-hp change:hp-formula-mod change:HP-misc change:mythic-adventures-show", function () { PFSheet.updateHP(); });
 on("change:hp-temp-misc change:buff_hp-temp-total", function () { PFSheet.updateTempHP(); });
 on("change:hp-formula-macro-text", function () { SWUtils.evaluateAndSetNumber("HP-formula-macro-text", "HP-formula-mod"); });
-
-
-
 
 //classes
 on("change:class-0-hp change:class-1-hp change:class-2-hp change:class-3-hp change:class-4-hp change:class-5-hp", function () { PFSheet.updateClassInformation("hp"); });
@@ -16685,7 +16837,6 @@ on("change:repeating_class-ability:max-calculation", function () { SWUtils.evalu
 on("change:ac-ability change:ff-ability change:cmd-ability1 change:cmd-ability2 change:cmd-ability"
 	, function (eventInfo) { PFSheet.handleDefenseDropdown(eventInfo.sourceAttribute); });
 
-
 //defenses
 on("change:condition-stunned change:condition-flat-footed change:ac-ability-mod change:ff-dex change:ac-penalty change:cmd-penalty change:size change:ac-dodge change:ac-natural change:ac-deflect change:ac-misc change:ac-shield change:ac-armor change:cmd-dex change:ff-cmd-dex change:cmd-str change:cmd-misc change:buff_ac-total change:buff_touch-total change:buff_cmd-total change:bab change:max-dex"
 	, function (eventInfo) { PFSheet.updateDefenses(eventInfo); });
@@ -16713,7 +16864,6 @@ on("change:fort-ability", function () { PFSheet.handleDropdown("Fort-ability", "
 on("change:ref-ability", function () { PFSheet.handleDropdown("Ref-ability", "Ref-ability-mod"); });
 on("change:will-ability", function () { PFSheet.handleDropdown("Will-ability", "Will-ability-mod"); });
 
-
 //attacks
 on("change:melee-ability", function () { PFSheet.handleDropdown("melee-ability", "melee-ability-mod"); });
 on("change:ranged-ability", function () { PFSheet.handleDropdown("ranged-ability", "ranged-ability-mod"); });
@@ -16722,7 +16872,6 @@ on("change:bab change:size change:melee-ability-mod change:buff_melee-total chan
 on("change:bab change:size change:ranged-ability-mod change:buff_ranged-total change:attk-ranged-misc change:attk-penalty", function () { PFSheet.updateAttack("ranged"); });
 on("change:bab change:CMD-size change:cmb-ability-mod change:cmb-total change:attk-cmb-misc change:attk-penalty", function () { PFSheet.updateAttack("CMB"); });
 on("change:condition-Sickened change:buff_dmg-total", function () { PFSheet.updateDamage(); });
-
 
 //attack effects
 on("change:attk-effect_mod_1 change:attk-effect_mod_1_Toggle change:attk-effect_mod_2 change:attk-effect_mod_2_Toggle change:attk-effect_mod_3 change:attk-effect_mod_3_Toggle change:attk-effect_mod_4 change:attk-effect_mod_4_Toggle"
@@ -16733,10 +16882,10 @@ on("change:dmg-effect_mod_1 change:dmg-effect_mod_1_Toggle change:dmg-effect_mod
 , function () {
     PFSheet.updateDMGEffectTotals();
 });
+
 //repeating weapons
 on("change:attk-effect-total", function (eventInfo) { PFSheet.updateRepeatingWeaponAttacks(eventInfo); });
 on("change:dmg-effect-total change:dmg-mod", function () { PFSheet.updateRepeatingWeaponDamages(); });
-
 
 on("change:repeating_weapon:attack-type-mod change:repeating_weapon:masterwork change:repeating_weapon:proficiency change:repeating_weapon:attack-mod"
 	, function (eventInfo) {
@@ -16762,20 +16911,18 @@ on("change:size", function () {
     PFSheet.updateSize();
     PFSheet.updateDamageNote();
 });
+
 //feats
 on("change:repeating_feat:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_feat_max-calculation", "repeating_feat_used_max"); });
 //racial-traits
 on("change:repeating_racial-trait:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_racial-trait_max-calculation", "repeating_racial-trait_used_max"); });
+
 //traits
 on("change:repeating_trait:max-calculation", function () { SWUtils.evaluateAndSetNumber("repeating_trait_max-calculation", "repeating_trait_used_max"); });
-
-
 
 //skills
 on("change:total-skill change:total-fcskill change:int-mod change:level change:max-skill-ranks-mod change:Max-Skill-Ranks-Misc2 change:unchained_skills-show change:BG-Skill-Use", function () { PFSheet.updateMaxSkills(); });
 on("change:max-skill-ranks-misc", function () { SWUtils.evaluateAndSetNumber("Max-Skill-Ranks-Misc", "Max-Skill-Ranks-mod"); });
-
-
 
 on("change:size_skill", function () { PFSheet.updateSkill("Fly"); });
 
@@ -16858,6 +17005,10 @@ on('change:load-light change:load-medium change:carried-total', function () {
     //console.log("checking current-load radio buttons");
     PFSheet.updateCurrentLoad();
 });
+on("change:STR change:size change:legs change:load-str-bonus change:load-multiplier change:load-misc", function () {
+    //console.log("caught change:size change:legs change:load-str-bonus change:load-multiplier change:load-misc event");
+    PFSheet.updateLoadsAndLift();
+});
 on('change:repeating_belonging:weight change:repeating_belonging:qty', function () {
     TAS.repeating('belonging')
 		.attrs('belonging_total_weight')
@@ -16899,11 +17050,9 @@ on("change:class-3-level", function () { PFSheet.updateSpellClassLevel(3); });
 on("change:class-4-level", function () { PFSheet.updateSpellClassLevel(4); });
 on("change:class-5-level", function () { PFSheet.updateSpellClassLevel(5); });
 
-
 on("change:concentration-0-ability", function () { PFSheet.handleConcentrationAbilityDropdown(0); });
 on("change:concentration-1-ability", function () { PFSheet.handleConcentrationAbilityDropdown(1); });
 on("change:concentration-2-ability", function () { PFSheet.handleConcentrationAbilityDropdown(2); });
-
 
 on("change:concentration-0-mod", function () { PFSheet.ifSpellClassExists(0, function () { PFSheet.updateBonusSpells(0); PFSheet.updateSaveDCs(0); }); });
 on("change:concentration-1-mod", function () { PFSheet.ifSpellClassExists(1, function () { PFSheet.updateBonusSpells(1); PFSheet.updateSaveDCs(1); }); });
@@ -16935,8 +17084,6 @@ on("change:spellclass-2-SP_misc", function () {
     PFSheet.updateSpellPenetration(2);
 });
 on("change:condition-Deafened", function () { PFSheet.updateCastingPenaltyNote(); });
-
-
 
 on("change:spellclass-0-level-0-class change:spellclass-0-level-0-bonus change:spellclass-0-level-0-misc", function () { PFSheet.updateMaxSpellsPerDay(0, 0); });
 on("change:spellclass-0-level-1-class change:spellclass-0-level-1-bonus change:spellclass-0-level-1-misc", function () { PFSheet.updateMaxSpellsPerDay(0, 1); });
@@ -16971,12 +17118,9 @@ on("change:spellclass-2-level-7-class change:spellclass-2-level-7-bonus change:s
 on("change:spellclass-2-level-8-class change:spellclass-2-level-8-bonus change:spellclass-2-level-8-misc", function () { PFSheet.updateMaxSpellsPerDay(2, 8); });
 on("change:spellclass-2-level-9-class change:spellclass-2-level-9-bonus change:spellclass-2-level-9-misc", function () { PFSheet.updateMaxSpellsPerDay(2, 9); });
 
-
 on("change:spellclass-0-level change:spellclass-0-level-misc change:buff_CasterLevel-total change:condition-Drained", function () { PFSheet.updateCasterLevel(0); });
 on("change:spellclass-1-level change:spellclass-1-level-misc change:buff_CasterLevel-total change:condition-Drained", function () { PFSheet.updateCasterLevel(1); });
 on("change:spellclass-2-level change:spellclass-2-level-misc change:buff_CasterLevel-total change:condition-Drained", function () { PFSheet.updateCasterLevel(2); });
-
-
 
 on("change:concentration-0 change:spellclass-0-level-total change:spellclass-0-SP-mod change:concentration-0-def " +
 	"change:concentration-1 change:spellclass-1-level-total change:spellclass-1-SP-mod change:concentration-1-def " +
