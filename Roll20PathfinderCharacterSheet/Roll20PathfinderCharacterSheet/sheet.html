@@ -1515,7 +1515,9 @@
                         <option value="( ((@{CHA-mod} + [[ @{max-dex-source} ]]) - abs(@{CHA-mod} - [[ @{max-dex-source} ]])) / 2 )">CHA</option>
                     </select>
                 </span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{AC-ability-mod}" type="number" name="attr_AC-ability-mod" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <input type="hidden" name="attr_AC-ability-mod" value="0" />
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{AC-ability-mod}" type="number" name="attr_AC-ability-display" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <!--<span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{AC-ability-mod}" type="number" name="attr_AC-ability-mod" value="0" class="sheet-calc" readonly="readonly" /></span>-->
                 <span class="sheet-table-data sheet-divider">+</span>
                 <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{size}" type="number" name="attr_size_display" value="0" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-divider">+</span>
@@ -1549,7 +1551,8 @@
                         <option value="( ((@{CHA-mod} + [[ @{max-dex-source} ]]) - abs(@{CHA-mod} - [[ @{max-dex-source} ]])) / 2 )">CHA</option>
                     </select>
                 </span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{AC-ability-mod}" type="number" name="attr_AC-ability-mod" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{AC-ability-mod}" type="number" name="attr_AC-ability-display" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <!--<span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{AC-ability-mod}" type="number" name="attr_AC-ability-mod" value="0" class="sheet-calc" readonly="readonly" /></span>-->
                 <span class="sheet-table-data sheet-divider">+</span>
                 <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{size}" type="number" name="attr_size_display" value="0" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-divider">+</span>
@@ -1584,7 +1587,9 @@
                         <option value="@{CHA-mod}">CHA</option>
                     </select>
                 </span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{attr_FF-DEX}" type="number" name="attr_FF-DEX" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <input type="hidden" name="attr_FF-DEX" value="0" />
+                <span class="sheet-table-data sheet-center"><input title="@{FF-DEX}" type="number" name="attr_FF-DEX-display" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <!--<span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{FF-DEX}" type="number" name="attr_FF-DEX" value="0" class="sheet-calc" readonly="readonly" /></span>-->
                 <span class="sheet-table-data sheet-divider">+</span>
                 <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{size}" type="number" name="attr_size_display" value="0" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-center"></span>
@@ -1652,7 +1657,9 @@
                         <option value="( ((@{CHA-mod} + [[ @{max-dex-source} ]]) - abs(@{CHA-mod} - [[ @{max-dex-source} ]])) / 2 )">CHA</option>
                     </select>
                 </span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{CMD-DEX}" type="number" name="attr_CMD-DEX" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <input type="hidden" name="attr_CMD-DEX" value="0" />
+                <span class="sheet-table-data sheet-center"><input title="@{CMD-DEX}" type="number" name="attr_CMD-DEX-display" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <!--<span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{CMD-DEX}" type="number" name="attr_CMD-DEX" value="0" class="sheet-calc" readonly="readonly" /></span>-->
                 <span class="sheet-table-data sheet-divider">-</span>
                 <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{CMD-size}" type="number" name="attr_CMD-size" value="0" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-divider">+</span>
@@ -1696,7 +1703,9 @@
                         <option value="( ((@{CHA-mod} + [[ @{max-dex-source} ]]) - abs(@{CHA-mod} - [[ @{max-dex-source} ]])) / 2 )">CHA</option>
                     </select>
                 </span>
-                <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{attr_FF-CMD-DEX}" type="number" name="attr_FF-CMD-DEX" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <input type="hidden" name="attr_FF-CMD-DEX" value="0" />
+                <span class="sheet-table-data sheet-center"><input title="@{FF-CMD-DEX}" type="number" name="attr_FF-CMD-DEX-display" value="0" class="sheet-calc" readonly="readonly" /></span>
+                <!--<span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{FF-CMD-DEX}" type="number" name="attr_FF-CMD-DEX" value="0" class="sheet-calc" readonly="readonly" /></span>-->
                 <span class="sheet-table-data sheet-divider">-</span>
                 <span class="sheet-table-data sheet-center"><input style="width:100%;" title="@{CMD-size}" type="number" name="attr_CMD-size" value="0" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-divider">+</span>
@@ -1751,8 +1760,8 @@
                     <select title="@{acp-source}" name="attr_acp-source">
                         <option value="0">None</option>
                         <option value="( ((@{armor-acp} * @{armor-equipped}) + (@{armor2-acp} * @{armor2-equipped}) + (@{armor3-acp} * @{armor3-equipped}) ) + ( (@{shield-acp} * @{shield-equipped}) + (@{shield2-acp} * @{shield2-equipped}) + (@{shield3-acp} * @{shield3-equipped}) ) )" selected>&#8226;Armor &amp; Shield</option>
-                        <option value="-3">Medium Load</option>
-                        <option value="-6">Heavy Load</option>
+                        <!--<option value="-3">Medium Load</option>
+                        <option value="-6">Heavy Load</option>-->
                     </select>
                 </span>
                 <span class="sheet-table-row-name">Attack Penalty</span>
@@ -1761,10 +1770,10 @@
                 <span class="sheet-table-data sheet-center"><input title="@{max-dex}" type="number" name="attr_max-dex" value=99 style="width:3.5em;" class="sheet-calc" readonly="readonly" /></span>
                 <span class="sheet-table-data sheet-center">
                     <select title="@{max-dex-source}" name="attr_max-dex-source">
-                        <option value="9999" selected>&#8226;None</option>
-                        <option value="(@{armor-max-dex} + @{armor2-max-dex} + @{armor3-max-dex})">Armor & Shield</option>
-                        <option value="3">Medium Load</option>
-                        <option value="1">Heavy Load</option>
+                        <option value="9999">None</option>
+                        <option value="(@{armor-max-dex} + @{armor2-max-dex} + @{armor3-max-dex})" selected>&#8226;Armor & Shield</option>
+                        <!--<option value="3">Medium Load</option>
+                        <option value="1">Heavy Load</option>-->
                     </select>
                 </span>
                 <span class="sheet-table-row-name"><button class="sheet-text-button" type="roll" title="%{selected|Spell-Fail-Check}" name="roll_Spell-Fail-Check" style="font-size:13px; line-height:10px; vertical-align:text-bottom;" value="@{PC-whisper} &{template:pf_generic} {{header_image=@{header_image-pf_generic}}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{subtitle}} {{name=Spell Failure}} {{Spell Fail Chance=[[ @{spell-fail} ]]&nbsp;%&nbsp;}} {{Check=[[ 1d100cf<[[ @{spell-fail} ]]cs>[[ @{spell-fail}+1 ]] ]]&nbsp;%&nbsp;}} {{lefttext_6=@{SpellFailureNote}}}"> Spell Fail Chance</button></span>
@@ -9710,7 +9719,8 @@
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{armor-acbonus}" type="number" name="attr_armor-acbonus" value="0" /><br><label style="text-align:center;"><input title="@{armor-equipped}" type="checkbox" name="attr_armor-equipped" value="1" style="width:10px; height:10px;" checked="checked" /><b title="Equipped" style="font-size: 85%;">&nbsp;Armor</b></label></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{shield-acbonus}" type="number" name="attr_shield-acbonus" value="0" /><br><label style="text-align:center;"><input title="@{shield-equipped}" type="checkbox" name="attr_shield-equipped" value="1" style="width:10px; height:10px;" checked="checked" /><b title="Equipped" style="font-size: 85%;">&nbsp;Shield</b></label></span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{AC-deflect}" type="number" name="attr_AC-deflect" value="0" /><br>Deflect</span>
-                            <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{AC-ability}" type="number" name="attr_AC-ability-mod" value="0" class="sheet-calc" readonly="readonly" /><br>DEX</span>
+                            <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{AC-ability-mod}" type="number" name="attr_AC-ability-display" value="0" class="sheet-calc" readonly="readonly" /></span>
+                            <!--<span class="sheet-table-data sheet-center sheet-small-label"><input title="@{AC-ability-mod}" type="number" name="attr_AC-ability-mod" value="0" class="sheet-calc" readonly="readonly" /><br>DEX</span>-->
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{AC-dodge}" type="number" name="attr_AC-dodge" value="0" /><br>Dodge</span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{AC-natural}" type="number" name="attr_AC-natural" value="0" /><br>Natural</span>
                             <span class="sheet-table-data sheet-center sheet-small-label"><input title="@{AC-misc}" type="number" name="attr_AC-misc" value="0" /><br>Misc</span>
@@ -13415,7 +13425,7 @@ var SWUtils = SWUtils || (function () {
 	},
 
 	/* evaluateExpression
-	 *  reads in the string, evalutates it until we find a number, then passes that numbe to the callback.
+	 *  reads in the string, evalutates it until we find a number, then passes that number to the callback.
 	 *  @exprStr= A string containing a mathematical expression, possibly containing references to fields such as @{myfield}
 	 *  @callback = a function taking one parameter, either a number or empty string .
 	 */
@@ -13663,7 +13673,7 @@ var SWUtils = SWUtils || (function () {
 
 var PFSheet = PFSheet || (function () {
 
-    var version = 0.35,
+    var version = 0.36,
 	pfDebug = false,
 
 	/****************************** UTILITIES ************************************/
@@ -13671,9 +13681,9 @@ var PFSheet = PFSheet || (function () {
 	/* findAbilityInString
 	 * For dropdowns, this looks at the <option value="xxxx"> pass the value to here.
 	 *
-	 * Looks at a string for instances of an ability modifier DEX-mod, STR-mod,  etc and returnsthe modifier it finds.
+	 * Looks at a string for instances of an ability modifier DEX-mod, STR-mod, etc and returns the modifier it finds.
 	 * Note the order checked is the same as the order they traditionally appear in: STR-mod,DEX-mod,CON-mod,INT-mod,WIS-mod,CHA-mod
-	 * Also checks for regular abilityies without mod , and other items that appear in dropdowns.
+	 * Also checks for regular abilityies without mod, and other items that appear in dropdowns.
 	 * if none is found, then if the first character is "0" return ""
 	 */
 	findAbilityInString = function (fieldToFind) {
@@ -13965,7 +13975,7 @@ var PFSheet = PFSheet || (function () {
 			});
 	},
 
-	/*************************************   CORE  PAGE ****************************************/
+	/************************************* CORE PAGE ****************************************/
 
 	/**** ABILITIES ****/
 	/* updateAbility
@@ -14127,7 +14137,10 @@ var PFSheet = PFSheet || (function () {
      *
      */
     updateModifiedSpeed = function () {
-        getAttrs(["current-load", "speed-base", "speed-modified", "speed-run", "load-heavy", "carried-total"], function (v) {
+        getAttrs(["current-load", "speed-base", "speed-modified", "speed-run", "load-heavy", "carried-total", "race",
+            "armor-equipped", "armor2-eqipped", "armor3-eqipped",
+            "armor-type", "armor2-type", "armor3-type"], function (v) {
+
             var currMod = parseInt(v["speed-modified"], 10) || 0,
             currRun = parseInt(v["speed-run"], 10) || 0,
             load = parseInt(v["current-load"], 10) || 0,
@@ -14135,24 +14148,55 @@ var PFSheet = PFSheet || (function () {
             heavy = parseInt(v["load-heavy"], 10) || 0,
             carried = parseInt(v["carried-total"], 10) || 0;
             //console.log("speed-modified=" + currMod + ", speed-run=" + currRun + ", current-load=" + load + ", speed-base=" + base + ", load-heavy=" + heavy + ", carried-total=" + carried);
-            var newSpeed, newRun;
+
+            var newLoadSpeed, newArmorSpeed, newRun, runMult = 4;
             if (load > 0) { //Medium Or Heavy load
                 if (carried > heavy) {
-                    newSpeed = 5;
+                    newLoadSpeed = 5;
                     newRun = 5;
+                    runMult = 0;
                 } else {
-                    if (base <= 5) { newSpeed = 5; }
-                    else if (base % 15 == 0) { newSpeed = base * 2 / 3; }
-                    else if ((base + 5) % 15 == 0) { newSpeed = (base + 5) * 2 / 3; }
-                    else { newSpeed = ((base + 10) * 2 / 3) - 5; }
+                    if (base <= 5) { newLoadSpeed = 5; }
+                    else if (base % 15 == 0) { newLoadSpeed = base * 2 / 3; }
+                    else if ((base + 5) % 15 == 0) { newLoadSpeed = (base + 5) * 2 / 3; }
+                    else { newLoadSpeed = ((base + 10) * 2 / 3) - 5; }
 
-                    if (load > 1) { newRun = newSpeed * 3; } //Heavy load
-                    else { newRun = newSpeed * 4; } //Medium load
+                    if (load > 1) { runMult = 3; } //Heavy load
                 }
             } else { //Light load
-                newSpeed = base;
-                newRun = base * 4;
+                newLoadSpeed = base;
+                runMult = 4;
             }
+            //console.log("newLoadSpeed=" + newLoadSpeed + ", newRun=" + newRun + ", runMult=" + runMult);
+
+            //console.log("race=" + v.race + ", armor-type=" + v["armor-type"] + ", armor-equipped=" + v["armor-equipped"] +
+            //            ", armor2-type=" + v["armor2-type"] + ", armor2-equipped=" + v["armor2-equipped"] + 
+            //            ", armor3-type=" + v["armor3-type"] + ", armor3-equipped=" + v["armor3-equipped"]);
+            var isDwarf = typeof v.race === "undefined" ? false : v.race.toLowerCase().indexOf("dwarf") >= 0;
+            var inHeavy = (v["armor-type"] == "Heavy" && (v["armor-equipped"] == "1" || typeof v["armor-equipped"] === "undefined")) ||
+                (v["armor2-type"] == "Heavy" && (v["armor2-equipped"] == "1" || typeof v["armor2-equipped"] === "undefined")) ||
+                (v["armor3-type"] == "Heavy" && (v["armor3-equipped"] == "1" || typeof v["armor3-equipped"] === "undefined"));
+            var inMedium = (v["armor-type"] == "Medium" && (v["armor-equipped"] == "1" || v["armor-equipped"] === "undefined")) ||
+                (v["armor2-type"] == "Medium" && (v["armor2-equipped"] == "1" || typeof v["armor2-equipped"] === "undefined")) ||
+                (v["armor3-type"] == "Medium" && (v["armor3-equipped"] == "1" || typeof v["armor3-equipped"] === "undefined"));
+            //console.log("inHeavy=" + inHeavy + ", inMedium=" + inMedium + ", isDwarf=" + isDwarf);
+            if (inHeavy) { runMult = 3; } // Max x3 run in heavy armor
+            if (!isDwarf && (inHeavy || inMedium)) {
+                if (base <= 5) { newArmorSpeed = 5; }
+                else if (base % 15 == 0) { newArmorSpeed = base * 2 / 3; }
+                else if ((base + 5) % 15 == 0) { newArmorSpeed = (base + 5) * 2 / 3; }
+                else { newArmorSpeed = ((base + 10) * 2 / 3) - 5; }
+            } else {
+                newArmorSpeed = base;
+            }
+            //console.log("newArmorSpeed=" + newArmorSpeed + ", runMult=" + runMult);
+
+            var newSpeed = Math.min(newLoadSpeed, newArmorSpeed);
+            //console.log("newSpeed=" + newSpeed + ", runMult=" + runMult);
+
+            if (runMult > 0) { newRun = newSpeed * runMult; }
+            //console.log("newRun=" + newRun);
+
             if (currMod !== newSpeed) { setAttrs({ "speed-modified": newSpeed }); }
             if (currRun !== newRun) { setAttrs({ "speed-run": newRun }); }
         });
@@ -14372,7 +14416,7 @@ var PFSheet = PFSheet || (function () {
 	 * @ffModField {string} = mod field containing value of ffField (to write to if modField is negative)
 	 */
 	handleNonFFDefenseDropdown = function (ddField, modField, ffField, ffModField) {
-	    console.log("at handleNonFFDefenseDropdown");
+	    //console.log("at handleNonFFDefenseDropdown ddField=" + ddField + ", modField=" + modField + ", ffField=" + ffField + ", ffModField=" + ffModField);
 	    handleDropdown(ddField, modField, function (dexmod, oldmod) {
 	        var setter = {};
 	        if (dexmod < 0) {
@@ -14396,25 +14440,20 @@ var PFSheet = PFSheet || (function () {
 	 * @dropdownField {string} = fieldname of dropdown, FROM eventInfo.sourceAttribute
 	 */
 	handleDefenseDropdown = function (dropdownField) {
-	    console.log("at handleDefenseDropdown:" + ability);
-	    switch (dropdownField) {
-	        case "CMD-ability1":
+	    //console.log("at handleDefenseDropdown:" + dropdownField);
+	    switch (dropdownField.toLowerCase()) {
 	        case "cmd-ability1":
 	            handleDropdown("CMD-ability1", ["CMD-STR"]);
 	            break;
-	        case "AC-ability":
 	        case "ac-ability":
 	            handleNonFFDefenseDropdown("AC-ability", "AC-ability-mod", "FF-ability", "FF-DEX");
 	            break;
-	        case "CMD-ability2":
 	        case "cmd-ability2":
 	            handleNonFFDefenseDropdown("CMD-ability2", "CMD-DEX", "CMD-ability", "FF-CMD-DEX");
 	            break;
-	        case "FF-ability":
 	        case "ff-ability":
 	            handleDropdown("FF-ability", ["FF-DEX"]);
 	            break;
-	        case "CMD-ability":
 	        case "cmd-ability":
 	            handleDropdown("CMD-ability", ["FF-CMD-DEX"]);
 	            break;
@@ -14443,96 +14482,117 @@ var PFSheet = PFSheet || (function () {
 	 */
 	updateDefenses = function (eventInfo) {
 	    getAttrs(["condition-Flat-Footed", "AC-ability-mod", "FF-DEX", "AC-penalty", "CMD-penalty", "size", "max-dex",
-			"AC-dodge", "AC-natural", "AC-deflect", "AC-misc", "buff_AC-total", "buff_Touch-total", "buff_CMD-total",
+            "AC-dodge", "AC-natural", "AC-deflect", "AC-misc", "buff_AC-total", "buff_Touch-total", "buff_CMD-total",
 			"CMD-DEX", "FF-CMD-DEX", "CMD-STR", "bab", "CMD-misc",
-			"AC", "Touch", "Flat-Footed", "CMD", "FF-CMD", "AC-ability", "AC-armor", "AC-shield",
+			"AC", "Touch", "Flat-Footed", "CMD", "FF-CMD", "AC-ability", "FF-ability", "CMD-ability2", "CMD-ability", "AC-armor", "AC-shield",
 			"condition-Blinded", "condition-Pinned", "condition-Stunned", "condition-Cowering", "condition-Drained"], function (v) {
-			    //console.log("AAAAAAAAAAAAt update defenses");
-			    //console.log(v);
-			    var setter = {}, setAny = 0,
-					size = parseInt(v["size"], 10) || 0,
-					dodge = parseInt(v["AC-dodge"], 10) || 0,
-					deflect = parseInt(v["AC-deflect"], 10) || 0,
-					miscAC = parseInt(v["AC-misc"], 10) || 0,
-					condPenalty = parseInt(v["AC-penalty"], 10) || 0,
-					buffs = parseInt(v["buff_AC-total"], 10) || 0,
-					buffsTouch = parseInt(v["buff_Touch-total"], 10) || 0,
-					buffsCMD = parseInt(v["buff_CMD-total"], 10) || 0,
-					armor = parseInt(v["AC-armor"], 10) || 0,
-					shield = parseInt(v["AC-shield"], 10) || 0,
-					natural = parseInt(v["AC-natural"], 10) || 0,
-					bab = parseInt(v["bab"], 10) || 0,
-					miscCMD = parseInt(v["CMD-misc"], 10) || 0,
-					maxDex = parseInt(v["max-dex"], 10),
-					ability = parseInt(v["AC-ability-mod"], 10) || 0,
-					ffAbility = parseInt(v["FF-DEX"], 10) || 0,
-					cmdAbility1 = parseInt(v["CMD-STR"], 10) || 0,
-					cmdAbility2 = parseInt(v["CMD-DEX"], 10) || 0,
-					cmdFFAbility2 = parseInt(v["FF-CMD-DEX"], 10) || 0,
-					cmdPenalty = (parseInt(v["CMD-penalty"], 10) || 0),
-					blinded = (parseInt(v["condition-Blinded"], 10) || 0) ? 1 : 0,
-					pinned = (parseInt(v["condition-Pinned"], 10) || 0) ? 1 : 0,
-					stunned = (parseInt(v["condition-Stunned"], 10) || 0) ? 1 : 0,
-					ffed = (parseInt(v["condition-Flat-Footed"], 10) || 0) ? 1 : 0,
-					cowering = (parseInt(v["condition-Cowering"], 10) || 0) ? 1 : 0,
-					loseDex = 0;
+            //console.log("AAAAAAAAAAAAt update defenses");
+            //console.log(v);
+            var setter = {}, setAny = 0,
+			size = parseInt(v["size"], 10) || 0,
+			dodge = parseInt(v["AC-dodge"], 10) || 0,
+			deflect = parseInt(v["AC-deflect"], 10) || 0,
+			miscAC = parseInt(v["AC-misc"], 10) || 0,
+			condPenalty = parseInt(v["AC-penalty"], 10) || 0,
+			buffs = parseInt(v["buff_AC-total"], 10) || 0,
+			buffsTouch = parseInt(v["buff_Touch-total"], 10) || 0,
+			buffsCMD = parseInt(v["buff_CMD-total"], 10) || 0,
+			armor = parseInt(v["AC-armor"], 10) || 0,
+			shield = parseInt(v["AC-shield"], 10) || 0,
+			natural = parseInt(v["AC-natural"], 10) || 0,
+			bab = parseInt(v["bab"], 10) || 0,
+			miscCMD = parseInt(v["CMD-misc"], 10) || 0,
+			maxDex = parseInt(v["max-dex"], 10),
+			ability = parseInt(v["AC-ability-mod"], 10) || 0,
+			ffAbility = parseInt(v["FF-DEX"], 10) || 0,
+			cmdAbility1 = parseInt(v["CMD-STR"], 10) || 0,
+			cmdAbility2 = parseInt(v["CMD-DEX"], 10) || 0,
+			cmdFFAbility2 = parseInt(v["FF-CMD-DEX"], 10) || 0,
+			cmdPenalty = parseInt(v["CMD-penalty"], 10) || 0,
+			blinded = (parseInt(v["condition-Blinded"], 10) || 0) ? 1 : 0,
+			pinned = (parseInt(v["condition-Pinned"], 10) || 0) ? 1 : 0,
+			stunned = (parseInt(v["condition-Stunned"], 10) || 0) ? 1 : 0,
+			ffed = (parseInt(v["condition-Flat-Footed"], 10) || 0) ? 1 : 0,
+			cowering = (parseInt(v["condition-Cowering"], 10) || 0) ? 1 : 0,
+			loseDex = 0;
 
-			    //console.log("DDDDDDDDDD updateDefenses size:"+size+", dodge:"+dodge+", misc:"+miscAC+", def:"+deflect+", cond:"+condPenalty+", buff:"+buffs+", armor:"+armor+", shield:"+shield+
-			    //  ", natural:"+natural+", bab:"+bab+", miscCMD:"+miscCMD+", maxDex:"+maxDex+", stunned:"+stunned+", ffed:"+ffed+", ability:"+ability+
-			    //  ", ffAbility:"+ffAbility+", cmdAbility1:"+cmdAbility1+",cmdAbility2:"+cmdAbility2+", cmdFFAbility2:"+cmdFFAbility2
-			    //  + ", blinded: "+blinded+", pinned:"+pinned +", cowering:"+cowering  );
+            //console.log("DDDDDDDDDD updateDefenses size:" + size + ", dodge:" + dodge + ", misc:" + miscAC + ", def:" + deflect + ", cond:" + condPenalty + ", buff:" + buffs + ", armor:" + armor + ", shield:" + shield +
+            //  ", natural:" + natural + ", bab:" + bab + ", miscCMD:" + miscCMD + ", maxDex:" + maxDex + ", stunned:" + stunned + ", ffed:" + ffed + ", ability:" + ability +
+            //  ", ffAbility:" + ffAbility + ", cmdAbility1:" + cmdAbility1 + ",cmdAbility2:" + cmdAbility2 + ", cmdFFAbility2:" + cmdFFAbility2
+            //  + ", blinded: " + blinded + ", pinned:" + pinned + ", cowering:" + cowering);
 
-			    maxDex = isNaN(maxDex) ? 99 : maxDex; //cannot do "||0" since 0 is valid but falsy
+            maxDex = isNaN(maxDex) ? 99 : maxDex; //cannot do "||0" since 0 is valid but falsy
+            //console.log("maxDex:" + maxDex);
 
-			    if (findAbilityInString(v["AC-ability"]) === "DEX-mod" && maxDex < 99 && maxDex >= 0) {
-			        ability = Math.min(ability, maxDex);
-			        ffAbility = Math.min(ffAbility, maxDex);
-			    }
+            if (findAbilityInString(v["AC-ability"]) === "DEX-mod" && maxDex < 99 && maxDex >= 0) {
+                ability = Math.min(ability, maxDex);
+                //console.log("AC-ability is DEX-mod, ability=" + ability);
+            }
+            if (findAbilityInString(v["FF-ability"]) === "DEX-mod" && maxDex < 99 && maxDex >= 0) {
+                ffAbility = Math.min(ffAbility, maxDex);
+                //console.log("FF-ability is DEX-mod, ffAbility=" + ffAbility);
+            }
+            if (findAbilityInString(v["CMD-ability2"]) === "DEX-mod" && maxDex < 99 && maxDex >= 0) {
+                cmdAbility2 = Math.min(cmdAbility2, maxDex);
+                //console.log("CMD-ability2 is DEX-mod, cmdAbility2=" + cmdAbility2);
+            }
+            if (findAbilityInString(v["CMD-ability"]) === "DEX-mod" && maxDex < 99 && maxDex >= 0) {
+                cmdFFAbility2 = Math.min(cmdFFAbility2, maxDex);
+                //console.log("CMD-ability is DEX-mod, cmdFFAbility2=" + cmdFFAbility2);
+            }
 
-			    //lose Dex: you lose your bonus but are not flat footed
-			    //Must be applied even if your bonus is not dex :
-			    //http://paizo.com/paizo/faq/v5748nruor1fm#v5748eaic9qdi
+            //lose Dex: you lose your bonus but are not flat footed
+            //Must be applied even if your bonus is not dex :
+            //http://paizo.com/paizo/faq/v5748nruor1fm#v5748eaic9qdi
 
-			    //blinded: uncanny dodge does not lose dex so set to ffAbility
-			    if (blinded) {
-			        loseDex = 1;
-			        ability = ffAbility;
-			        cmdAbility2 = cmdFFAbility2;
-			    }
+            //blinded: uncanny dodge does not lose dex so set to ffAbility
+            if (blinded) {
+                loseDex = 1;
+                ability = ffAbility;
+                cmdAbility2 = cmdFFAbility2;
+                //console.log("blinded loseDex=" + loseDex + ", ability=" + ability + ", cmdAbility2=" + cmdAbility2);
+            }
 
-			    //Uncanny dodge still loses dex in these conditions, so set both to 0
-			    if (pinned || cowering || stunned) {
-			        loseDex = 1;
-			        ffAbility = Math.min(0, ffAbility);
-			        ability = Math.min(0, ffAbility);
-			        cmdFFAbility2 = Math.min(0, cmdFFAbility2);
-			        cmdAbility2 = Math.min(0, cmdFFAbility2);
-			        dodge = 0;
-			    }
+            //Uncanny dodge still loses dex in these conditions, so set both to 0
+            if (pinned || cowering || stunned) {
+                loseDex = 1;
+                ffAbility = Math.min(0, ffAbility);
+                ability = Math.min(0, ffAbility);
+                cmdFFAbility2 = Math.min(0, cmdFFAbility2);
+                cmdAbility2 = Math.min(0, cmdFFAbility2);
+                dodge = 0;
+                //console.log("pinned, cowering, or stunned loseDex=" + loseDex + ", ffAbility=" + ffAbility + ", ability=" + ability + ", cmdFFAbility2=" + cmdFFAbility2 + ", cmdAbility2=" + cmdAbility2 + ", dodge=" + dodge);
+            }
 
-			    var ac = 10 + armor + shield + natural + size + dodge + ability + deflect + miscAC + condPenalty + buffs;
-			    var touch = 10 + size + dodge + ability + deflect + miscAC + condPenalty + buffsTouch;
-			    var ff = 10 + armor + shield + natural + size + ffAbility + deflect + miscAC + condPenalty + buffs + (ffAbility > 0 ? dodge : 0);
-			    var cmd = 10 + bab + cmdAbility1 + cmdAbility2 + (-1 * size) + dodge + deflect + miscCMD + cmdPenalty + buffsCMD;
-			    var cmdFF = 10 + bab + cmdAbility1 + cmdFFAbility2 + (-1 * size) + deflect + miscCMD + cmdPenalty + buffsCMD + (cmdFFAbility2 > 0 ? dodge : 0);
+            var ac = 10 + armor + shield + natural + size + dodge + ability + deflect + miscAC + condPenalty + buffs;
+            var touch = 10 + size + dodge + ability + deflect + miscAC + condPenalty + buffsTouch;
+            var ff = 10 + armor + shield + natural + size + ffAbility + deflect + miscAC + condPenalty + buffs + (ffAbility > 0 ? dodge : 0);
+            var cmd = 10 + bab + cmdAbility1 + cmdAbility2 + (-1 * size) + dodge + deflect + miscCMD + cmdPenalty + buffsCMD;
+            var cmdFF = 10 + bab + cmdAbility1 + cmdFFAbility2 + (-1 * size) + deflect + miscCMD + cmdPenalty + buffsCMD + (cmdFFAbility2 > 0 ? dodge : 0);
+            //console.log("ac=" + ac + ", touch=" + touch + ", ff=" + ff + ", cmd=" + cmd + ", cmdFF=" + cmdFF);
 
-			    //use 0 not 10 to force an update so don't need to check for NaN
-			    var currAC = parseInt(v["AC"], 10) || 0;
-			    var currTouch = parseInt(v["Touch"], 10) || 0;
-			    var currFF = parseInt(v["Flat-Footed"], 10) || 0;
-			    var currCMD = parseInt(v["CMD"], 10) || 0;
-			    var currCMDFF = parseInt(v["FF-CMD"], 10) || 0;
+            //use 0 not 10 to force an update so don't need to check for NaN
+            var currAC = parseInt(v["AC"], 10) || 0;
+            var currTouch = parseInt(v["Touch"], 10) || 0;
+            var currFF = parseInt(v["Flat-Footed"], 10) || 0;
+            var currCMD = parseInt(v["CMD"], 10) || 0;
+            var currCMDFF = parseInt(v["FF-CMD"], 10) || 0;
+            //console.log("currAC=" + currAC + ", currTouch=" + currTouch + ", currFF=" + currFF + ", currCMD=" + currCMD + ", currCMDFF=" + currCMDFF);
 
-			    if (ac !== currAC) { setter["AC"] = ac; setAny += 1; }
-			    if (touch !== currTouch) { setter["Touch"] = touch; setAny += 1; }
-			    if (ff !== currFF) { setter["Flat-Footed"] = ff; setAny += 1; }
-			    if (cmd !== currCMD) { setter["CMD"] = cmd; setAny += 1; }
-			    if (cmdFF !== currCMDFF) { setter["FF-CMD"] = cmdFF; setAny += 1; }
-			    if (setAny) {
-			        setAttrs(setter);
-			    }
+            if (ac !== currAC) { setter["AC"] = ac; setAny += 1; }
+            if (touch !== currTouch) { setter["Touch"] = touch; setAny += 1; }
+            if (ff !== currFF) { setter["Flat-Footed"] = ff; setAny += 1; }
+            if (cmd !== currCMD) { setter["CMD"] = cmd; setAny += 1; }
+            if (cmdFF !== currCMDFF) { setter["FF-CMD"] = cmdFF; setAny += 1; }
+            if (ability !== parseInt(v["AC-ability-display"], 10) || 0) { setter["AC-ability-display"] = ability; setAny += 1; }
+            if (ffAbility !== parseInt(v["FF-DEX-display"], 10) || 0) { setter["FF-DEX-display"] = ffAbility; setAny += 1; }
+            if (cmdAbility2 !== parseInt(v["CMD-DEX-display"], 10) || 0) { setter["CMD-DEX-display"] = cmdAbility2; setAny += 1; }
+            if (cmdFFAbility2 !== parseInt(v["FF-CMD-DEX-display"], 10) || 0) { setter["FF-CMD-DEX-display"] = cmdFFAbility2; setAny += 1; }
+            if (setAny) {
+                setAttrs(setter);
+            }
 
-			});
+        });
 	},
 
     /*updateArmor
@@ -14541,129 +14601,145 @@ var PFSheet = PFSheet || (function () {
 	 * for backward compatiblity, proficiency is string and 0 is proficient, anything else non proficient
 	 */
 	updateArmor = function () {
-	    getAttrs(["shield-equipped", "shield-acbonus", "shield-max-dex", "shield-acp", "shield-spell-fail", "shield-proficiency",
-		 "shield2-equipped", "shield2-acbonus", "shield2-max-dex", "shield2-acp", "shield2-spell-fail", "shield2-proficiency",
-		 "shield3-equipped", "shield3-acbonus", "shield3-max-dex", "shield3-acp", "shield3-spell-fail", "shield3-proficiency",
-		 "armor-equipped", "armor-acbonus", "armor-max-dex", "armor-acp", "armor-spell-fail", "armor-proficiency",
-		 "armor2-equipped", "armor2-acbonus", "armor2-max-dex", "armor2-acp", "armor2-spell-fail", "armor2-proficiency",
-		 "armor3-equipped", "armor3-acbonus", "armor3-max-dex", "armor3-acp", "armor3-spell-fail", "armor3-proficiency",
-		 "acp", "max-dex", "AC-armor", "AC-shield", "spell-fail", "acp-attack-mod",
-		 "max-dex-source", "acp-source"], function (v) {
-		     //console.log(v);
-		     var acp = 0, maxDex = 99, acA = 0, acS = 0, sp = 0, atk = 0;
-		     var subAC, subD, subAcp, nonProf, subsp;
-		     var currACP, currMaxDex, currACArmor, currACShield, currSpellFail, currAtkMod;
-		     var maxDexDropdown = parseInt(v["max-dex-source"], 10);
-		     var acpDropdown = parseInt(v["acp-source"], 10);
-		     var setAny = 0, setter = {};
+        getAttrs(["shield-equipped", "shield-acbonus", "shield-max-dex", "shield-acp", "shield-spell-fail", "shield-proficiency",
+            "shield2-equipped", "shield2-acbonus", "shield2-max-dex", "shield2-acp", "shield2-spell-fail", "shield2-proficiency",
+            "shield3-equipped", "shield3-acbonus", "shield3-max-dex", "shield3-acp", "shield3-spell-fail", "shield3-proficiency",
+            "armor-equipped", "armor-acbonus", "armor-max-dex", "armor-acp", "armor-spell-fail", "armor-proficiency",
+            "armor2-equipped", "armor2-acbonus", "armor2-max-dex", "armor2-acp", "armor2-spell-fail", "armor2-proficiency",
+            "armor3-equipped", "armor3-acbonus", "armor3-max-dex", "armor3-acp", "armor3-spell-fail", "armor3-proficiency",
+            "acp", "max-dex", "AC-armor", "AC-shield", "spell-fail", "acp-attack-mod",
+            "max-dex-source", "acp-source", "current-load"], function (v) {
+		    //console.log("updateArmor");
+		    //console.log(v);
+		    var acp = 0, maxDex = 99, acA = 0, acS = 0, sp = 0, atk = 0;
+		    var subAC, subD, subAcp, nonProf, subsp;
+		    var currACP, currMaxDex, currACArmor, currACShield, currSpellFail, currAtkMod;
+		    var maxDexDropdown = parseInt(v["max-dex-source"], 10);
+		    var acpDropdown = parseInt(v["acp-source"], 10);
+		    var setAny = 0, setter = {};
 
-		     if (v["armor-equipped"] == "1") {
-		         subAC = parseInt(v["armor-acbonus"], 10) || 0;
-		         subD = parseInt(v["armor-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
-		         subAcp = parseInt(v["armor-acp"], 10) || 0;
-		         nonProf = parseInt(v["armor-proficiency"], 10) || 0;//assume proficient 0 is messing with it //prof=isNaN(prof)?0:prof;//cannot do "||0" since 0 is valid but falsy
-		         subsp = parseInt(v["armor-spell-fail"], 10) || 0;
-		         acA += subAC;
-		         maxDex = Math.min(subD, maxDex);
-		         acp += subAcp;
-		         sp += subsp;
-		         if (nonProf) { atk += subAcp; }
-		         //console.log("the proficiency is " + prof + " and attack penalty: " + atk);
-		     }
-		     if (v["armor2-equipped"] == "1") {
-		         subAC = parseInt(v["armor2-acbonus"], 10) || 0;
-		         subD = parseInt(v["armor2-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
-		         subAcp = parseInt(v["armor2-acp"], 10) || 0;
-		         nonProf = parseInt(v["armor2-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
-		         subsp = parseInt(v["armor2-spell-fail"], 10) || 0;
-		         acA += subAC;
-		         maxDex = Math.min(subD, maxDex);
-		         acp += subAcp;
-		         sp += subsp;
-		         if (nonProf) { atk += subAcp; }
-		     }
-		     if (v["armor3-equipped"] == "1") {
-		         subAC = parseInt(v["armor3-acbonus"], 10) || 0;
-		         subD = parseInt(v["armor3-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
-		         subAcp = parseInt(v["armor3-acp"], 10) || 0;
-		         nonProf = parseInt(v["armor3-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
-		         subsp = parseInt(v["armor3-spell-fail"], 10) || 0;
-		         acA += subAC;
-		         maxDex = Math.min(subD, maxDex);
-		         acp += subAcp;
-		         sp += subsp;
-		         if (nonProf) { atk += subAcp; }
-		     }
-		     if (v["shield-equipped"] == "1") {
-		         subAC = parseInt(v["shield-acbonus"], 10) || 0;
-		         subD = parseInt(v["shield-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
-		         subAcp = parseInt(v["shield-acp"], 10) || 0;
-		         nonProf = parseInt(v["shield-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
-		         subsp = parseInt(v["shield-spell-fail"], 10) || 0;
-		         acS += subAC;
-		         maxDex = Math.min(subD, maxDex);
-		         acp += subAcp;
-		         sp += subsp;
-		         if (nonProf) { atk += subAcp; }
-		     }
-		     if (v["shield2-equipped"] == "1") {
-		         subAC = parseInt(v["shield2-acbonus"], 10) || 0;
-		         subD = parseInt(v["shield2-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
-		         subAcp = parseInt(v["shield2-acp"], 10) || 0;
-		         nonProf = parseInt(v["shield2-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
-		         subsp = parseInt(v["shield2-spell-fail"], 10) || 0;
-		         acS += subAC;
-		         maxDex = Math.min(subD, maxDex);
-		         acp += subAcp;
-		         sp += subsp;
-		         if (nonProf) { atk += subAcp; }
-		     }
-		     if (v["shield3-equipped"] == "1") {
-		         subAC = parseInt(v["shield3-acbonus"], 10) || 0;
-		         subD = parseInt(v["shield3-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
-		         subAcp = parseInt(v["shield3-acp"], 10) || 0;
-		         nonProf = parseInt(v["shield3-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
-		         subsp = parseInt(v["shield3-spell-fail"], 10) || 0;
-		         acS += subAC;
-		         maxDex = Math.min(subD, maxDex);
-		         acp += subAcp;
-		         sp += subsp;
-		         if (nonProf) { atk += subAcp; }
-		     }
-		     //if not using armor and shield then use value in the dropdown
-		     //armor and shield are not a number
-		     if (!isNaN(maxDexDropdown)) {
-		         maxDex = maxDexDropdown;
-		         if (maxDex === 9999) { maxDex = 99; }
-		     }
-		     if (!isNaN(acpDropdown)) {
-		         acp = acpDropdown;
-		     }
+		    if (v["armor-equipped"] == "1") {
+                subAC = parseInt(v["armor-acbonus"], 10) || 0;
+		        subD = parseInt(v["armor-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
+		        subAcp = parseInt(v["armor-acp"], 10) || 0;
+		        nonProf = parseInt(v["armor-proficiency"], 10) || 0;//assume proficient 0 is messing with it //prof=isNaN(prof)?0:prof;//cannot do "||0" since 0 is valid but falsy
+		        subsp = parseInt(v["armor-spell-fail"], 10) || 0;
+		        acA += subAC;
+		        maxDex = Math.min(subD, maxDex);
+		        acp += subAcp;
+		        sp += subsp;
+		        if (nonProf) { atk += subAcp; }
+		        //console.log("subAC=" + subAC + ", subD=" + subD + ", subAcp=" + subAcp + ", nonProf=" + nonProf + ", subsp=" + subsp + ", acA=" + acA + ", maxDex=" + maxDex + ", acp=" + acp + ", sp=" + sp + ", atk=" + atk);
+		    }
+		    if (v["armor2-equipped"] == "1") {
+		        subAC = parseInt(v["armor2-acbonus"], 10) || 0;
+		        subD = parseInt(v["armor2-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
+		        subAcp = parseInt(v["armor2-acp"], 10) || 0;
+		        nonProf = parseInt(v["armor2-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
+		        subsp = parseInt(v["armor2-spell-fail"], 10) || 0;
+		        acA += subAC;
+		        maxDex = Math.min(subD, maxDex);
+		        acp += subAcp;
+		        sp += subsp;
+		        if (nonProf) { atk += subAcp; }
+		        //console.log("subAC=" + subAC + ", subD=" + subD + ", subAcp=" + subAcp + ", nonProf=" + nonProf + ", subsp=" + subsp + ", acA=" + acA + ", maxDex=" + maxDex + ", acp=" + acp + ", sp=" + sp + ", atk=" + atk);
+		    }
+		    if (v["armor3-equipped"] == "1") {
+		        subAC = parseInt(v["armor3-acbonus"], 10) || 0;
+		        subD = parseInt(v["armor3-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
+		        subAcp = parseInt(v["armor3-acp"], 10) || 0;
+		        nonProf = parseInt(v["armor3-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
+		        subsp = parseInt(v["armor3-spell-fail"], 10) || 0;
+		        acA += subAC;
+		        maxDex = Math.min(subD, maxDex);
+		        acp += subAcp;
+		        sp += subsp;
+		        if (nonProf) { atk += subAcp; }
+		        //console.log("subAC=" + subAC + ", subD=" + subD + ", subAcp=" + subAcp + ", nonProf=" + nonProf + ", subsp=" + subsp + ", acA=" + acA + ", maxDex=" + maxDex + ", acp=" + acp + ", sp=" + sp + ", atk=" + atk);
+		    }
+		    if (v["shield-equipped"] == "1") {
+		        subAC = parseInt(v["shield-acbonus"], 10) || 0;
+		        subD = parseInt(v["shield-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
+		        subAcp = parseInt(v["shield-acp"], 10) || 0;
+		        nonProf = parseInt(v["shield-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
+		        subsp = parseInt(v["shield-spell-fail"], 10) || 0;
+		        acS += subAC;
+		        maxDex = Math.min(subD, maxDex);
+		        acp += subAcp;
+		        sp += subsp;
+		        if (nonProf) { atk += subAcp; }
+		        //console.log("subAC=" + subAC + ", subD=" + subD + ", subAcp=" + subAcp + ", nonProf=" + nonProf + ", subsp=" + subsp + ", acA=" + acA + ", maxDex=" + maxDex + ", acp=" + acp + ", sp=" + sp + ", atk=" + atk);
+		    }
+		    if (v["shield2-equipped"] == "1") {
+		        subAC = parseInt(v["shield2-acbonus"], 10) || 0;
+		        subD = parseInt(v["shield2-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
+		        subAcp = parseInt(v["shield2-acp"], 10) || 0;
+		        nonProf = parseInt(v["shield2-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
+		        subsp = parseInt(v["shield2-spell-fail"], 10) || 0;
+		        acS += subAC;
+		        maxDex = Math.min(subD, maxDex);
+		        acp += subAcp;
+		        sp += subsp;
+		        if (nonProf) { atk += subAcp; }
+		        //console.log("subAC=" + subAC + ", subD=" + subD + ", subAcp=" + subAcp + ", nonProf=" + nonProf + ", subsp=" + subsp + ", acA=" + acA + ", maxDex=" + maxDex + ", acp=" + acp + ", sp=" + sp + ", atk=" + atk);
+		    }
+		    if (v["shield3-equipped"] == "1") {
+		        subAC = parseInt(v["shield3-acbonus"], 10) || 0;
+		        subD = parseInt(v["shield3-max-dex"], 10); subD = isNaN(subD) ? 99 : subD; //cannot do "or 0" since 0 is valid but falsy
+		        subAcp = parseInt(v["shield3-acp"], 10) || 0;
+		        nonProf = parseInt(v["shield3-proficiency"], 10) || 0;//a;prof=isNaN(prof)?1:prof;
+		        subsp = parseInt(v["shield3-spell-fail"], 10) || 0;
+		        acS += subAC;
+		        maxDex = Math.min(subD, maxDex);
+		        acp += subAcp;
+		        sp += subsp;
+		        if (nonProf) { atk += subAcp; }
+		        //console.log("subAC=" + subAC + ", subD=" + subD + ", subAcp=" + subAcp + ", nonProf=" + nonProf + ", subsp=" + subsp + ", acA=" + acA + ", maxDex=" + maxDex + ", acp=" + acp + ", sp=" + sp + ", atk=" + atk);
+		    }
+		    //since the dropdown contains a formula, that is NaN. The only valid number is 9999 = "Nothing"
+		    if (!isNaN(maxDexDropdown)) {
+		        maxDex = 99;
+		    }
+		    //since the dropdown contains a formula, that is NaN. The only valid number is 0 = "Nothing"
+		    if (!isNaN(acpDropdown)) {
+		        acp = 0;
+		    }
+		    //carry capacity / encumbrance / load affect on max dex
+		    var currentLoad = parseInt(v["current-load"], 10) || 0;
+		    //console.log("currentLoad=" + currentLoad);
+		    if (currentLoad == 1) { // under medium encumbrance load
+		        maxDex = Math.min(maxDex, 3);
+		        acp -= 3;
+		        //console.log("medium load adjusted maxDex=" + maxDex + ", acp=" + acp);
+		    } else if (currentLoad == 2) { // under heavy encumbrance load
+		        maxDex = Math.min(maxDex, 1);
+		        acp -= 6;
+		        //console.log("heavy load adjusted maxDex=" + maxDex + ", acp=" + acp);
+		    }
 
-		     currACP = parseInt(v.acp, 10) || 0;
-		     currMaxDex = parseInt(v["max-dex"], 10);//cannot do "||0" since 0 is valid but falsy
+		    currACP = parseInt(v.acp, 10) || 0;
+		    currMaxDex = parseInt(v["max-dex"], 10);//cannot do "||0" since 0 is valid but falsy
+		    currMaxDex = isNaN(currMaxDex) ? 99 : currMaxDex;
 
-		     currMaxDex = isNaN(currMaxDex) ? 99 : currMaxDex;
+		    //using -1 forces update
+		    currACArmor = parseInt(v["AC-armor"], 10) || -1;
+		    currACShield = parseInt(v["AC-shield"], 10) || -1;
+		    currSpellFail = parseInt(v["spell-fail"], 10) || -1;
+		    currAtkMod = parseInt(v["acp-attack-mod"], 10) || 0;
 
-		     //using -1 forces update
-		     currACArmor = parseInt(v["AC-armor"], 10) || -1;
-		     currACShield = parseInt(v["AC-shield"], 10) || -1;
-		     currSpellFail = parseInt(v["spell-fail"], 10) || -1;
-		     currAtkMod = parseInt(v["acp-attack-mod"], 10) || 0;
+		    //console.log(v);
+		    console.log("curr atk mod:" + currAtkMod + ", curr acp:" + currACP + ", new acp:" + acp + ", currMaxDex:" + currMaxDex + ", new maxdex:" + maxDex);
 
-		     //console.log(v);
-		     //console.log("curr atk mod:"+currAtkMod+", curr acp:"+currACP+", new acp:"+acp+", currMaxDex:"+currMaxDex+", new maxdex:"+maxDex);
-
-		     if (currACP !== acp) { setter["acp"] = acp; setAny = 1; }
-		     if (currMaxDex !== maxDex) { setter["max-dex"] = maxDex; setAny = 1; }
-		     if (currACArmor !== acA) { setter["AC-armor"] = acA; setAny = 1; }
-		     if (currACShield !== acS) { setter["AC-shield"] = acS; setAny = 1; }
-		     if (currSpellFail !== sp) { setter["spell-fail"] = sp; setAny = 1; }
-		     if (currAtkMod !== atk) { setter["acp-attack-mod"] = atk; setAny = 1; }
-		     if (setAny) {
-		         setAttrs(setter);
-		     }
-		 });
+		    if (currACP !== acp) { setter["acp"] = acp; setAny = 1; }
+		    if (currMaxDex !== maxDex) { setter["max-dex"] = maxDex; setAny = 1; }
+		    if (currACArmor !== acA) { setter["AC-armor"] = acA; setAny = 1; }
+		    if (currACShield !== acS) { setter["AC-shield"] = acS; setAny = 1; }
+		    if (currSpellFail !== sp) { setter["spell-fail"] = sp; setAny = 1; }
+		    if (currAtkMod !== atk) { setter["acp-attack-mod"] = atk; setAny = 1; }
+		    if (setAny) {
+		        setAttrs(setter);
+            }
+        });
 	},
 
     /*updateConditionsSavePenalty
@@ -15290,7 +15366,8 @@ var PFSheet = PFSheet || (function () {
             //console.log("currentTotal=" + currentTotal);
             getSectionIDs("repeating_" + repeatName, function (idarray) { // get the repeating set
                 //console.log("idarray.length=" + idarray.length);
-                var newTotal = 0.0;
+                var newTotal = 0.0,
+                setter = {};
                 if (idarray.length > 0) {
                     _.each(idarray, function (currentID, i) { // loop through the set
                         getAttrs(["repeating_" + repeatName + "_" + currentID + "_weight", "repeating_" + repeatName + "_" + currentID + "_qty", "repeating_" + repeatName + "_" + currentID + "_qty_max"], function (v) {
@@ -15310,7 +15387,6 @@ var PFSheet = PFSheet || (function () {
                                 //console.log("loop finished newTotal=" + newTotal + ", currentTotal=" + currentTotal);
                                 if (currentTotal !== newTotal) {
                                     //console.log("changing " + totalVar + " to " + newTotal);
-                                    var setter = {};
                                     setter[totalVar] = newTotal;
                                     setAttrs(setter); // could not simply set totalVar to newTotal since it would set newTotal to the attribute named totalVar instead
                                 }
@@ -15321,7 +15397,6 @@ var PFSheet = PFSheet || (function () {
                     //console.log("no loop? newTotal=" + newTotal + ", currentTotal=" + currentTotal + ", totalVar=" + totalVar);
                     if (currentTotal !== newTotal) {
                         //console.log("changing " + totalVar + " to " + newTotal);
-                        var setter = {};
                         setter[totalVar] = newTotal;
                         setAttrs(setter);
                     }
@@ -16214,14 +16289,14 @@ var PFSheet = PFSheet || (function () {
 	        TAS.repeatingSimpleSum('item', 'hp', 'item-total-hp');
 	        TAS.repeatingSimpleSum('item', 'hp_max', 'item-total-hp_max');
 	        TAS.repeatingSimpleSum('item', 'value', 'item-total-value');
-	        updateCarriedCurrency();
-	        updateCarriedTotal();
-	        updateCurrentLoad();
-	        updateLoadsAndLift();
 	        updateRepeatingItemTotalWeight("belonging", "belonging_total_weight");
 	        TAS.repeatingSimpleSum('belonging', 'hp', 'belonging-total-hp');
 	        TAS.repeatingSimpleSum('belonging', 'hp_max', 'belonging-total-hp_max');
 	        TAS.repeatingSimpleSum('belonging', 'value', 'belonging-total-value');
+	        updateCarriedCurrency();
+	        updateCarriedTotal();
+	        updateLoadsAndLift();
+	        updateCurrentLoad();
 	    }
 	},
 
@@ -16846,7 +16921,7 @@ on("change:condition-blinded", function (eventInfo) {
     PFSheet.updateConditionDefensePenalty(eventInfo);
 });
 
-on("change:condition-drained change:condition-wounds change:condition-cowering change:condition-flat-footed change:condition-stunned change:condition-pinned", function (eventInfo) {
+on("change:condition-drained change:condition-wounds change:condition-cowering change:condition-flat-footed change:condition-Stunned change:condition-pinned", function (eventInfo) {
     PFSheet.updateConditionDefensePenalty(eventInfo);
 });
 
@@ -16866,8 +16941,8 @@ on("change:init-ability", function () { PFSheet.handleDropdown("init-ability", [
 on("change:init-ability-mod change:init-trait change:init-misc change:condition-deafened", function () { PFSheet.updateInit(); });
 
 //speed
-on("change:current-load change:speed-base change:load-heavy change:carried-total", function () {
-    //console.log("caught change:current-load change:speed-base event");
+on("change:current-load change:speed-base change:load-heavy change:carried-total change:race change:armor-equipped change:armor2-eqipped change:armor3-eqipped change:armor-type change:armor2-type change:armor3-type", function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     PFSheet.updateModifiedSpeed();
 });
 
@@ -16910,17 +16985,17 @@ on("change:repeating_class-ability:max-calculation", function () { SWUtils.evalu
 //on("change:repeating_class-ability:max-calculation",function(eventInfo){ console.log("Detected change to "+eventInfo.sourceAttribute);});
 
 //defense dropdowns
-//on("change:ac-ability", function () {PFSheet.handleDefenseDropdown("AC-ability");});
-//on("change:ff-ability", function () {PFSheet.handleDefenseDropdown("FF-ability");});
-//on("change:cmd-ability1", function () {PFSheet.handleDefenseDropdown("CMD-ability1");});
-//on("change:cmd-ability2", function () {PFSheet.handleDefenseDropdown("CMD-ability2");});
-//on("change:cmd-ability", function () {PFSheet.handleDefenseDropdown("CMD-ability");});
+//on("change:AC-ability", function () {PFSheet.handleDefenseDropdown("AC-ability");});
+//on("change:FF-ability", function () {PFSheet.handleDefenseDropdown("FF-ability");});
+//on("change:CMD-ability1", function () {PFSheet.handleDefenseDropdown("CMD-ability1");});
+//on("change:CMD-ability2", function () {PFSheet.handleDefenseDropdown("CMD-ability2");});
+//on("change:CMD-ability", function () {PFSheet.handleDefenseDropdown("CMD-ability");});
 
-on("change:ac-ability change:ff-ability change:cmd-ability1 change:cmd-ability2 change:cmd-ability"
+on("change:AC-ability change:FF-ability change:CMD-ability1 change:CMD-ability2 change:CMD-ability"
 	, function (eventInfo) { PFSheet.handleDefenseDropdown(eventInfo.sourceAttribute); });
 
 //defenses
-on("change:condition-stunned change:condition-flat-footed change:ac-ability-mod change:ff-dex change:ac-penalty change:cmd-penalty change:size change:ac-dodge change:ac-natural change:ac-deflect change:ac-misc change:ac-shield change:ac-armor change:cmd-dex change:ff-cmd-dex change:cmd-str change:cmd-misc change:buff_ac-total change:buff_touch-total change:buff_cmd-total change:bab change:max-dex"
+on("change:condition-Stunned change:condition-flat-footed change:AC-ability-mod change:FF-DEX change:ac-penalty change:cmd-penalty change:size change:ac-dodge change:ac-natural change:ac-deflect change:ac-misc change:ac-shield change:ac-armor change:CMD-DEX change:FF-CMD-DEX change:cmd-str change:cmd-misc change:buff_ac-total change:buff_touch-total change:buff_cmd-total change:bab change:max-dex"
 	, function (eventInfo) { PFSheet.updateDefenses(eventInfo); });
 
 on("change:shield-equipped change:shield-acbonus change:shield-max-dex change:shield-acp change:shield-spell-fail change:shield-proficiency "
@@ -16929,7 +17004,7 @@ on("change:shield-equipped change:shield-acbonus change:shield-max-dex change:sh
 	+ "change:armor-equipped change:armor-acbonus change:armor-max-dex change:armor-acp change:armor-spell-fail change:armor-proficiency "
 	+ "change:armor2-equipped change:armor2-acbonus change:armor2-max-dex change:armor2-acp change:armor2-spell-fail change:armor2-proficiency "
 	+ "change:armor3-equipped change:armor3-acbonus change:armor3-max-dex change:armor3-acp change:armor3-spell-fail change:armor3-proficiency "
-	+ "change:max-dex-source change:acp-source"
+	+ "change:max-dex-source change:acp-source change:current-load"
 	, function (eventInfo) { PFSheet.updateArmor(eventInfo.sourceAttribute); });
 
 //saves
@@ -17045,52 +17120,52 @@ on("change:worn-Armor-weight change:worn-Belt-weight change:worn-Body-weight cha
 on("change:worn-Armor-hp change:worn-Belt-hp change:worn-Body-hp change:worn-Chest-hp change:worn-Eyes-hp change:worn-Feet-hp change:worn-Hands-hp change:worn-Head-hp change:worn-Headband-hp change:worn-Neck-hp change:worn-Ring1-hp change:worn-Ring2-hp change:worn-Shield-hp change:worn-Shoulders-hp change:worn-Wrist-hp", function () { PFSheet.updateWornEquipment("hp"); });
 on("change:worn-Armor-hp_max change:worn-Belt-hp_max change:worn-Body-hp_max change:worn-Chest-hp_max change:worn-Eyes-hp_max change:worn-Feet-hp_max change:worn-Hands-hp_max change:worn-Head-hp_max change:worn-Headband-hp_max change:worn-Neck-hp_max change:worn-Ring1-hp_max change:worn-Ring2-hp_max change:worn-Shield-hp_max change:worn-Shoulders-hp_max change:worn-Wrist-hp_max", function () { PFSheet.updateWornEquipment("hp_max"); });
 on("change:worn-Armor-value change:worn-Belt-value change:worn-Body-value change:worn-Chest-value change:worn-Eyes-value change:worn-Feet-value change:worn-Hands-value change:worn-Head-value change:worn-Headband-value change:worn-Neck-value change:worn-Ring1-value change:worn-Ring2-value change:worn-Shield-value change:worn-Shoulders-value change:worn-Wrist-value", function () { PFSheet.updateWornEquipment("value"); });
-on('change:repeating_item:weight change:repeating_item:qty change:repeating_item:qty_max', function () {
-    //console.log("event change:repeating_item:weight or change:repeating_item:qty change:repeating_item:qty_max caught");
+on('change:repeating_item:weight change:repeating_item:qty change:repeating_item:qty_max', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     updateRepeatingItemTotalWeight("item", "item_total_weight");
 });
-on('change:repeating_item:hp', function () {
-    //console.log("event change:repeating_item:hp caught");
+on('change:repeating_item:hp', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     TAS.repeatingSimpleSum('item', 'hp', 'item-total-hp');
 });
-on('change:repeating_item:hp_max', function () {
-    //console.log("event change:repeating_item:hp_max caught");
+on('change:repeating_item:hp_max', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     TAS.repeatingSimpleSum('item', 'hp_max', 'item-total-hp_max');
 });
-on('change:repeating_item:value', function () {
-    //console.log("event change:repeating_item:value caught");
+on('change:repeating_item:value', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     TAS.repeatingSimpleSum('item', 'value', 'item-total-value');
 });
-on('change:CP change:SP change:GP change:PP', function () {
-    //console.log("event change:CP change:SP change:GP change:PP caught");
+on('change:CP change:SP change:GP change:PP', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     PFSheet.updateCarriedCurrency();
 });
-on('change:carried-currency change:item_total_weight change:worn-total-weight change:carried-misc', function () {
-    //console.log("event change:carried-currency change:item_total_weight change:worn-total-weight change:carried-misc caught");
+on('change:carried-currency change:item_total_weight change:worn-total-weight change:carried-misc', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     PFSheet.updateCarriedTotal();
 });
-on('change:load-light change:load-medium change:carried-total', function () {
+on('change:load-light change:load-medium change:carried-total', function (eventInfo) {
     //console.log("checking current-load radio buttons");
     PFSheet.updateCurrentLoad();
 });
-on("change:STR change:size change:legs change:load-str-bonus change:load-multiplier change:load-misc", function () {
-    //console.log("caught change:size change:legs change:load-str-bonus change:load-multiplier change:load-misc event");
+on("change:STR change:size change:legs change:load-str-bonus change:load-multiplier change:load-misc", function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     PFSheet.updateLoadsAndLift();
 });
-on('change:repeating_belonging:weight change:repeating_belonging:qty change:repeating_belonging:qty_max', function () {
-    //console.log("event change:repeating_belonging:weight or change:repeating_belonging:qty change:repeating_belonging:qty_max caught");
+on('change:repeating_belonging:weight change:repeating_belonging:qty change:repeating_belonging:qty_max', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     updateRepeatingItemTotalWeight("belonging", "belonging_total_weight");
 });
-on('change:repeating_belonging:hp', function () {
-    //console.log("event change:repeating_belonging:hp caught");
+on('change:repeating_belonging:hp', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     TAS.repeatingSimpleSum('belonging', 'hp', 'belonging-total-hp');
 });
-on('change:repeating_belonging:hp_max', function () {
-    //console.log("event change:repeating_belonging:hp_max caught");
+on('change:repeating_belonging:hp_max', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     TAS.repeatingSimpleSum('belonging', 'hp_max', 'belonging-total-hp_max');
 });
-on('change:repeating_belonging:value', function () {
-    //console.log("event change:repeating_belonging:value caught");
+on('change:repeating_belonging:value', function (eventInfo) {
+    //console.log("caught " + eventInfo.sourceAttribute + " event");
     TAS.repeatingSimpleSum('belonging', 'value', 'belonging-total-value');
 });
 
